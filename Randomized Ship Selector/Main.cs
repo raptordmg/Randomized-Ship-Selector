@@ -15,6 +15,7 @@ namespace Randomized_Ship_Selector
     public partial class Main : Form
     {
         private List<Ship> Ships = null;
+        private Random Rnd = new Random();
 
         public Main()
         {
@@ -27,8 +28,7 @@ namespace Randomized_Ship_Selector
         {
             PictureBox output = pbOutput;
 
-            Random rnd = new Random();
-            Ship randomShip = Ships[rnd.Next(Ships.Count)];
+            Ship randomShip = Ships[Rnd.Next(Ships.Count)];
             output.Image = randomShip.Image;
         }
 

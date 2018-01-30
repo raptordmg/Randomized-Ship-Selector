@@ -22,12 +22,14 @@ namespace Randomized_Ship_Selector
         public enum Nations
         {
             None,
-            USN,
-            IJN,
-            VMF,
-            KM,
-            PA,
-            RN
+            USN, //United States Navy
+            IJN, // Imperial Japanese Navy
+            VMF, // Vojenno-Morskoj Flot
+            KM, // Kriegsmarine
+            PA, // Pan-Asian Navy
+            RN, // Royal Navy
+            ORP, // Okręt Rzeczypospolitej Polskiej
+            Commonwealth // Perth, Vampire
         }
 
         public Image Image { get; }
