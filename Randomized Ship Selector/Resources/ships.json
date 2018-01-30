@@ -1,0 +1,170 @@
+[
+  {
+    "imgName": "PASA002.png",
+    "tier": 5,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA004.png",
+    "tier": 4,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA006.png",
+    "tier": 6,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA010.png",
+    "tier": 7,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA012.png",
+    "tier": 5,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA013.png",
+    "tier": 9,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA015.png",
+    "tier": 10,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": false
+  },
+  {
+    "imgName": "PASA507.png",
+    "tier": 7,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": true
+  },
+  {
+    "imgName": "PASA508.png",
+    "tier": 8,
+    "nation": "USN",
+    "shipClass": "Carrier",
+    "premium": true
+  },
+  {
+    "imgName": "PASB001.png",
+    "tier": 3,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB004.png",
+    "tier": 4,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB006.png",
+    "tier": 5,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB008.png",
+    "tier": 7,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB012.png",
+    "tier": 8,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB013.png",
+    "tier": 4,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB017.png",
+    "tier": 10,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB018.png",
+    "tier": 9,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB034.png",
+    "tier": 6,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": false
+  },
+  {
+    "imgName": "PASB506.png",
+    "tier": 6,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB508.png",
+    "tier": 8,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB509.png",
+    "tier": 9,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB518.png",
+    "tier": 8,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB705.png",
+    "tier": 5,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  },
+  {
+    "imgName": "PASB708.png",
+    "tier": 8,
+    "nation": "USN",
+    "shipClass": "Battleship",
+    "premium": true
+  }
+]
