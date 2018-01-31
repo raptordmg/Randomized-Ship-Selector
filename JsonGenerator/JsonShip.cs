@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Randomized_Ship_Selector
 {
@@ -34,10 +35,10 @@ namespace Randomized_Ship_Selector
             Commonwealth // Perth, Vampire (Australia)
         }
 
-        public Image Image { get; }
+        public string Image { get; }
         public int Tier { get; }
-        public Nations Nation { get; }
-        public Classes ShipClass { get; set; }
+        public string Nation { get; }
+        public string ShipClass { get; set; }
         public bool Premium { get; }
 
         /// <summary>
@@ -49,9 +50,7 @@ namespace Randomized_Ship_Selector
         /// <param name="premium">Is it a premium</param>
         public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
         {
-            FileStream fs = new FileStream("Resources/Panzerschiffer_Icons/" + imgName, FileMode.Open);
-            this.Image = Image.FromStream(fs);
-            fs.Close();
+            this.Image = imgName;
 
             if (tier > 0 && tier <= 10)
             {
@@ -62,8 +61,8 @@ namespace Randomized_Ship_Selector
                 throw new IndexOutOfRangeException("Tier must be between 1 and 10 inclusive.");
             }
 
-            this.Nation = nation;
-            this.ShipClass = cls;
+            this.Nation = nation.ToString();
+            this.ShipClass = cls.ToString();
             this.Premium = premium;
         }
     }

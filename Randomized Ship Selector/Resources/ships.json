@@ -453,5 +453,82 @@
     "nation": "RN",
     "shipClass": "Battleship",
     "premium": true
+  },
+  {
+    "imgName": "PBSC101.png",
+    "tier": 1,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC102.png",
+    "tier": 2,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC103.png",
+    "tier": 3,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC104.png",
+    "tier": 4,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC105.png",
+    "tier": 5,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC106.png",
+    "tier": 6,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC107.png",
+    "tier": 7,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC108.png",
+    "tier": 8,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC109.png",
+    "tier": 9,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC110.png",
+    "tier": 10,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": false
+  },
+  {
+    "imgName": "PBSC507.png",
+    "tier": 7,
+    "nation": "RN",
+    "shipClass": "Cruiser",
+    "premium": true
   }
 ]
