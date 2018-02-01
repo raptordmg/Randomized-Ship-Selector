@@ -11,9 +11,7 @@ namespace JsonGenerator
         static void Main(string[] args)
         {
             RSSjsonMaker maker = new RSSjsonMaker(@"C:\Users\Daan\Source\Repos\Randomized-Ship-Selector\Randomized Ship Selector\Resources\Panzerschiffer_Icons\");
-            
-            
-            Console.ReadKey();
+            maker.MakeJson();
         }
     }
 }

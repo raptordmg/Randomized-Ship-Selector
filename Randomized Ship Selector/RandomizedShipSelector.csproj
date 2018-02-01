@@ -79,7 +79,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\ships.json">
+    <None Include="Resources\shipdata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -108,19 +108,10 @@
     <Content Include="Resources\Panzerschiffer_Icons\PASA015.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASA021.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASA507.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASA508.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASA906.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASA915.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASB001.png">
@@ -166,9 +157,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASB708.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASB917.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASC001.png">
@@ -219,9 +207,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PASC707.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASC710.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASD002.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -255,28 +240,10 @@
     <Content Include="Resources\Panzerschiffer_Icons\PASD502.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASD506.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASD508.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PASD709.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASD913.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASX001.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASX003.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASX005.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PASX815.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PBSB002.png">
@@ -306,9 +273,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PBSB110.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PBSB207.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PBSB507.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -316,9 +280,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PBSB527.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PBSB910.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PBSC101.png">
@@ -363,33 +324,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PBSD507.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PBSD605.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB103.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB104.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB105.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB106.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB107.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB108.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB109.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSB110.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PFSB506.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -432,16 +366,7 @@
     <Content Include="Resources\Panzerschiffer_Icons\PFSD506.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PFSD605.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSA508.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PGSA509.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PGSA510.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSB002.png">
@@ -475,9 +400,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSB507.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PGSB910.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSC001.png">
@@ -520,9 +442,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSC706.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PGSC910.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PGSD102.png">
@@ -591,9 +510,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PJSA507.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSA917.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSB001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -648,12 +564,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PJSB708.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSB799.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSB918.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSC004.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -675,13 +585,7 @@
     <Content Include="Resources\Panzerschiffer_Icons\PJSC013.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSC014.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSC015.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSC018.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSC026.png">
@@ -723,9 +627,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PJSC737.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSC934.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSD001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -739,9 +640,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSD012.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSD014.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSD017.png">
@@ -780,16 +678,10 @@
     <Content Include="Resources\Panzerschiffer_Icons\PJSD209.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSD518.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSD706.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PJSD708.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PJSD912.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PRSB001.png">
@@ -805,9 +697,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PRSC003.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PRSC010.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PRSC101.png">
@@ -853,9 +742,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PRSC606.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PRSC910.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PRSD001.png">
@@ -906,9 +792,6 @@
     <Content Include="Resources\Panzerschiffer_Icons\PRSD507.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PRSD910.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PUSC506.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -916,30 +799,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PWSD501.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSD007.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX016.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX017.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX023.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX024.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX025.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX026.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Panzerschiffer_Icons\PXSX034.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Panzerschiffer_Icons\PZSC101.png">

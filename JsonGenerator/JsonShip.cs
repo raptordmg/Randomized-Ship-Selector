@@ -35,11 +35,11 @@ namespace Randomized_Ship_Selector
             Commonwealth // Perth, Vampire (Australia)
         }
 
-        public string Image { get; }
-        public int Tier { get; }
-        public string Nation { get; }
-        public string ShipClass { get; set; }
-        public bool Premium { get; }
+        public string imgName { get; }
+        public int tier { get; }
+        public string nation { get; }
+        public string shipClass { get; set; }
+        public bool premium { get; }
 
         /// <summary>
         /// A ship object
@@ -50,20 +50,20 @@ namespace Randomized_Ship_Selector
         /// <param name="premium">Is it a premium</param>
         public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
         {
-            this.Image = imgName;
+            this.imgName = imgName;
 
             if (tier > 0 && tier <= 10)
             {
-                this.Tier = tier;
+                this.tier = tier;
             }
             else
             {
                 throw new IndexOutOfRangeException("Tier must be between 1 and 10 inclusive.");
             }
 
-            this.Nation = nation.ToString();
-            this.ShipClass = cls.ToString();
-            this.Premium = premium;
+            this.nation = nation.ToString();
+            this.shipClass = cls.ToString();
+            this.premium = premium;
         }
     }
 }

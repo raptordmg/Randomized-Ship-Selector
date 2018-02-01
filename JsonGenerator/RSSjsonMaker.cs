@@ -152,7 +152,12 @@ namespace JsonGenerator
         {
             Console.WriteLine("Making JSON!");
 
-
+            // ../../../Randomized Ship Selector/Resources
+            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
+            {
+                JsonSerializer s = new JsonSerializer();
+                s.Serialize(file, Ships);
+            }
 
             Console.WriteLine("Success!");
         }

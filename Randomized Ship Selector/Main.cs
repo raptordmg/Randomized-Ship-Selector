@@ -21,7 +21,7 @@ namespace Randomized_Ship_Selector
         {
             InitializeComponent();
 
-            Ships = ImportShipsFromFile("./Resources/ships.json");
+            Ships = ImportShipsFromFile("./Resources/shipdata.json");
         }
 
         private void btnRandom_Click(object sender, EventArgs e)

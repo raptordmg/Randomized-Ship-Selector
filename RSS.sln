@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomized Ship Selector", "Randomized Ship Selector\Randomized Ship Selector.csproj", "{B14B75FC-BDD3-4E14-BE57-3926740A30E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomizedShipSelector", "Randomized Ship Selector\RandomizedShipSelector.csproj", "{B14B75FC-BDD3-4E14-BE57-3926740A30E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonGenerator", "JsonGenerator\JsonGenerator.csproj", "{25893A88-5A37-4F0A-9650-C20524396644}"
 EndProject
