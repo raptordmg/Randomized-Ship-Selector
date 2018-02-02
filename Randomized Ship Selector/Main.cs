@@ -59,8 +59,7 @@ namespace Randomized_Ship_Selector
             bool prem = cb_Premium.Checked;
             List<int> tiers = PopulateTiers();
             List<string> nations = PopulateNations();
-
-            string a = Ship.Nations.USN.ToString();
+            List<string> classes = PopulateClasses();
 
             List<Ship> filtered = new List<Ship>();
 
@@ -68,6 +67,7 @@ namespace Randomized_Ship_Selector
             filtered = ships.Where(s => (s.Premium == true && prem) || (s.Premium == false && nonprem))
                 .Where(s => tiers.Contains(s.Tier))
                 .Where(s => nations.Contains(s.Nation.ToString()))
+                .Where(s => classes.Contains(s.ShipClass.ToString()))
                     .ToList<Ship>();
 
             return filtered;
@@ -165,7 +165,31 @@ namespace Randomized_Ship_Selector
                 nations.Add("Commonwealth");
             }
 
-            return (nations);
+            return nations;
+        }
+
+        private List<string> PopulateClasses()
+        {
+            List<string> classes = new List<string>();
+
+            if (cb_C_Battleship.Checked)
+            {
+                classes.Add("Battleship");
+            }
+            if (cb_C_Carrier.Checked)
+            {
+                classes.Add("Carrier");
+            }
+            if (cb_C_Cruiser.Checked)
+            {
+                classes.Add("Cruiser");
+            }
+            if (cb_C_Destroyer.Checked)
+            {
+                classes.Add("Destroyer");
+            }
+
+            return classes;
         }
     }
 }
