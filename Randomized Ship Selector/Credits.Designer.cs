@@ -58,10 +58,10 @@
             this.llbl_panzerschiffer_forum.AutoSize = true;
             this.llbl_panzerschiffer_forum.Location = new System.Drawing.Point(12, 121);
             this.llbl_panzerschiffer_forum.Name = "llbl_panzerschiffer_forum";
-            this.llbl_panzerschiffer_forum.Size = new System.Drawing.Size(191, 13);
+            this.llbl_panzerschiffer_forum.Size = new System.Drawing.Size(159, 13);
             this.llbl_panzerschiffer_forum.TabIndex = 2;
             this.llbl_panzerschiffer_forum.TabStop = true;
-            this.llbl_panzerschiffer_forum.Text = "Forum Historical Ensigns Contour Icons";
+            this.llbl_panzerschiffer_forum.Text = "Historical Ensigns Contour Icons";
             this.llbl_panzerschiffer_forum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbl_panzerschiffer_forum_LinkClicked);
             // 
             // label2
