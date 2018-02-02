@@ -6,5 +6,5 @@ Designed for use with World of Warships.
 
 Credits
 =======
-Get the contour icons used in the randomizer for your game:
-(Historical Ensigns Contour Icons)[https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/]
+Get the contour icons used in the randomizer for your game: 
+[Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/)
