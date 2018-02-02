@@ -14,22 +14,31 @@ namespace Randomized_Ship_Selector
 {
     public partial class Main : Form
     {
-        private List<Ship> Ships = null;
+        private List<Ship> AllShips = null;
         private Random Rnd = new Random();
 
         public Main()
         {
             InitializeComponent();
 
-            Ships = ImportShipsFromFile("./Resources/shipdata.json");
+            AllShips = ImportShipsFromFile("./Resources/shipdata.json");            
+
+            lbl_Count.Text = AllShips.Count().ToString();
         }
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
             PictureBox output = pbOutput;
+            List<Ship> filteredShips = FilterShips(AllShips);
 
-            Ship randomShip = Ships[Rnd.Next(Ships.Count)];
-            output.Image = randomShip.Image;
+            int count = filteredShips.Count();
+
+            lbl_Count.Text = count.ToString();
+
+            if (count > 0) {
+                Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
+                output.Image = randomShip.Image;
+            }
         }
 
         private List<Ship> ImportShipsFromFile(string filePath)
@@ -42,6 +51,121 @@ namespace Randomized_Ship_Selector
 
                 return ships;
             }
+        }
+
+        private List<Ship> FilterShips(List<Ship> ships)
+        {
+            bool nonprem = cb_nonPremium.Checked;
+            bool prem = cb_Premium.Checked;
+            List<int> tiers = PopulateTiers();
+            List<string> nations = PopulateNations();
+
+            string a = Ship.Nations.USN.ToString();
+
+            List<Ship> filtered = new List<Ship>();
+
+            // Filter ships
+            filtered = ships.Where(s => (s.Premium == true && prem) || (s.Premium == false && nonprem))
+                .Where(s => tiers.Contains(s.Tier))
+                .Where(s => nations.Contains(s.Nation.ToString()))
+                    .ToList<Ship>();
+
+            return filtered;
+        }
+
+        private List<int> PopulateTiers()
+        {
+            List<int> tiers = new List<int>();
+
+            if(cb_T1.Checked)
+            {
+                tiers.Add(1);
+            }
+            if (cb_T2.Checked)
+            {
+                tiers.Add(2);
+            }
+            if (cb_T3.Checked)
+            {
+                tiers.Add(3);
+            }
+            if(cb_T4.Checked)
+            {
+                tiers.Add(4);
+            }
+            if(cb_T5.Checked) {
+                tiers.Add(5);
+            }
+            if(cb_T6.Checked)
+            {
+                tiers.Add(6);
+            }
+            if(cb_T7.Checked)
+            {
+                tiers.Add(7);
+            }
+            if (cb_T8.Checked)
+            {
+                tiers.Add(8);
+            }
+            if (cb_T9.Checked)
+            {
+                tiers.Add(9);
+            }
+            if (cb_T10.Checked)
+            {
+                tiers.Add(10);
+            }
+
+            return tiers;
+        }
+
+        private List<string> PopulateNations()
+        {
+            List<string> nations = new List<string>();
+
+            if(cb_N_USN.Checked)
+            {
+                nations.Add("USN");
+            }
+            if (cb_N_IJN.Checked)
+            {
+                nations.Add("IJN");
+            }
+            if (cb_N_VMF.Checked)
+            {
+                nations.Add("VMF");
+            }
+            if (cb_N_FN.Checked)
+            {
+                nations.Add("FN");
+            }
+            if (cb_N_RM.Checked)
+            {
+                nations.Add("RM");
+            }
+            if (cb_N_KM.Checked)
+            {
+                nations.Add("KM");
+            }
+            if (cb_N_PA.Checked)
+            {
+                nations.Add("PA");
+            }
+            if (cb_N_RN.Checked)
+            {
+                nations.Add("RN");
+            }
+            if (cb_N_ORP.Checked)
+            {
+                nations.Add("ORP");
+            }
+            if (cb_N_Commonwealth.Checked)
+            {
+                nations.Add("Commonwealth");
+            }
+
+            return (nations);
         }
     }
 }

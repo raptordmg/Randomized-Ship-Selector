@@ -470,7 +470,7 @@
     },
     {
         "imgName":"PBSC103.png",
-        "tier":3
+        "tier":3,
         "nation":"RN",
         "shipClass":"Cruiser",
         "premium":false
@@ -939,7 +939,7 @@
     },
     {
         "imgName":"PJSA006.png",
-        "tier"5,
+        "tier":5,
         "nation":"IJN",
         "shipClass":"Carrier",
         "premium":false
@@ -1009,7 +1009,7 @@
     },
     {
         "imgName":"PJSB007.png",
-        "tier":,5
+        "tier":5,
         "nation":"IJN",
         "shipClass":"Battleship",
         "premium":false
