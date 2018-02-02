@@ -63,6 +63,7 @@
             this.cb_C_Cruiser = new System.Windows.Forms.CheckBox();
             this.cb_C_Battleship = new System.Windows.Forms.CheckBox();
             this.cb_C_Carrier = new System.Windows.Forms.CheckBox();
+            this.btn_Credits = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,10 +318,18 @@
             this.cb_C_Carrier.Name = "cb_C_Carrier";
             this.cb_C_Carrier.UseVisualStyleBackColor = true;
             // 
+            // btn_Credits
+            // 
+            resources.ApplyResources(this.btn_Credits, "btn_Credits");
+            this.btn_Credits.Name = "btn_Credits";
+            this.btn_Credits.UseVisualStyleBackColor = true;
+            this.btn_Credits.Click += new System.EventHandler(this.btn_Credits_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Credits);
             this.Controls.Add(this.cb_C_Carrier);
             this.Controls.Add(this.cb_C_Battleship);
             this.Controls.Add(this.cb_C_Cruiser);
@@ -355,7 +364,7 @@
             this.Controls.Add(this.cb_nonPremium);
             this.Controls.Add(this.pbOutput);
             this.Controls.Add(this.btnRandom);
-            this.HelpButton = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
@@ -401,6 +410,7 @@
         private System.Windows.Forms.CheckBox cb_C_Cruiser;
         private System.Windows.Forms.CheckBox cb_C_Battleship;
         private System.Windows.Forms.CheckBox cb_C_Carrier;
+        private System.Windows.Forms.Button btn_Credits;
     }
 }
 

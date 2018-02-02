@@ -191,5 +191,11 @@ namespace Randomized_Ship_Selector
 
             return classes;
         }
+
+        private void btn_Credits_Click(object sender, EventArgs e)
+        {
+            Form creditForm = new Credits();
+            creditForm.Show();
+        }
     }
 }
