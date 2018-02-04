@@ -214,7 +214,7 @@
         "tier":6,
         "nation":"USN",
         "shipClass":"Cruiser",
-        "premium":true
+        "premium":false
     },
     {
         "imgName":"PASC012.png",
