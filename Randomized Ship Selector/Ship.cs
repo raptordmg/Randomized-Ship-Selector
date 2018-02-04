@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Randomized_Ship_Selector
 {
@@ -49,9 +50,13 @@ namespace Randomized_Ship_Selector
         /// <param name="premium">Is it a premium</param>
         public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
         {
-            FileStream fs = new FileStream("Resources/Panzerschiffer_Icons/" + imgName, FileMode.Open);
-            this.Image = Image.FromStream(fs);
-            fs.Close();
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "Randomized_Ship_Selector.Resources.Panzerschiffer_Icons." + imgName;
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                this.Image = Image.FromStream(stream);
+            }
 
             if (tier > 0 && tier <= 10)
             {
