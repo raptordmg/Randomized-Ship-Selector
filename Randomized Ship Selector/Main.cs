@@ -197,5 +197,10 @@ namespace Randomized_Ship_Selector
             Form creditForm = new Credits();
             creditForm.Show();
         }
+
+        private void cb_N_Commonwealth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
