@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Randomized_Ship_Selector
 {
@@ -21,7 +22,7 @@ namespace Randomized_Ship_Selector
         {
             InitializeComponent();
 
-            AllShips = ImportShipsFromFile("./Resources/shipdata.json");            
+            AllShips = ImportShipsFromFile();            
 
             lbl_Count.Text = AllShips.Count().ToString();
         }
@@ -41,15 +42,21 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        private List<Ship> ImportShipsFromFile(string filePath)
+        private List<Ship> ImportShipsFromFile()
         {
-            using (StreamReader r = new StreamReader(filePath))
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourceName = "Randomized_Ship_Selector.Resources.shipdata.json";
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
-                string json = r.ReadToEnd();
+                using (StreamReader r = new StreamReader(stream))
+                {
+                    string json = r.ReadToEnd();
 
-                List<Ship> ships = JsonConvert.DeserializeObject<List<Ship>>(json);
+                    List<Ship> ships = JsonConvert.DeserializeObject<List<Ship>>(json);
 
-                return ships;
+                    return ships;
+                }
             }
         }
 
