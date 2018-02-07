@@ -9,7 +9,7 @@ Randomized Ship Selector lets you customize the list from which you want to pick
 
 **How to open/install:**  
 No installation required! 
-- Download the .zip file here: RandomizedShipSelector.zip  
+- Download the .zip file here: [RandomizedShipSelector.zip](https://github.com/DInbound/Randomized-Ship-Selector/releases/download/v1.0/Randomized.Ship.Selector.zip)  
 - Unpack it (unzip) and run the executable file (.exe).  
 
 Take note that there is a seperate .dll file in the zip file.  
