@@ -9,39 +9,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Reflection;
+using System.Net;
 
 namespace Randomized_Ship_Selector
 {
     public partial class Main : Form
     {
+        private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
         private List<Ship> AllShips = null;
+        private List<Ship> PlayerShips = null;
         private Random Rnd = new Random();
+        private bool UseIGN = false;
 
         public Main()
         {
             InitializeComponent();
 
-            AllShips = ImportShipsFromFile();            
+            AllShips = ImportShipsFromFile();
 
             lbl_Count.Text = AllShips.Count().ToString();
         }
 
+        // Selects a random ship
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            PictureBox output = pbOutput;
-            List<Ship> filteredShips = FilterShips(AllShips);
+            if (UseIGN)
+            {
+                PictureBox output = pbOutput;
+                List<Ship> filteredShips = FilterShips(PlayerShips);
 
-            int count = filteredShips.Count();
+                int count = filteredShips.Count();
 
-            lbl_Count.Text = count.ToString();
+                lbl_Count.Text = count.ToString();
 
-            if (count > 0) {
-                Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
-                output.Image = randomShip.Image;
+                if (count > 0)
+                {
+                    Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
+                    output.Image = randomShip.Image;
+                }
+            }
+            else
+            {
+                PictureBox output = pbOutput;
+                List<Ship> filteredShips = FilterShips(AllShips);
+
+                int count = filteredShips.Count();
+
+                lbl_Count.Text = count.ToString();
+
+                if (count > 0) {
+                    Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
+                    output.Image = randomShip.Image;
+                }
             }
         }
 
+        // Imports all ships that are currently availaible.
         private List<Ship> ImportShipsFromFile()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -60,6 +85,7 @@ namespace Randomized_Ship_Selector
             }
         }
 
+        // Filters ships with set filters
         private List<Ship> FilterShips(List<Ship> ships)
         {
             bool nonprem = cb_nonPremium.Checked;
@@ -80,6 +106,7 @@ namespace Randomized_Ship_Selector
             return filtered;
         }
 
+        // Fills tiers list for filtering
         private List<int> PopulateTiers()
         {
             List<int> tiers = new List<int>();
@@ -127,6 +154,7 @@ namespace Randomized_Ship_Selector
             return tiers;
         }
 
+        // Fills nations list for filtering
         private List<string> PopulateNations()
         {
             List<string> nations = new List<string>();
@@ -175,6 +203,7 @@ namespace Randomized_Ship_Selector
             return nations;
         }
 
+        // Fills classes list for filtering
         private List<string> PopulateClasses()
         {
             List<string> classes = new List<string>();
@@ -199,15 +228,100 @@ namespace Randomized_Ship_Selector
             return classes;
         }
 
+        // Opens credits window
         private void btn_Credits_Click(object sender, EventArgs e)
         {
             Form creditForm = new Credits();
             creditForm.Show();
         }
 
-        private void cb_N_Commonwealth_CheckedChanged(object sender, EventArgs e)
+        // Get User info
+        private void btn_Search_Click(object sender, EventArgs e)
         {
+            string server = cb_Server.Text;
+            string userName = tb_UserName.Text;
+            string userId = null;
 
+            if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
+            {
+                if (userName != "")
+                {
+                    // Step 1: Get user ID
+                    Log("Fetching account ID...");
+                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", server, AppID, userName);
+
+                    JObject idObj = GetJson(idUri);
+
+                    // T-T (cri every time)
+                    JToken idData = idObj["data"].FirstOrDefault();
+                    try
+                    {
+                        userId = idData["account_id"].ToString();
+                        Log("Account ID fetched: " + userId);
+                    }
+                    catch
+                    {
+                        Log("Problem fetching account ID");
+                        return;
+                    }
+
+                    // Step 2: Get all ships that are in port
+                    Log("Fetching current ships in port...");
+                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", server, AppID, userId);
+                    JObject shipsObj = GetJson(shipsUri);
+                    try
+                    {
+                        var shipsData = shipsObj["data"][userId];
+                        foreach (var item in shipsData)
+                        {
+                            string id = item["ship_id"].ToString();
+
+                            // TODO: fill PlayerShips list with ships in port
+                            ;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("ERROR: Problem getting ships from port. " + ex.Message);
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                Log("ERROR: Please select a valid server.");
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Returns a JSON string
+        /// </summary>
+        /// <param name="url">Wargaming API URL</param>
+        /// <returns>JSON String</returns>
+        private JObject GetJson(string uri)
+        {
+            using (WebClient client = new WebClient())
+            using (Stream stream = client.OpenRead(uri))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return JObject.Parse(reader.ReadLine());
+            }
+        }
+
+        // Logs a string to the rich text box
+        private void Log(string text)
+        {
+            rtb_SearchOutput.AppendText(Environment.NewLine + text);
+        }
+
+        // Scrolls down the rich text box
+        private void rtb_SearchOutput_TextChanged(object sender, EventArgs e)
+        {
+            // set the current caret position to the end
+            rtb_SearchOutput.SelectionStart = rtb_SearchOutput.Text.Length;
+            // scroll it automatically
+            rtb_SearchOutput.ScrollToCaret();
         }
     }
 }

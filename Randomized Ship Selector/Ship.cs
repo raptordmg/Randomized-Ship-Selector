@@ -35,6 +35,7 @@ namespace Randomized_Ship_Selector
             Commonwealth // Perth, Vampire (Australia)
         }
 
+        public string ID { get; }
         public Image Image { get; }
         public int Tier { get; }
         public Nations Nation { get; }
@@ -50,6 +51,8 @@ namespace Randomized_Ship_Selector
         /// <param name="premium">Is it a premium</param>
         public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
         {
+            ID = imgName;
+
             Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = "Randomized_Ship_Selector.Resources.Panzerschiffer_Icons." + imgName;
 
