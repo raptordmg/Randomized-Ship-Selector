@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Randomized_Ship_Selector
+namespace JsonGenerator
 {
     class Ship
     {
@@ -35,11 +35,13 @@ namespace Randomized_Ship_Selector
             Commonwealth // Perth, Vampire (Australia)
         }
 
-        public string imgName { get; }
-        public int tier { get; }
-        public string nation { get; }
-        public string shipClass { get; set; }
-        public bool premium { get; }
+        public string ID { get; }
+        public string Name { get; }
+        public string ImageName { get; }
+        public int Tier { get; }
+        public string Nation { get; }
+        public string ShipClass { get; set; }
+        public bool Premium { get; }
 
         /// <summary>
         /// A ship object
@@ -48,22 +50,24 @@ namespace Randomized_Ship_Selector
         /// <param name="tier">Tier of the ship (1 - 10)</param>
         /// <param name="cls">Class of the ship</param>
         /// <param name="premium">Is it a premium</param>
-        public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
+        public Ship(string id, string name, string imgName, int tier, Nations nation, Classes cls, bool premium)
         {
-            this.imgName = imgName;
+            this.ID = id;
+            this.Name = name;
+            this.ImageName = imgName;
 
             if (tier > 0 && tier <= 10)
             {
-                this.tier = tier;
+                this.Tier = tier;
             }
             else
             {
                 throw new IndexOutOfRangeException("Tier must be between 1 and 10 inclusive.");
             }
 
-            this.nation = nation.ToString();
-            this.shipClass = cls.ToString();
-            this.premium = premium;
+            this.Nation = nation.ToString();
+            this.ShipClass = cls.ToString();
+            this.Premium = premium;
         }
     }
 }

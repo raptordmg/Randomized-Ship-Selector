@@ -18,6 +18,7 @@ namespace Randomized_Ship_Selector
     public partial class Main : Form
     {
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
+
         private List<Ship> AllShips = null;
         private List<Ship> PlayerShips = null;
         private Random Rnd = new Random();
@@ -276,8 +277,7 @@ namespace Randomized_Ship_Selector
                         {
                             string id = item["ship_id"].ToString();
 
-                            // TODO: fill PlayerShips list with ships in port
-                            ;
+                            //PlayerShips.Add(AllShips.Where(s => s.ID == id));
                         }
                     }
                     catch (Exception ex)

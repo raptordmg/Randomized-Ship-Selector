@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Randomized_Ship_Selector;
 using System.Drawing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net;
 
 namespace JsonGenerator
 {
@@ -12,140 +14,42 @@ namespace JsonGenerator
     {
         List<Ship> Ships = new List<Ship>();
 
+        private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="path">Path to JSON file</param>
         public RSSjsonMaker(string path)
         {
-            List<string> fileNames = new List<string>();
-            IEnumerable<string> files = Directory.EnumerateFiles(path);
-            files.ToList().ForEach(e => fileNames.Add(e.Substring(path.Length).TrimEnd(".png".ToArray())));
+            int pages = 1;
 
-            foreach (string item in fileNames)
+            for (int page = 1; page <= pages; page++)
             {
-                // TODO: Fix tier
-                // TODO: Fix premium
+                Console.WriteLine("Reading page " + page);
 
-                string name = item + ".png";
+                var json = GetJson(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                pages = Int32.Parse(json["meta"]["page_total"].ToString());
+                var data = json["data"];
 
-                int tier = 1;
-
-                Ship.Nations nation = Ship.Nations.None;
-
-                string i = item.Substring(1, 1);
-
-                switch (item.Substring(1, 1))
+                foreach (var item in data)
                 {
-                    default:
-                        nation = Ship.Nations.None;
-                        break;
-                    case "J":
-                        nation = Ship.Nations.IJN;
-                        break;
-                    case "A":
-                        nation = Ship.Nations.USN;
-                        break;
-                    case "B":
-                        nation = Ship.Nations.RN;
-                        break;
-                    case "F":
-                        nation = Ship.Nations.FN;
-                        break;
-                    case "G":
-                        nation = Ship.Nations.KM;
-                        break;
-                    case "I":
-                        nation = Ship.Nations.RM;
-                        break;
-                    case "R":
-                        nation = Ship.Nations.VMF;
-                        break;
-                    case "U":
-                        nation = Ship.Nations.Commonwealth;
-                        break;
-                    case "W":
-                        nation = Ship.Nations.ORP;
-                        break;
-                    case "Z":
-                        nation = Ship.Nations.PA;
-                        break;
-                }
+                    Ship.Nations nation = GetNation(item.First()["nation"].ToString());
+                    Ship.Classes shipClass = GetClasses(item.First()["type"].ToString());
 
-                Ship.Classes cls = Ship.Classes.None;
+                    string id = item.First()["ship_id"].ToString();
+                    string name = item.First()["name"].ToString();
 
-                switch (item.Substring(3, 1))
-                {
-                    default:
-                        cls = Ship.Classes.None;
-                        break;
-                    case "A":
-                        cls = Ship.Classes.Carrier;
-                        break;
-                    case "B":
-                        cls = Ship.Classes.Battleship;
-                        break;
-                    case "C":
-                        cls = Ship.Classes.Cruiser;
-                        break;
-                    case "D":
-                        cls = Ship.Classes.Destroyer;
-                        break;
-                }
+                    if (name.Contains("["))
+                        continue;
 
-                bool prem = false; // IsPremium(item);
+                    string resource = item.First()["ship_id_str"].ToString();
+                    int tier = Int32.Parse(item.First()["tier"].ToString());
+                    bool premium = Boolean.Parse(item.First()["is_premium"].ToString());
 
-                Ships.Add(new Ship(name, tier, nation, cls, prem));
-            }
-        }
-
-        public bool IsPremium(string imageName)
-        {
-            string name = imageName + ".png";
-
-            using (FileStream fs = new FileStream($"C:/Users/Daan/Source/Repos/Randomized-Ship-Selector/Randomized Ship Selector/Resources/Panzerschiffer_Icons/" + name, FileMode.Open))
-            {
-                Image img = Image.FromStream(fs);
-                Bitmap bmp = (Bitmap)img;
-
-                List<Color> pixels = new List<Color>();
-
-                pixels.Add(bmp.GetPixel(110, 5));
-                pixels.Add(bmp.GetPixel(111, 5));
-                pixels.Add(bmp.GetPixel(112, 5));
-                pixels.Add(bmp.GetPixel(113, 5));
-                pixels.Add(bmp.GetPixel(114, 5));
-                pixels.Add(bmp.GetPixel(115, 5));
-                pixels.Add(bmp.GetPixel(116, 5));
-                pixels.Add(bmp.GetPixel(117, 5));
-                pixels.Add(bmp.GetPixel(118, 5));
-                pixels.Add(bmp.GetPixel(119, 5));
-                pixels.Add(bmp.GetPixel(120, 5));
-
-                // Alpha == 255;
-                for (int i = 0; i < pixels.Count; i++)
-                {
-                    if(pixels[i].A == 255)
-                    {
-                        // TODO fix hue
-                        float hue = pixels[i].GetHue();
-                        float sat = pixels[i].GetSaturation();
-                        Console.WriteLine(hue);
-                        Console.WriteLine(sat);
-                        if(hue > 10 && hue < 100)
-                        {
-                            return true;
-                        } else
-                        {
-                            return false;
-                        }
-                    }
+                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, premium));
                 }
             }
-
-            // Something went wrong, assume is false;
-            Console.WriteLine("Error in parsing if ship is premium.");
-            return false;
         }
 
         public void MakeJson()
@@ -153,13 +57,68 @@ namespace JsonGenerator
             Console.WriteLine("Making JSON!");
 
             // ../../../Randomized Ship Selector/Resources
-            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
+            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/newShips.json"))
             {
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, Ships);
             }
 
             Console.WriteLine("Success!");
+        }
+
+        public Ship.Nations GetNation(string name)
+        {
+            if (name.Equals("germany"))
+                return Ship.Nations.KM;
+            if (name.Equals("japan"))
+                return Ship.Nations.IJN;
+            if (name.Equals("usa"))
+                return Ship.Nations.USN;
+            if (name.Equals("ussr"))
+                return Ship.Nations.VMF;
+            if (name.Equals("uk"))
+                return Ship.Nations.RN;
+            if (name.Equals("france"))
+                return Ship.Nations.FN;
+            if (name.Equals("pan_asia"))
+                return Ship.Nations.PA;
+            if (name.Equals("commonwealth"))
+                return Ship.Nations.Commonwealth;
+            if (name.Equals("italy"))
+                return Ship.Nations.RM;
+            if (name.Equals("poland"))
+                return Ship.Nations.ORP;
+
+            return Ship.Nations.None;
+        }
+
+        public Ship.Classes GetClasses(string name)
+        {
+            if (name.Equals("Cruiser"))
+                return Ship.Classes.Cruiser;
+            if (name.Equals("Battleship"))
+                return Ship.Classes.Battleship;
+            if (name.Equals("AirCarrier"))
+                return Ship.Classes.Carrier;
+            if (name.Equals("Destroyer"))
+                return Ship.Classes.Destroyer;
+
+            return Ship.Classes.None;
+        }
+
+        /// <summary>
+        /// Returns a JSON string
+        /// </summary>
+        /// <param name="url">Wargaming API URL</param>
+        /// <returns>JSON String</returns>
+        private JObject GetJson(string uri)
+        {
+            using (WebClient client = new WebClient())
+            using (Stream stream = client.OpenRead(uri))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return JObject.Parse(reader.ReadLine());
+            }
         }
     }
 }

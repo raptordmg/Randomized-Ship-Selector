@@ -108,13 +108,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Resources\shipdata.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\icon.ico" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA002.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA004.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA006.png" />
@@ -366,9 +359,50 @@
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD110.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD506.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD508.png" />
+    <EmbeddedResource Include="Resources\shipdata.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA021.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA906.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA915.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB917.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC710.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD506.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB207.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB910.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSD605.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB103.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB104.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB105.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB106.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB107.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB108.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB109.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB110.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSD605.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSA509.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSA510.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB910.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC910.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA917.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB799.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB918.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC014.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC018.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC934.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD014.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD518.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD912.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC010.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC910.png" />
+    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD910.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
