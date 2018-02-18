@@ -243,6 +243,8 @@ namespace Randomized_Ship_Selector
             string userName = tb_UserName.Text;
             string userId = null;
 
+            PlayerShips = new List<Ship>();
+
             if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
             {
                 if (userName != "")
@@ -255,6 +257,13 @@ namespace Randomized_Ship_Selector
 
                     // T-T (cri every time)
                     JToken idData = idObj["data"].FirstOrDefault();
+
+                    if (idData == null)
+                    {
+                        Log("No player with specified name.");
+                        return;
+                    }
+
                     try
                     {
                         userId = idData["account_id"].ToString();
@@ -283,14 +292,14 @@ namespace Randomized_Ship_Selector
                                 PlayerShips.Add(aShip);
                         }
 
-                        Log("Finished fetching ships from port...");
-                        Log("Total ships in port: " + PlayerShips.Count());
+                        Log("Finished fetching ships with more than 0 battles...");
+                        Log("Total ships found: " + PlayerShips.Count());
                         UseIGN = true;
                         lbl_Count.Text = FilterShips(PlayerShips).Count().ToString();
                     }
                     //catch (Exception ex)
                     {
-                     //   Log("ERROR: Problem getting ships from port. " + ex.Message);
+                     //   Log("ERROR: Problem getting ships fsasarom port. " + ex.Message);
                         return;
                     }
                 }

@@ -96,6 +96,7 @@
             this.cb_nonPremium.Checked = true;
             this.cb_nonPremium.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_nonPremium.Name = "cb_nonPremium";
+            this.cb_nonPremium.TabStop = false;
             this.cb_nonPremium.UseVisualStyleBackColor = true;
             // 
             // cb_Premium
@@ -104,6 +105,7 @@
             this.cb_Premium.Checked = true;
             this.cb_Premium.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_Premium.Name = "cb_Premium";
+            this.cb_Premium.TabStop = false;
             this.cb_Premium.UseVisualStyleBackColor = true;
             // 
             // lbl_Tiers
@@ -122,6 +124,7 @@
             this.cb_T1.Checked = true;
             this.cb_T1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T1.Name = "cb_T1";
+            this.cb_T1.TabStop = false;
             this.cb_T1.UseVisualStyleBackColor = true;
             // 
             // cb_T2
@@ -130,6 +133,7 @@
             this.cb_T2.Checked = true;
             this.cb_T2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T2.Name = "cb_T2";
+            this.cb_T2.TabStop = false;
             this.cb_T2.UseVisualStyleBackColor = true;
             // 
             // cb_T3
@@ -138,6 +142,7 @@
             this.cb_T3.Checked = true;
             this.cb_T3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T3.Name = "cb_T3";
+            this.cb_T3.TabStop = false;
             this.cb_T3.UseVisualStyleBackColor = true;
             // 
             // cb_T4
@@ -146,6 +151,7 @@
             this.cb_T4.Checked = true;
             this.cb_T4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T4.Name = "cb_T4";
+            this.cb_T4.TabStop = false;
             this.cb_T4.UseVisualStyleBackColor = true;
             // 
             // cb_T5
@@ -154,6 +160,7 @@
             this.cb_T5.Checked = true;
             this.cb_T5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T5.Name = "cb_T5";
+            this.cb_T5.TabStop = false;
             this.cb_T5.UseVisualStyleBackColor = true;
             // 
             // cb_T6
@@ -162,6 +169,7 @@
             this.cb_T6.Checked = true;
             this.cb_T6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T6.Name = "cb_T6";
+            this.cb_T6.TabStop = false;
             this.cb_T6.UseVisualStyleBackColor = true;
             // 
             // cb_T7
@@ -170,6 +178,7 @@
             this.cb_T7.Checked = true;
             this.cb_T7.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T7.Name = "cb_T7";
+            this.cb_T7.TabStop = false;
             this.cb_T7.UseVisualStyleBackColor = true;
             // 
             // cb_T8
@@ -178,6 +187,7 @@
             this.cb_T8.Checked = true;
             this.cb_T8.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T8.Name = "cb_T8";
+            this.cb_T8.TabStop = false;
             this.cb_T8.UseVisualStyleBackColor = true;
             // 
             // cb_T9
@@ -186,6 +196,7 @@
             this.cb_T9.Checked = true;
             this.cb_T9.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T9.Name = "cb_T9";
+            this.cb_T9.TabStop = false;
             this.cb_T9.UseVisualStyleBackColor = true;
             // 
             // cb_T10
@@ -194,6 +205,7 @@
             this.cb_T10.Checked = true;
             this.cb_T10.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_T10.Name = "cb_T10";
+            this.cb_T10.TabStop = false;
             this.cb_T10.UseVisualStyleBackColor = true;
             // 
             // cb_N_USN
@@ -202,6 +214,7 @@
             this.cb_N_USN.Checked = true;
             this.cb_N_USN.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_USN.Name = "cb_N_USN";
+            this.cb_N_USN.TabStop = false;
             this.cb_N_USN.UseVisualStyleBackColor = true;
             // 
             // cb_N_IJN
@@ -210,6 +223,7 @@
             this.cb_N_IJN.Checked = true;
             this.cb_N_IJN.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_IJN.Name = "cb_N_IJN";
+            this.cb_N_IJN.TabStop = false;
             this.cb_N_IJN.UseVisualStyleBackColor = true;
             // 
             // cb_N_VMF
@@ -218,6 +232,7 @@
             this.cb_N_VMF.Checked = true;
             this.cb_N_VMF.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_VMF.Name = "cb_N_VMF";
+            this.cb_N_VMF.TabStop = false;
             this.cb_N_VMF.UseVisualStyleBackColor = true;
             // 
             // cb_N_FN
@@ -226,6 +241,7 @@
             this.cb_N_FN.Checked = true;
             this.cb_N_FN.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_FN.Name = "cb_N_FN";
+            this.cb_N_FN.TabStop = false;
             this.cb_N_FN.UseVisualStyleBackColor = true;
             // 
             // cb_N_RM
@@ -234,6 +250,7 @@
             this.cb_N_RM.Checked = true;
             this.cb_N_RM.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_RM.Name = "cb_N_RM";
+            this.cb_N_RM.TabStop = false;
             this.cb_N_RM.UseVisualStyleBackColor = true;
             // 
             // cb_N_KM
@@ -242,6 +259,7 @@
             this.cb_N_KM.Checked = true;
             this.cb_N_KM.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_KM.Name = "cb_N_KM";
+            this.cb_N_KM.TabStop = false;
             this.cb_N_KM.UseVisualStyleBackColor = true;
             // 
             // cb_N_PA
@@ -250,6 +268,7 @@
             this.cb_N_PA.Checked = true;
             this.cb_N_PA.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_PA.Name = "cb_N_PA";
+            this.cb_N_PA.TabStop = false;
             this.cb_N_PA.UseVisualStyleBackColor = true;
             // 
             // cb_N_RN
@@ -258,6 +277,7 @@
             this.cb_N_RN.Checked = true;
             this.cb_N_RN.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_RN.Name = "cb_N_RN";
+            this.cb_N_RN.TabStop = false;
             this.cb_N_RN.UseVisualStyleBackColor = true;
             // 
             // cb_N_ORP
@@ -266,6 +286,7 @@
             this.cb_N_ORP.Checked = true;
             this.cb_N_ORP.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_ORP.Name = "cb_N_ORP";
+            this.cb_N_ORP.TabStop = false;
             this.cb_N_ORP.UseVisualStyleBackColor = true;
             // 
             // cb_N_Commonwealth
@@ -274,6 +295,7 @@
             this.cb_N_Commonwealth.Checked = true;
             this.cb_N_Commonwealth.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_N_Commonwealth.Name = "cb_N_Commonwealth";
+            this.cb_N_Commonwealth.TabStop = false;
             this.cb_N_Commonwealth.UseVisualStyleBackColor = true;
             // 
             // lbl_CountTxt
@@ -297,6 +319,7 @@
             this.cb_C_Destroyer.Checked = true;
             this.cb_C_Destroyer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_C_Destroyer.Name = "cb_C_Destroyer";
+            this.cb_C_Destroyer.TabStop = false;
             this.cb_C_Destroyer.UseVisualStyleBackColor = true;
             // 
             // cb_C_Cruiser
@@ -305,6 +328,7 @@
             this.cb_C_Cruiser.Checked = true;
             this.cb_C_Cruiser.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_C_Cruiser.Name = "cb_C_Cruiser";
+            this.cb_C_Cruiser.TabStop = false;
             this.cb_C_Cruiser.UseVisualStyleBackColor = true;
             // 
             // cb_C_Battleship
@@ -313,6 +337,7 @@
             this.cb_C_Battleship.Checked = true;
             this.cb_C_Battleship.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_C_Battleship.Name = "cb_C_Battleship";
+            this.cb_C_Battleship.TabStop = false;
             this.cb_C_Battleship.UseVisualStyleBackColor = true;
             // 
             // cb_C_Carrier
@@ -321,12 +346,14 @@
             this.cb_C_Carrier.Checked = true;
             this.cb_C_Carrier.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_C_Carrier.Name = "cb_C_Carrier";
+            this.cb_C_Carrier.TabStop = false;
             this.cb_C_Carrier.UseVisualStyleBackColor = true;
             // 
             // btn_Credits
             // 
             resources.ApplyResources(this.btn_Credits, "btn_Credits");
             this.btn_Credits.Name = "btn_Credits";
+            this.btn_Credits.TabStop = false;
             this.btn_Credits.UseVisualStyleBackColor = true;
             this.btn_Credits.Click += new System.EventHandler(this.btn_Credits_Click);
             // 

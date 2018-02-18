@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRandom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 314</value>
+    <value>81, 315</value>
   </data>
   <data name="btnRandom.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 32</value>
@@ -144,7 +144,7 @@
     <value>39</value>
   </data>
   <data name="pbOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 367</value>
+    <value>452, 320</value>
   </data>
   <data name="pbOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -168,7 +168,7 @@
     <value>True</value>
   </data>
   <data name="lblOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 376</value>
+    <value>257, 333</value>
   </data>
   <data name="lblOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 13</value>
@@ -843,7 +843,7 @@
     <value>True</value>
   </data>
   <data name="lbl_CountTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 358</value>
+    <value>257, 318</value>
   </data>
   <data name="lbl_CountTxt.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 13</value>
@@ -870,7 +870,7 @@
     <value>True</value>
   </data>
   <data name="lbl_Count.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 358</value>
+    <value>421, 318</value>
   </data>
   <data name="lbl_Count.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -1032,7 +1032,7 @@
     <value>12, 318</value>
   </data>
   <data name="btn_Credits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 24</value>
+    <value>52, 24</value>
   </data>
   <data name="btn_Credits.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -1077,18 +1077,17 @@
     <value>True</value>
   </data>
   <data name="lbl_NameInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 21</value>
+    <value>360, 27</value>
   </data>
   <data name="lbl_NameInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 39</value>
+    <value>217, 26</value>
   </data>
   <data name="lbl_NameInput.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
   <data name="lbl_NameInput.Text" xml:space="preserve">
-    <value>To filter ships by what you have in your port,
-fill username in the box below and select
-the correct server:</value>
+    <value>Prefilter ships with only researched ships of a
+player's account. Can be left empty.</value>
   </data>
   <data name="&gt;&gt;lbl_NameInput.Name" xml:space="preserve">
     <value>lbl_NameInput</value>
@@ -1130,7 +1129,7 @@ the correct server:</value>
     <value>363, 118</value>
   </data>
   <data name="rtb_SearchOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 153</value>
+    <value>211, 178</value>
   </data>
   <data name="rtb_SearchOutput.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -1190,7 +1189,7 @@ the correct server:</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>586, 403</value>
+    <value>586, 359</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
