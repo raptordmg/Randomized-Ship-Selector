@@ -24,6 +24,8 @@ namespace Randomized_Ship_Selector
         private Random Rnd = new Random();
         private bool UseIGN = false;
 
+        private Ship CurrentShip = null;
+
         public Main()
         {
             InitializeComponent();
@@ -47,8 +49,9 @@ namespace Randomized_Ship_Selector
 
                 if (count > 0)
                 {
-                    Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
-                    output.Image = randomShip.Image;
+                    CurrentShip = filteredShips[Rnd.Next(filteredShips.Count)];
+                     
+                    output.Image = CurrentShip.Image;
                 }
             }
             else
@@ -61,8 +64,8 @@ namespace Randomized_Ship_Selector
                 lbl_Count.Text = count.ToString();
 
                 if (count > 0) {
-                    Ship randomShip = filteredShips[Rnd.Next(filteredShips.Count)];
-                    output.Image = randomShip.Image;
+                    CurrentShip = filteredShips[Rnd.Next(filteredShips.Count)];
+                    output.Image = CurrentShip.Image;
                 }
             }
         }

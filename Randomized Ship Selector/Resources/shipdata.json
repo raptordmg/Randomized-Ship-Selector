@@ -97,7 +97,7 @@
 	"ShipClass": "Cruiser",
 	"Premium": false
 },
-{
+/*{
 	"ID": "3763222480",
 	"Name": "Cossack",
 	"ImageName": "PBSD507",
@@ -105,7 +105,7 @@
 	"Nation": "RN",
 	"ShipClass": "Destroyer",
 	"Premium": false
-},
+},*/
 {
 	"ID": "4179506992",
 	"Name": "Z-52",
@@ -178,7 +178,7 @@
 	"ShipClass": "Destroyer",
 	"Premium": false
 },
-{
+/*{
 	"ID": "3764270896",
 	"Name": "T-61",
 	"ImageName": "PGSD506",
@@ -186,7 +186,7 @@
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
 	"Premium": false
-},
+},*/
 {
 	"ID": "3554588464",
 	"Name": "HSF Admiral Graf Spee",
@@ -637,7 +637,7 @@
 	"ShipClass": "Destroyer",
 	"Premium": false
 },
-{
+/*{
 	"ID": "3751687888",
 	"Name": "Asashio",
 	"ImageName": "PJSD518",
@@ -645,7 +645,7 @@
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
 	"Premium": false
-},
+},*/
 {
 	"ID": "4179506384",
 	"Name": "Yueyang",
@@ -673,7 +673,7 @@
 	"ShipClass": "Cruiser",
 	"Premium": false
 },
-{
+/*{
 	"ID": "3764271088",
 	"Name": "Monaghan",
 	"ImageName": "PASD506",
@@ -681,7 +681,7 @@
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
 	"Premium": false
-},
+},*/
 {
 	"ID": "3762239312",
 	"Name": "Gascogne",
