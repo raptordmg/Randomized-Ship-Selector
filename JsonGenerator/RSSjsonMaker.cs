@@ -16,6 +16,9 @@ namespace JsonGenerator
 
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
+        // Ships to ignore by name
+        private string[] IgnoreName = new string[] { "Cossack", "T-61", "Asashio", "Monaghan" };
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -40,12 +43,17 @@ namespace JsonGenerator
                     string id = item.First()["ship_id"].ToString();
                     string name = item.First()["name"].ToString();
 
+                    // Skip CB ships
                     if (name.Contains("["))
+                        continue;
+
+                    // Skip ignored by name
+                    if (IgnoreName.Contains(name))
                         continue;
 
                     string resource = item.First()["ship_id_str"].ToString();
                     int tier = Int32.Parse(item.First()["tier"].ToString());
-                    bool premium = Boolean.Parse(item.First()["is_premium"].ToString());
+                    bool premium = GetPremium(item.First());
 
                     Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, premium));
                 }
@@ -57,7 +65,7 @@ namespace JsonGenerator
             Console.WriteLine("Making JSON!");
 
             // ../../../Randomized Ship Selector/Resources
-            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/newShips.json"))
+            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
             {
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, Ships);
@@ -104,6 +112,20 @@ namespace JsonGenerator
                 return Ship.Classes.Destroyer;
 
             return Ship.Classes.None;
+        }
+
+        public bool GetPremium(JToken shipData)
+        {
+            if (Boolean.Parse(shipData["is_premium"].ToString()))
+            {
+                return true;
+            }
+            else if(Boolean.Parse(shipData["is_special"].ToString()))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
