@@ -20,7 +20,7 @@ namespace Randomized_Ship_Selector
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         private List<Ship> AllShips = null;
-        private List<Ship> PlayerShips = null;
+        private List<Ship> PlayerShips = new List<Ship>();
         private Random Rnd = new Random();
         private bool UseIGN = false;
 
@@ -102,7 +102,7 @@ namespace Randomized_Ship_Selector
                 .Where(s => tiers.Contains(s.Tier))
                 .Where(s => nations.Contains(s.Nation.ToString()))
                 .Where(s => classes.Contains(s.ShipClass.ToString()))
-                    .ToList<Ship>();
+                    .ToList();
 
             return filtered;
         }
@@ -270,19 +270,27 @@ namespace Randomized_Ship_Selector
                     Log("Fetching current ships in port...");
                     string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", server, AppID, userId);
                     JObject shipsObj = GetJson(shipsUri);
-                    try
+                    //try
                     {
                         var shipsData = shipsObj["data"][userId];
                         foreach (var item in shipsData)
                         {
                             string id = item["ship_id"].ToString();
 
-                            //PlayerShips.Add(AllShips.Where(s => s.ID == id));
+                            Ship aShip = AllShips.Where(s => s.ID == id).FirstOrDefault();
+
+                            if (aShip != null)
+                                PlayerShips.Add(aShip);
                         }
+
+                        Log("Finished fetching ships from port...");
+                        Log("Total ships in port: " + PlayerShips.Count());
+                        UseIGN = true;
+                        lbl_Count.Text = FilterShips(PlayerShips).Count().ToString();
                     }
-                    catch (Exception ex)
+                    //catch (Exception ex)
                     {
-                        Log("ERROR: Problem getting ships from port. " + ex.Message);
+                     //   Log("ERROR: Problem getting ships from port. " + ex.Message);
                         return;
                     }
                 }
