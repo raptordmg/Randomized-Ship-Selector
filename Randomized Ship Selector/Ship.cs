@@ -26,7 +26,7 @@ namespace Randomized_Ship_Selector
             USN, // United States Navy
             IJN, // Imperial Japanese Navy (Japan)
             VMF, // Vojenno-Morskoj Flot (Russia)
-            FN, // La Royale (French)
+            FN, // Marine Nationale (French)
             RM, // Regina Marina (Italy)
             KM, // Kriegsmarine (Germany)
             PA, // Pan-Asian Navy (Pan-Asia)
@@ -35,6 +35,8 @@ namespace Randomized_Ship_Selector
             Commonwealth // Perth, Vampire (Australia)
         }
 
+        public string ID { get; }
+        public string Name { get; }
         public Image Image { get; }
         public int Tier { get; }
         public Nations Nation { get; }
@@ -48,25 +50,20 @@ namespace Randomized_Ship_Selector
         /// <param name="tier">Tier of the ship (1 - 10)</param>
         /// <param name="cls">Class of the ship</param>
         /// <param name="premium">Is it a premium</param>
-        public Ship(string imgName, int tier, Nations nation, Classes cls, bool premium)
+        public Ship(string id, string name, string imageName, int tier, Nations nation, Classes cls, bool premium)
         {
+            this.ID = id;
+            this.Name = name;
+
             Assembly assembly = Assembly.GetExecutingAssembly();
-            string resourceName = "Randomized_Ship_Selector.Resources.Panzerschiffer_Icons." + imgName;
+            string resourceName = "Randomized_Ship_Selector.Resources.Panzerschiffer_Icons." + imageName + ".png";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
                 this.Image = Image.FromStream(stream);
             }
 
-            if (tier > 0 && tier <= 10)
-            {
-                this.Tier = tier;
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Tier must be between 1 and 10 inclusive.");
-            }
-
+            this.Tier = tier;
             this.Nation = nation;
             this.ShipClass = cls;
             this.Premium = premium;

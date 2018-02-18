@@ -118,6 +118,1079 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRandom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>81, 315</value>
+  </data>
+  <data name="btnRandom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 32</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnRandom.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnRandom.Text" xml:space="preserve">
+    <value>Randomize</value>
+  </data>
+  <data name="&gt;&gt;btnRandom.Name" xml:space="preserve">
+    <value>btnRandom</value>
+  </data>
+  <data name="&gt;&gt;btnRandom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRandom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnRandom.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="pbOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>452, 320</value>
+  </data>
+  <data name="pbOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 22</value>
+  </data>
+  <data name="pbOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Name" xml:space="preserve">
+    <value>pbOutput</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbOutput.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="lblOutput.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 333</value>
+  </data>
+  <data name="lblOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="lblOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblOutput.Text" xml:space="preserve">
+    <value>The randomfier has chosen this ship:</value>
+  </data>
+  <data name="&gt;&gt;lblOutput.Name" xml:space="preserve">
+    <value>lblOutput</value>
+  </data>
+  <data name="&gt;&gt;lblOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblOutput.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="cb_nonPremium.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_nonPremium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="cb_nonPremium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="cb_nonPremium.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cb_nonPremium.Text" xml:space="preserve">
+    <value>Non Premium</value>
+  </data>
+  <data name="&gt;&gt;cb_nonPremium.Name" xml:space="preserve">
+    <value>cb_nonPremium</value>
+  </data>
+  <data name="&gt;&gt;cb_nonPremium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_nonPremium.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_nonPremium.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="cb_Premium.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_Premium.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="cb_Premium.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="cb_Premium.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cb_Premium.Text" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="&gt;&gt;cb_Premium.Name" xml:space="preserve">
+    <value>cb_Premium</value>
+  </data>
+  <data name="&gt;&gt;cb_Premium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_Premium.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_Premium.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="lbl_Tiers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Tiers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 40</value>
+  </data>
+  <data name="lbl_Tiers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lbl_Tiers.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lbl_Tiers.Text" xml:space="preserve">
+    <value>Tiers</value>
+  </data>
+  <data name="&gt;&gt;lbl_Tiers.Name" xml:space="preserve">
+    <value>lbl_Tiers</value>
+  </data>
+  <data name="&gt;&gt;lbl_Tiers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Tiers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Tiers.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="lbl_Ships.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Ships.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 40</value>
+  </data>
+  <data name="lbl_Ships.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lbl_Ships.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lbl_Ships.Text" xml:space="preserve">
+    <value>Nations</value>
+  </data>
+  <data name="&gt;&gt;lbl_Ships.Name" xml:space="preserve">
+    <value>lbl_Ships</value>
+  </data>
+  <data name="&gt;&gt;lbl_Ships.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Ships.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Ships.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="cb_T1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 65</value>
+  </data>
+  <data name="cb_T1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cb_T1.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cb_T1.Name" xml:space="preserve">
+    <value>cb_T1</value>
+  </data>
+  <data name="&gt;&gt;cb_T1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T1.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="cb_T2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 88</value>
+  </data>
+  <data name="cb_T2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cb_T2.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cb_T2.Name" xml:space="preserve">
+    <value>cb_T2</value>
+  </data>
+  <data name="&gt;&gt;cb_T2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T2.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="cb_T3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 111</value>
+  </data>
+  <data name="cb_T3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cb_T3.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cb_T3.Name" xml:space="preserve">
+    <value>cb_T3</value>
+  </data>
+  <data name="&gt;&gt;cb_T3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T3.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="cb_T4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 134</value>
+  </data>
+  <data name="cb_T4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T4.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cb_T4.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cb_T4.Name" xml:space="preserve">
+    <value>cb_T4</value>
+  </data>
+  <data name="&gt;&gt;cb_T4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T4.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="cb_T5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 157</value>
+  </data>
+  <data name="cb_T5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T5.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cb_T5.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cb_T5.Name" xml:space="preserve">
+    <value>cb_T5</value>
+  </data>
+  <data name="&gt;&gt;cb_T5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T5.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="cb_T6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 180</value>
+  </data>
+  <data name="cb_T6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T6.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cb_T6.Text" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cb_T6.Name" xml:space="preserve">
+    <value>cb_T6</value>
+  </data>
+  <data name="&gt;&gt;cb_T6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T6.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="cb_T7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 203</value>
+  </data>
+  <data name="cb_T7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T7.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cb_T7.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cb_T7.Name" xml:space="preserve">
+    <value>cb_T7</value>
+  </data>
+  <data name="&gt;&gt;cb_T7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T7.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="cb_T8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 226</value>
+  </data>
+  <data name="cb_T8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T8.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cb_T8.Text" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cb_T8.Name" xml:space="preserve">
+    <value>cb_T8</value>
+  </data>
+  <data name="&gt;&gt;cb_T8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T8.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T8.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="cb_T9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 249</value>
+  </data>
+  <data name="cb_T9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
+  </data>
+  <data name="cb_T9.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cb_T9.Text" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cb_T9.Name" xml:space="preserve">
+    <value>cb_T9</value>
+  </data>
+  <data name="&gt;&gt;cb_T9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T9.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T9.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="cb_T10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_T10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 272</value>
+  </data>
+  <data name="cb_T10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 17</value>
+  </data>
+  <data name="cb_T10.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="cb_T10.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cb_T10.Name" xml:space="preserve">
+    <value>cb_T10</value>
+  </data>
+  <data name="&gt;&gt;cb_T10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_T10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_T10.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="cb_N_USN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_USN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 65</value>
+  </data>
+  <data name="cb_N_USN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="cb_N_USN.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="cb_N_USN.Text" xml:space="preserve">
+    <value>USN (Amercia)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_USN.Name" xml:space="preserve">
+    <value>cb_N_USN</value>
+  </data>
+  <data name="&gt;&gt;cb_N_USN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_USN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_USN.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="cb_N_IJN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_IJN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 89</value>
+  </data>
+  <data name="cb_N_IJN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 17</value>
+  </data>
+  <data name="cb_N_IJN.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cb_N_IJN.Text" xml:space="preserve">
+    <value>IJN (Japan)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_IJN.Name" xml:space="preserve">
+    <value>cb_N_IJN</value>
+  </data>
+  <data name="&gt;&gt;cb_N_IJN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_IJN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_IJN.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="cb_N_VMF.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_VMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 113</value>
+  </data>
+  <data name="cb_N_VMF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="cb_N_VMF.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cb_N_VMF.Text" xml:space="preserve">
+    <value>VMF (Russia)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_VMF.Name" xml:space="preserve">
+    <value>cb_N_VMF</value>
+  </data>
+  <data name="&gt;&gt;cb_N_VMF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_VMF.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_VMF.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="cb_N_FN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_FN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 137</value>
+  </data>
+  <data name="cb_N_FN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="cb_N_FN.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="cb_N_FN.Text" xml:space="preserve">
+    <value>FN (French)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_FN.Name" xml:space="preserve">
+    <value>cb_N_FN</value>
+  </data>
+  <data name="&gt;&gt;cb_N_FN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_FN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_FN.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="cb_N_RM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_RM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 161</value>
+  </data>
+  <data name="cb_N_RM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 17</value>
+  </data>
+  <data name="cb_N_RM.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="cb_N_RM.Text" xml:space="preserve">
+    <value>RM (Italy)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RM.Name" xml:space="preserve">
+    <value>cb_N_RM</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RM.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="cb_N_KM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_KM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 184</value>
+  </data>
+  <data name="cb_N_KM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="cb_N_KM.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="cb_N_KM.Text" xml:space="preserve">
+    <value>KM (Germany)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_KM.Name" xml:space="preserve">
+    <value>cb_N_KM</value>
+  </data>
+  <data name="&gt;&gt;cb_N_KM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_KM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_KM.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="cb_N_PA.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_PA.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 207</value>
+  </data>
+  <data name="cb_N_PA.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 17</value>
+  </data>
+  <data name="cb_N_PA.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="cb_N_PA.Text" xml:space="preserve">
+    <value>PA (Pan Asia)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PA.Name" xml:space="preserve">
+    <value>cb_N_PA</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PA.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PA.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PA.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="cb_N_RN.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_RN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 231</value>
+  </data>
+  <data name="cb_N_RN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="cb_N_RN.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="cb_N_RN.Text" xml:space="preserve">
+    <value>RN (England)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RN.Name" xml:space="preserve">
+    <value>cb_N_RN</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RN.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_RN.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="cb_N_ORP.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_ORP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 255</value>
+  </data>
+  <data name="cb_N_ORP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 17</value>
+  </data>
+  <data name="cb_N_ORP.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="cb_N_ORP.Text" xml:space="preserve">
+    <value>ORP (Poland)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_ORP.Name" xml:space="preserve">
+    <value>cb_N_ORP</value>
+  </data>
+  <data name="&gt;&gt;cb_N_ORP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_ORP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_ORP.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="cb_N_Commonwealth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_N_Commonwealth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 279</value>
+  </data>
+  <data name="cb_N_Commonwealth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="cb_N_Commonwealth.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="cb_N_Commonwealth.Text" xml:space="preserve">
+    <value>Commonwealth</value>
+  </data>
+  <data name="&gt;&gt;cb_N_Commonwealth.Name" xml:space="preserve">
+    <value>cb_N_Commonwealth</value>
+  </data>
+  <data name="&gt;&gt;cb_N_Commonwealth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_Commonwealth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_N_Commonwealth.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lbl_CountTxt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_CountTxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 318</value>
+  </data>
+  <data name="lbl_CountTxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 13</value>
+  </data>
+  <data name="lbl_CountTxt.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lbl_CountTxt.Text" xml:space="preserve">
+    <value>Amount of ships to choose from:</value>
+  </data>
+  <data name="&gt;&gt;lbl_CountTxt.Name" xml:space="preserve">
+    <value>lbl_CountTxt</value>
+  </data>
+  <data name="&gt;&gt;lbl_CountTxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_CountTxt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_CountTxt.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lbl_Count.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Count.Location" type="System.Drawing.Point, System.Drawing">
+    <value>421, 318</value>
+  </data>
+  <data name="lbl_Count.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lbl_Count.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lbl_Count.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbl_Count.Name" xml:space="preserve">
+    <value>lbl_Count</value>
+  </data>
+  <data name="&gt;&gt;lbl_Count.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Count.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Count.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lbl_Classes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Classes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 40</value>
+  </data>
+  <data name="lbl_Classes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lbl_Classes.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lbl_Classes.Text" xml:space="preserve">
+    <value>Classes</value>
+  </data>
+  <data name="&gt;&gt;lbl_Classes.Name" xml:space="preserve">
+    <value>lbl_Classes</value>
+  </data>
+  <data name="&gt;&gt;lbl_Classes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Classes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_Classes.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cb_C_Destroyer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_C_Destroyer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 65</value>
+  </data>
+  <data name="cb_C_Destroyer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 17</value>
+  </data>
+  <data name="cb_C_Destroyer.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="cb_C_Destroyer.Text" xml:space="preserve">
+    <value>Destroyer</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Destroyer.Name" xml:space="preserve">
+    <value>cb_C_Destroyer</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Destroyer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Destroyer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Destroyer.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cb_C_Cruiser.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_C_Cruiser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 88</value>
+  </data>
+  <data name="cb_C_Cruiser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="cb_C_Cruiser.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="cb_C_Cruiser.Text" xml:space="preserve">
+    <value>Cruiser</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Cruiser.Name" xml:space="preserve">
+    <value>cb_C_Cruiser</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Cruiser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Cruiser.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Cruiser.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cb_C_Battleship.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_C_Battleship.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 111</value>
+  </data>
+  <data name="cb_C_Battleship.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="cb_C_Battleship.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="cb_C_Battleship.Text" xml:space="preserve">
+    <value>Battleship</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Battleship.Name" xml:space="preserve">
+    <value>cb_C_Battleship</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Battleship.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Battleship.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Battleship.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cb_C_Carrier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cb_C_Carrier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 134</value>
+  </data>
+  <data name="cb_C_Carrier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="cb_C_Carrier.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="cb_C_Carrier.Text" xml:space="preserve">
+    <value>Carrier</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Carrier.Name" xml:space="preserve">
+    <value>cb_C_Carrier</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Carrier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Carrier.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_C_Carrier.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btn_Credits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 318</value>
+  </data>
+  <data name="btn_Credits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 24</value>
+  </data>
+  <data name="btn_Credits.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="btn_Credits.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="&gt;&gt;btn_Credits.Name" xml:space="preserve">
+    <value>btn_Credits</value>
+  </data>
+  <data name="&gt;&gt;btn_Credits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Credits.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Credits.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tb_UserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 62</value>
+  </data>
+  <data name="tb_UserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="tb_UserName.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;tb_UserName.Name" xml:space="preserve">
+    <value>tb_UserName</value>
+  </data>
+  <data name="&gt;&gt;tb_UserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tb_UserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tb_UserName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl_NameInput.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_NameInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 27</value>
+  </data>
+  <data name="lbl_NameInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 26</value>
+  </data>
+  <data name="lbl_NameInput.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="lbl_NameInput.Text" xml:space="preserve">
+    <value>Prefilter ships with only researched ships of a
+player's account. Can be left empty.</value>
+  </data>
+  <data name="&gt;&gt;lbl_NameInput.Name" xml:space="preserve">
+    <value>lbl_NameInput</value>
+  </data>
+  <data name="&gt;&gt;lbl_NameInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_NameInput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_NameInput.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 89</value>
+  </data>
+  <data name="btn_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 23</value>
+  </data>
+  <data name="btn_Search.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="btn_Search.Text" xml:space="preserve">
+    <value>Search Player</value>
+  </data>
+  <data name="&gt;&gt;btn_Search.Name" xml:space="preserve">
+    <value>btn_Search</value>
+  </data>
+  <data name="&gt;&gt;btn_Search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Search.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_Search.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rtb_SearchOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 118</value>
+  </data>
+  <data name="rtb_SearchOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 178</value>
+  </data>
+  <data name="rtb_SearchOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="rtb_SearchOutput.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtb_SearchOutput.Name" xml:space="preserve">
+    <value>rtb_SearchOutput</value>
+  </data>
+  <data name="&gt;&gt;rtb_SearchOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtb_SearchOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rtb_SearchOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cb_Server.Items" xml:space="preserve">
+    <value>ru</value>
+  </data>
+  <data name="cb_Server.Items1" xml:space="preserve">
+    <value>eu</value>
+  </data>
+  <data name="cb_Server.Items2" xml:space="preserve">
+    <value>na</value>
+  </data>
+  <data name="cb_Server.Items3" xml:space="preserve">
+    <value>asia</value>
+  </data>
+  <data name="cb_Server.Location" type="System.Drawing.Point, System.Drawing">
+    <value>507, 61</value>
+  </data>
+  <data name="cb_Server.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 21</value>
+  </data>
+  <data name="cb_Server.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;cb_Server.Name" xml:space="preserve">
+    <value>cb_Server</value>
+  </data>
+  <data name="&gt;&gt;cb_Server.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_Server.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_Server.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>586, 359</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABMKQAAZgAAAICAAAABACAAKAgBALIpAABAQAAAAQAgAChCAADaMQEAMDAAAAEA
@@ -1959,5 +3032,14 @@
         AABPT08OExMTRRMTE0VPT08OAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/j8AAPgPAADgAwAAgAEAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAwAA/D8AAA==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Random Ship Selector</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
