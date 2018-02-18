@@ -250,11 +250,22 @@ namespace Randomized_Ship_Selector
 
             if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
             {
+                string extension = "";
+
+                if (server.Equals("na"))
+                {
+                    extension = "com";
+                }
+                else
+                {
+                    extension = server;
+                }
+
                 if (userName != "")
                 {
                     // Step 1: Get user ID
                     Log("Fetching account ID...");
-                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", server, AppID, userName);
+                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, AppID, userName);
 
                     JObject idObj = GetJson(idUri);
 
@@ -280,7 +291,8 @@ namespace Randomized_Ship_Selector
 
                     // Step 2: Get all ships that are in port
                     Log("Fetching current ships in port...");
-                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", server, AppID, userId);
+
+                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, AppID, userId);
                     JObject shipsObj = GetJson(shipsUri);
                     //try
                     {
