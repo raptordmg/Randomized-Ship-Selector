@@ -9,7 +9,7 @@ Randomized Ship Selector lets you customize the list from which you want to pick
 
 **How to open/install:**  
 No installation required! 
-- Download the .zip file here: [RandomizedShipSelector.zip](https://github.com/DInbound/Randomized-Ship-Selector/releases/download/v1.0/Randomized.Ship.Selector.zip)  
+- Download the .zip file here: [RandomizedShipSelector.zip](https://github.com/DInbound/Randomized-Ship-Selector/releases/latest)  
 - Unpack it (unzip) and run the executable file (.exe).  
 
 Take note that there is a seperate .dll file in the zip file.  
@@ -33,8 +33,7 @@ If the selected ship doesnt change, be sure to check if "Amount of ships to choo
 **What are those icons?**  
 The ship contour icons I use here are provided (with approval) by Panzerschiffer from his mod: [Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/).
 
-**What happens in the fuuutureeeeee?**  
-I realized that the filters I have now are not enough. 
-That is why I am currently creating a "Tech Tree" style filter selecter.
-Where you can also turn on/off one ship at a time!
+**Changelog**
+v2.0 - Updated for WoWs 0.7.2 - Added player account support.
+v1.0 - Released for WoWs 0.7.0 - Initial release.
 
