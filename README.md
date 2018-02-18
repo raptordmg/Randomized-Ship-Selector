@@ -15,20 +15,20 @@ No installation required!
 Take note that there is a seperate .dll file in the zip file.  
 That .dll needs to accompany the executable at all times otherwise the application will not work!
 
-**But D_Inbound, it is an executable? How do I know if i can trust it or not?**  
-Like all other things off the internet, you dont. But if you download this mod off the official World of Warships forums or Github, you can be 99% sure that nobody but me has uploaded it and that it is legit software!
-If you dont trust me you can check the contents of the application for yourself on Github.
+**How does it work I hear you asking:**  
+I made a app which lets RNG decide what ship YOU need to play next.  
+From v2.x the UI got updated with extra prefilters.  
+On the right, fill in the screenname (accountname) of your account & server you play on.  
+When you click on "search player" the program will prefilter the list of ships to all the ships that you have at least 1 battle in.  
+Use the checkboxes on the left to further customize your random experience!  
 
-Here you can read the source code, track the development and clone the project so you can build it yourself.
-Note: I made this program in VS 2017 and it might not be compatible with earlier versions of VS.
+Have Fun!
 
-**How does it work I hear you asking?**  
-Well I painstakingly made a list of all ships with their attributes to filter them on (nation, tier, premium) and then let RNG decide which ship YOU need to play.
-Lets have a look at the very basic UI first:
-The top half contains filters. There are 4 criteria on which to filter ships: Tier, Nation, Class and Premium status.
-Select your prefered filters and click the Randomize button, the application will then present a ship based on your filters.
-The application will also show how many ships it can choose from.
-If the selected ship doesnt change, be sure to check if "Amount of ships to choose from"  isn't 0!
+Notice about account privacy:
+
+If your account is private, my application will not be able to extract data and will return a error in the text field on the right.
+
+You can still use the app without the prefilter (just like in v1.0). 
 
 **What are those icons?**  
 The ship contour icons I use here are provided (with approval) by Panzerschiffer from his mod: [Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/).
