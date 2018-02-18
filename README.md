@@ -24,11 +24,9 @@ Use the checkboxes on the left to further customize your random experience!
 
 Have Fun!
 
-Notice about account privacy:
-
-If your account is private, my application will not be able to extract data and will return a error in the text field on the right.
-
-You can still use the app without the prefilter (just like in v1.0). 
+**Notice about account privacy:**  
+If your account is private, my application will not be able to extract data and will return a error in the text field on the right.  
+You can still use the app without the prefilter (just like in v1.0).   
 
 **What are those icons?**  
 The ship contour icons I use here are provided (with approval) by Panzerschiffer from his mod: [Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/).
