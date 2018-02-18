@@ -33,7 +33,7 @@ If the selected ship doesnt change, be sure to check if "Amount of ships to choo
 **What are those icons?**  
 The ship contour icons I use here are provided (with approval) by Panzerschiffer from his mod: [Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/).
 
-**Changelog**
-v2.0 - Updated for WoWs 0.7.2 - Added player account support.
-v1.0 - Released for WoWs 0.7.0 - Initial release.
+**Changelog**  
+v2.0 - Updated for WoWs 0.7.2 - Added player account support.  
+v1.0 - Released for WoWs 0.7.0 - Initial release.  
 
