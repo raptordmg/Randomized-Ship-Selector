@@ -26,7 +26,7 @@ namespace Randomized_Ship_Selector
             USN, // United States Navy
             IJN, // Imperial Japanese Navy (Japan)
             VMF, // Vojenno-Morskoj Flot (Russia)
-            FN, // Marine Nationale (French)
+            MN, // Marine Nationale (French)
             RM, // Regina Marina (Italy)
             KM, // Kriegsmarine (Germany)
             PA, // Pan-Asian Navy (Pan-Asia)

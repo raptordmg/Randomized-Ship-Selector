@@ -657,13 +657,13 @@
     <value>121, 137</value>
   </data>
   <data name="cb_N_FN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
+    <value>85, 17</value>
   </data>
   <data name="cb_N_FN.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="cb_N_FN.Text" xml:space="preserve">
-    <value>FN (French)</value>
+    <value>MN (French)</value>
   </data>
   <data name="&gt;&gt;cb_N_FN.Name" xml:space="preserve">
     <value>cb_N_FN</value>

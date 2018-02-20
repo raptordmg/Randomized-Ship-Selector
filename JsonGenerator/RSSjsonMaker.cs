@@ -13,25 +13,27 @@ namespace JsonGenerator
     internal class RSSjsonMaker
     {
         List<Ship> Ships = new List<Ship>();
+        List<Ship> OldShips = new List<Ship>();
 
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         // Ships to ignore by name
-        private string[] IgnoreName = new string[] { "Cossack", "T-61", "Asashio", "Monaghan" };
+        private string[] IgnoreName = null;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="path">Path to JSON file</param>
-        public RSSjsonMaker(string path)
+        public RSSjsonMaker(string[] ignoredShips)
         {
+            IgnoreName = ignoredShips;
+
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
             {
                 Console.WriteLine("Reading page " + page);
 
-                var json = GetJson(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                var json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
                 var data = json["data"];
 
@@ -60,6 +62,32 @@ namespace JsonGenerator
             }
         }
 
+        public List<Ship> GetDifference()
+        {
+            ReadOldFile();
+
+            List<Ship> difference = new List<Ship>();
+
+            foreach (Ship newShip in Ships)
+            {
+                bool found = false;
+
+                foreach(Ship oldShip in OldShips)
+                {
+                    if(newShip.ID == oldShip.ID)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found)
+                    difference.Add(newShip);
+            }
+
+            return difference;
+        }
+
         public void MakeJson()
         {
             Console.WriteLine("Making JSON!");
@@ -74,7 +102,18 @@ namespace JsonGenerator
             Console.WriteLine("Success!");
         }
 
-        public Ship.Nations GetNation(string name)
+        public void ReadOldFile()
+        {
+            using (StreamReader file = File.OpenText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
+            {
+                string json = file.ReadToEnd();
+
+                OldShips = JsonConvert.DeserializeObject<List<Ship>>(json);
+            }
+            
+        }
+
+        private Ship.Nations GetNation(string name)
         {
             if (name.Equals("germany"))
                 return Ship.Nations.KM;
@@ -87,7 +126,7 @@ namespace JsonGenerator
             if (name.Equals("uk"))
                 return Ship.Nations.RN;
             if (name.Equals("france"))
-                return Ship.Nations.FN;
+                return Ship.Nations.MN;
             if (name.Equals("pan_asia"))
                 return Ship.Nations.PA;
             if (name.Equals("commonwealth"))
@@ -100,7 +139,7 @@ namespace JsonGenerator
             return Ship.Nations.None;
         }
 
-        public Ship.Classes GetClasses(string name)
+        private Ship.Classes GetClasses(string name)
         {
             if (name.Equals("Cruiser"))
                 return Ship.Classes.Cruiser;
@@ -114,7 +153,7 @@ namespace JsonGenerator
             return Ship.Classes.None;
         }
 
-        public bool GetPremium(JToken shipData)
+        private bool GetPremium(JToken shipData)
         {
             if (Boolean.Parse(shipData["is_premium"].ToString()))
             {
@@ -133,7 +172,7 @@ namespace JsonGenerator
         /// </summary>
         /// <param name="url">Wargaming API URL</param>
         /// <returns>JSON String</returns>
-        private JObject GetJson(string uri)
+        private JObject GetJsonFromWeb(string uri)
         {
             using (WebClient client = new WebClient())
             using (Stream stream = client.OpenRead(uri))

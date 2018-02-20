@@ -30,10 +30,12 @@ namespace Randomized_Ship_Selector
         {
             InitializeComponent();
 
-            AllShips = ImportShipsFromFile();
+            AllShips = GetShipsFromResource();
 
             lbl_Count.Text = AllShips.Count().ToString();
         }
+
+        /// Interactions ///
 
         // Selects a random ship
         private void btnRandom_Click(object sender, EventArgs e)
@@ -70,8 +72,104 @@ namespace Randomized_Ship_Selector
             }
         }
 
+        // Opens credits window
+        private void btn_Credits_Click(object sender, EventArgs e)
+        {
+            Form creditForm = new Credits();
+            creditForm.Show();
+        }
+
+        // Get User info
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            string server = cb_Server.Text;
+            string userName = tb_UserName.Text;
+            string userId = null;
+
+            PlayerShips = new List<Ship>();
+
+            if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
+            {
+                string extension = "";
+
+                if (server.Equals("na"))
+                {
+                    extension = "com";
+                }
+                else
+                {
+                    extension = server;
+                }
+
+                if (userName != "")
+                {
+                    // Step 1: Get user ID
+                    Log("Fetching account ID...");
+                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, AppID, userName);
+
+                    JObject idObj = GetJsonFromWeb(idUri);
+
+                    // T-T (cri every time)
+                    JToken idData = idObj["data"].FirstOrDefault();
+
+                    if (idData == null)
+                    {
+                        Log("No player with specified name.");
+                        return;
+                    }
+
+                    try
+                    {
+                        userId = idData["account_id"].ToString();
+                        Log("Account ID fetched: " + userId);
+                    }
+                    catch
+                    {
+                        Log("Problem fetching account ID");
+                        return;
+                    }
+
+                    // Step 2: Get all ships that are in port
+                    Log("Fetching all ships...");
+
+                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, AppID, userId);
+                    JObject shipsObj = GetJsonFromWeb(shipsUri);
+                    try
+                    {
+                        var shipsData = shipsObj["data"][userId];
+                        foreach (var item in shipsData)
+                        {
+                            string id = item["ship_id"].ToString();
+
+                            Ship aShip = AllShips.Where(s => s.ID == id).FirstOrDefault();
+
+                            if (aShip != null)
+                                PlayerShips.Add(aShip);
+                        }
+
+                        Log("Finished fetching ships with more than 0 battles...");
+                        Log("Total ships found: " + PlayerShips.Count());
+                        UseIGN = true;
+                        lbl_Count.Text = FilterShips(PlayerShips).Count().ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("ERROR: Problem getting played ships.. " + ex.Message);
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                Log("ERROR: Please select a valid server.");
+                return;
+            }
+        }
+
+        /// HELPERS ///
+
         // Imports all ships that are currently availaible.
-        private List<Ship> ImportShipsFromFile()
+        private List<Ship> GetShipsFromResource()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             string resourceName = "Randomized_Ship_Selector.Resources.shipdata.json";
@@ -86,6 +184,21 @@ namespace Randomized_Ship_Selector
 
                     return ships;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Returns a JSON string
+        /// </summary>
+        /// <param name="url">Wargaming API URL</param>
+        /// <returns>JSON String</returns>
+        private JObject GetJsonFromWeb(string uri)
+        {
+            using (WebClient client = new WebClient())
+            using (Stream stream = client.OpenRead(uri))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return JObject.Parse(reader.ReadLine());
             }
         }
 
@@ -177,7 +290,7 @@ namespace Randomized_Ship_Selector
             }
             if (cb_N_FN.Checked)
             {
-                nations.Add("FN");
+                nations.Add("MN");
             }
             if (cb_N_RM.Checked)
             {
@@ -230,115 +343,6 @@ namespace Randomized_Ship_Selector
             }
 
             return classes;
-        }
-
-        // Opens credits window
-        private void btn_Credits_Click(object sender, EventArgs e)
-        {
-            Form creditForm = new Credits();
-            creditForm.Show();
-        }
-
-        // Get User info
-        private void btn_Search_Click(object sender, EventArgs e)
-        {
-            string server = cb_Server.Text;
-            string userName = tb_UserName.Text;
-            string userId = null;
-
-            PlayerShips = new List<Ship>();
-
-            if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
-            {
-                string extension = "";
-
-                if (server.Equals("na"))
-                {
-                    extension = "com";
-                }
-                else
-                {
-                    extension = server;
-                }
-
-                if (userName != "")
-                {
-                    // Step 1: Get user ID
-                    Log("Fetching account ID...");
-                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, AppID, userName);
-
-                    JObject idObj = GetJson(idUri);
-
-                    // T-T (cri every time)
-                    JToken idData = idObj["data"].FirstOrDefault();
-
-                    if (idData == null)
-                    {
-                        Log("No player with specified name.");
-                        return;
-                    }
-
-                    try
-                    {
-                        userId = idData["account_id"].ToString();
-                        Log("Account ID fetched: " + userId);
-                    }
-                    catch
-                    {
-                        Log("Problem fetching account ID");
-                        return;
-                    }
-
-                    // Step 2: Get all ships that are in port
-                    Log("Fetching current ships in port...");
-
-                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, AppID, userId);
-                    JObject shipsObj = GetJson(shipsUri);
-                    //try
-                    {
-                        var shipsData = shipsObj["data"][userId];
-                        foreach (var item in shipsData)
-                        {
-                            string id = item["ship_id"].ToString();
-
-                            Ship aShip = AllShips.Where(s => s.ID == id).FirstOrDefault();
-
-                            if (aShip != null)
-                                PlayerShips.Add(aShip);
-                        }
-
-                        Log("Finished fetching ships with more than 0 battles...");
-                        Log("Total ships found: " + PlayerShips.Count());
-                        UseIGN = true;
-                        lbl_Count.Text = FilterShips(PlayerShips).Count().ToString();
-                    }
-                    //catch (Exception ex)
-                    {
-                     //   Log("ERROR: Problem getting ships fsasarom port. " + ex.Message);
-                        return;
-                    }
-                }
-            }
-            else
-            {
-                Log("ERROR: Please select a valid server.");
-                return;
-            }
-        }
-
-        /// <summary>
-        /// Returns a JSON string
-        /// </summary>
-        /// <param name="url">Wargaming API URL</param>
-        /// <returns>JSON String</returns>
-        private JObject GetJson(string uri)
-        {
-            using (WebClient client = new WebClient())
-            using (Stream stream = client.OpenRead(uri))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return JObject.Parse(reader.ReadLine());
-            }
         }
 
         // Logs a string to the rich text box

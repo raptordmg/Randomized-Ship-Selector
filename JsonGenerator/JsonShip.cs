@@ -26,7 +26,7 @@ namespace JsonGenerator
             USN, // United States Navy
             IJN, // Imperial Japanese Navy (Japan)
             VMF, // Vojenno-Morskoj Flot (Russia)
-            FN, // La Royale (French)
+            MN, // La Royale (French)
             RM, // Regina Marina (Italy)
             KM, // Kriegsmarine (Germany)
             PA, // Pan-Asian Navy (Pan-Asia)
