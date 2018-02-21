@@ -5,7 +5,7 @@
 	"Tier": 8,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3659445712",
@@ -14,7 +14,7 @@
 	"Tier": 6,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4179539408",
@@ -23,7 +23,7 @@
 	"Tier": 10,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4079891920",
@@ -32,7 +32,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4075697872",
@@ -41,7 +41,7 @@
 	"Tier": 9,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3522082512",
@@ -50,7 +50,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3761190608",
@@ -59,7 +59,7 @@
 	"Tier": 9,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3764271056",
@@ -68,7 +68,7 @@
 	"Tier": 6,
 	"Nation": "RN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3765384656",
@@ -77,7 +77,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3554555600",
@@ -86,7 +86,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3532568272",
@@ -95,7 +95,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179506992",
@@ -104,7 +104,7 @@
 	"Tier": 10,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3764303056",
@@ -113,7 +113,7 @@
 	"Tier": 6,
 	"Nation": "PA",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3763221968",
@@ -122,7 +122,7 @@
 	"Tier": 7,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3762239184",
@@ -131,7 +131,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3768465392",
@@ -140,7 +140,7 @@
 	"Tier": 2,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3763287760",
@@ -149,7 +149,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3763255248",
@@ -158,7 +158,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3767416784",
@@ -167,7 +167,7 @@
 	"Tier": 3,
 	"Nation": "RN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3554588464",
@@ -176,7 +176,7 @@
 	"Tier": 6,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3767482160",
@@ -185,7 +185,7 @@
 	"Tier": 3,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3762272048",
@@ -194,7 +194,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Carrier",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4076746448",
@@ -203,7 +203,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3551410160",
@@ -212,7 +212,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3763288016",
@@ -221,7 +221,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3555670000",
@@ -230,7 +230,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3765319120",
@@ -239,7 +239,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4077795024",
@@ -248,7 +248,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3552491216",
@@ -257,7 +257,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3764303216",
@@ -266,7 +266,7 @@
 	"Tier": 6,
 	"Nation": "Commonwealth",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "4078843600",
@@ -275,7 +275,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3553539792",
@@ -284,7 +284,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3761190896",
@@ -293,7 +293,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3761223472",
@@ -302,7 +302,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3551442640",
@@ -311,7 +311,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3762206160",
@@ -320,7 +320,7 @@
 	"Tier": 8,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764336336",
@@ -329,7 +329,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3762239472",
@@ -338,7 +338,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3762239216",
@@ -347,7 +347,7 @@
 	"Tier": 8,
 	"Nation": "RM",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764303600",
@@ -356,7 +356,7 @@
 	"Tier": 6,
 	"Nation": "RM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3555636944",
@@ -365,7 +365,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3763320528",
@@ -374,7 +374,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4078843344",
@@ -383,7 +383,7 @@
 	"Tier": 6,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3764303312",
@@ -392,7 +392,7 @@
 	"Tier": 6,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3765384944",
@@ -401,7 +401,7 @@
 	"Tier": 5,
 	"Nation": "RM",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764336464",
@@ -410,7 +410,7 @@
 	"Tier": 6,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764336624",
@@ -419,7 +419,7 @@
 	"Tier": 6,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3550394352",
@@ -428,7 +428,7 @@
 	"Tier": 10,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3762206512",
@@ -437,7 +437,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3971888592",
@@ -446,7 +446,7 @@
 	"Tier": 8,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3765351888",
@@ -455,7 +455,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3742316496",
@@ -464,7 +464,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3552523984",
@@ -473,7 +473,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3767449296",
@@ -482,7 +482,7 @@
 	"Tier": 3,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764303696",
@@ -491,7 +491,7 @@
 	"Tier": 6,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3769513264",
@@ -500,7 +500,7 @@
 	"Tier": 7,
 	"Nation": "ORP",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3764270928",
@@ -509,7 +509,7 @@
 	"Tier": 6,
 	"Nation": "MN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764303664",
@@ -518,7 +518,7 @@
 	"Tier": 6,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "3553572560",
@@ -527,7 +527,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3555669712",
@@ -536,7 +536,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3767416176",
@@ -545,7 +545,7 @@
 	"Tier": 3,
 	"Nation": "Commonwealth",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4074649040",
@@ -554,7 +554,7 @@
 	"Tier": 10,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3767449040",
@@ -563,7 +563,7 @@
 	"Tier": 3,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3543054032",
@@ -572,7 +572,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3554621136",
@@ -581,7 +581,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "ARP"
 },
 {
 	"ID": "3762173936",
@@ -590,7 +590,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3751753712",
@@ -599,7 +599,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3763320816",
@@ -608,7 +608,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3764270288",
@@ -617,7 +617,7 @@
 	"Tier": 6,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4076746192",
@@ -626,7 +626,7 @@
 	"Tier": 8,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179506384",
@@ -635,7 +635,7 @@
 	"Tier": 10,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4077794768",
@@ -644,7 +644,7 @@
 	"Tier": 7,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3763255024",
@@ -653,7 +653,7 @@
 	"Tier": 7,
 	"Nation": "RM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3762239312",
@@ -662,7 +662,7 @@
 	"Tier": 8,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3552524272",
@@ -671,7 +671,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3553540080",
@@ -680,7 +680,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3752802256",
@@ -689,7 +689,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3763255280",
@@ -698,7 +698,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3768497968",
@@ -707,7 +707,7 @@
 	"Tier": 2,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3763287856",
@@ -716,7 +716,7 @@
 	"Tier": 7,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3762272240",
@@ -725,7 +725,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "3865982416",
@@ -734,7 +734,7 @@
 	"Tier": 9,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179506640",
@@ -743,7 +743,7 @@
 	"Tier": 10,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "3552458448",
@@ -752,7 +752,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4184815440",
@@ -761,7 +761,7 @@
 	"Tier": 5,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4182652112",
@@ -770,7 +770,7 @@
 	"Tier": 7,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186846416",
@@ -779,7 +779,7 @@
 	"Tier": 3,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181636560",
@@ -788,7 +788,7 @@
 	"Tier": 8,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180587984",
@@ -797,7 +797,7 @@
 	"Tier": 9,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184749776",
@@ -806,7 +806,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181604048",
@@ -815,7 +815,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4247697392",
@@ -824,7 +824,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4186879952",
@@ -833,7 +833,7 @@
 	"Tier": 3,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185864016",
@@ -842,7 +842,7 @@
 	"Tier": 4,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179539920",
@@ -851,7 +851,7 @@
 	"Tier": 10,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4255037136",
@@ -860,7 +860,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "4186912592",
@@ -869,7 +869,7 @@
 	"Tier": 3,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180588496",
@@ -878,7 +878,7 @@
 	"Tier": 9,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185863984",
@@ -887,7 +887,7 @@
 	"Tier": 4,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182652368",
@@ -896,7 +896,7 @@
 	"Tier": 9,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185831376",
@@ -905,7 +905,7 @@
 	"Tier": 4,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181637072",
@@ -914,7 +914,7 @@
 	"Tier": 8,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182652720",
@@ -923,7 +923,7 @@
 	"Tier": 7,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180555568",
@@ -932,7 +932,7 @@
 	"Tier": 9,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186912560",
@@ -941,7 +941,7 @@
 	"Tier": 3,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180621264",
@@ -950,7 +950,7 @@
 	"Tier": 9,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182685648",
@@ -959,7 +959,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180588336",
@@ -968,7 +968,7 @@
 	"Tier": 9,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181604144",
@@ -977,7 +977,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183734224",
@@ -986,7 +986,7 @@
 	"Tier": 6,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184815408",
@@ -995,7 +995,7 @@
 	"Tier": 5,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185798096",
@@ -1004,7 +1004,7 @@
 	"Tier": 4,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4258182864",
@@ -1013,7 +1013,7 @@
 	"Tier": 2,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4268635856",
@@ -1022,7 +1022,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4179539792",
@@ -1031,7 +1031,7 @@
 	"Tier": 10,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184782800",
@@ -1040,7 +1040,7 @@
 	"Tier": 5,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179572688",
@@ -1049,7 +1049,7 @@
 	"Tier": 10,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183701296",
@@ -1058,7 +1058,7 @@
 	"Tier": 6,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4256085712",
@@ -1067,7 +1067,7 @@
 	"Tier": 1,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4259231440",
@@ -1076,7 +1076,7 @@
 	"Tier": 10,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182718416",
@@ -1085,7 +1085,7 @@
 	"Tier": 7,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180588368",
@@ -1094,7 +1094,7 @@
 	"Tier": 9,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184749872",
@@ -1103,7 +1103,7 @@
 	"Tier": 5,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179539760",
@@ -1112,7 +1112,7 @@
 	"Tier": 10,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187895248",
@@ -1121,7 +1121,7 @@
 	"Tier": 2,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182685136",
@@ -1130,7 +1130,7 @@
 	"Tier": 7,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4264441840",
@@ -1139,7 +1139,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "4181669840",
@@ -1148,7 +1148,7 @@
 	"Tier": 8,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183766864",
@@ -1157,7 +1157,7 @@
 	"Tier": 6,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4183733712",
@@ -1166,7 +1166,7 @@
 	"Tier": 6,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182652624",
@@ -1175,7 +1175,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180621136",
@@ -1184,7 +1184,7 @@
 	"Tier": 9,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184782640",
@@ -1193,7 +1193,7 @@
 	"Tier": 5,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182685520",
@@ -1202,7 +1202,7 @@
 	"Tier": 7,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4269717488",
@@ -1211,7 +1211,7 @@
 	"Tier": 4,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187928528",
@@ -1220,7 +1220,7 @@
 	"Tier": 2,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186847024",
@@ -1229,7 +1229,7 @@
 	"Tier": 3,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181636912",
@@ -1238,7 +1238,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179572528",
@@ -1247,7 +1247,7 @@
 	"Tier": 10,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184782288",
@@ -1256,7 +1256,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4267587280",
@@ -1265,7 +1265,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4183734096",
@@ -1274,7 +1274,7 @@
 	"Tier": 6,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4188977104",
@@ -1283,7 +1283,7 @@
 	"Tier": 1,
 	"Nation": "RN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183766992",
@@ -1292,7 +1292,7 @@
 	"Tier": 6,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187895600",
@@ -1301,7 +1301,7 @@
 	"Tier": 2,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182685488",
@@ -1310,7 +1310,7 @@
 	"Tier": 7,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187928400",
@@ -1319,7 +1319,7 @@
 	"Tier": 2,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180554960",
@@ -1328,7 +1328,7 @@
 	"Tier": 9,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182718288",
@@ -1337,7 +1337,7 @@
 	"Tier": 7,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4185830864",
@@ -1346,7 +1346,7 @@
 	"Tier": 4,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185798448",
@@ -1355,7 +1355,7 @@
 	"Tier": 4,
 	"Nation": "KM",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184782672",
@@ -1364,7 +1364,7 @@
 	"Tier": 5,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4179572560",
@@ -1373,7 +1373,7 @@
 	"Tier": 10,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183734064",
@@ -1382,7 +1382,7 @@
 	"Tier": 6,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181669712",
@@ -1391,7 +1391,7 @@
 	"Tier": 8,
 	"Nation": "MN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4181603536",
@@ -1400,7 +1400,7 @@
 	"Tier": 8,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186879440",
@@ -1409,7 +1409,7 @@
 	"Tier": 3,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4269684432",
@@ -1418,7 +1418,7 @@
 	"Tier": 3,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185831248",
@@ -1427,7 +1427,7 @@
 	"Tier": 4,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185864144",
@@ -1436,7 +1436,7 @@
 	"Tier": 4,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187928016",
@@ -1445,7 +1445,7 @@
 	"Tier": 2,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4248745968",
@@ -1454,7 +1454,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4186879824",
@@ -1463,7 +1463,7 @@
 	"Tier": 3,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186912720",
@@ -1472,7 +1472,7 @@
 	"Tier": 3,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185831216",
@@ -1481,7 +1481,7 @@
 	"Tier": 4,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4180621104",
@@ -1490,7 +1490,7 @@
 	"Tier": 9,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183700688",
@@ -1499,7 +1499,7 @@
 	"Tier": 6,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4188976592",
@@ -1508,7 +1508,7 @@
 	"Tier": 1,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4187894992",
@@ -1517,7 +1517,7 @@
 	"Tier": 2,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186879792",
@@ -1526,7 +1526,7 @@
 	"Tier": 3,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4181669680",
@@ -1535,7 +1535,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184749264",
@@ -1544,7 +1544,7 @@
 	"Tier": 5,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4184815568",
@@ -1553,7 +1553,7 @@
 	"Tier": 5,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183701200",
@@ -1562,7 +1562,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4183766832",
@@ -1571,7 +1571,7 @@
 	"Tier": 6,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4267620048",
@@ -1580,7 +1580,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4181636944",
@@ -1589,7 +1589,7 @@
 	"Tier": 8,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4188976976",
@@ -1598,7 +1598,7 @@
 	"Tier": 1,
 	"Nation": "MN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4259264496",
@@ -1607,7 +1607,7 @@
 	"Tier": 6,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4188976336",
@@ -1616,7 +1616,7 @@
 	"Tier": 1,
 	"Nation": "PA",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4182718256",
@@ -1625,7 +1625,7 @@
 	"Tier": 7,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4185797840",
@@ -1634,7 +1634,7 @@
 	"Tier": 4,
 	"Nation": "PA",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4266538992",
@@ -1643,7 +1643,7 @@
 	"Tier": 3,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4186846672",
@@ -1652,7 +1652,7 @@
 	"Tier": 3,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4281219056",
@@ -1661,7 +1661,7 @@
 	"Tier": 10,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292786160",
@@ -1670,7 +1670,7 @@
 	"Tier": 2,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4286494416",
@@ -1679,7 +1679,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4272830448",
@@ -1688,7 +1688,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292785968",
@@ -1697,7 +1697,7 @@
 	"Tier": 2,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4272895696",
@@ -1706,7 +1706,7 @@
 	"Tier": 9,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293834192",
@@ -1715,7 +1715,7 @@
 	"Tier": 3,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4284397008",
@@ -1724,7 +1724,7 @@
 	"Tier": 2,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4277122768",
@@ -1733,7 +1733,7 @@
 	"Tier": 10,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4291770064",
@@ -1742,7 +1742,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4276041712",
@@ -1751,7 +1751,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4282267344",
@@ -1760,7 +1760,7 @@
 	"Tier": 10,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4277024464",
@@ -1769,7 +1769,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4282300400",
@@ -1778,7 +1778,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4291704528",
@@ -1787,7 +1787,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4286461936",
@@ -1796,7 +1796,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4291737584",
@@ -1805,7 +1805,7 @@
 	"Tier": 2,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4288624624",
@@ -1814,7 +1814,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4279220208",
@@ -1823,7 +1823,7 @@
 	"Tier": 10,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4289640432",
@@ -1832,7 +1832,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293834736",
@@ -1841,7 +1841,7 @@
 	"Tier": 1,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292851408",
@@ -1850,7 +1850,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292818736",
@@ -1859,7 +1859,7 @@
 	"Tier": 8,
 	"Nation": "KM",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "4280170192",
@@ -1868,7 +1868,7 @@
 	"Tier": 2,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4292753392",
@@ -1877,7 +1877,7 @@
 	"Tier": 2,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293834544",
@@ -1886,7 +1886,7 @@
 	"Tier": 1,
 	"Nation": "KM",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293866960",
@@ -1895,7 +1895,7 @@
 	"Tier": 4,
 	"Nation": "VMF",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4288657104",
@@ -1904,7 +1904,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4284430032",
@@ -1913,7 +1913,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4287542992",
@@ -1922,7 +1922,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4290688720",
@@ -1931,7 +1931,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Premium"
 },
 {
 	"ID": "4276041424",
@@ -1940,7 +1940,7 @@
 	"Tier": 10,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4286527184",
@@ -1949,7 +1949,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4292753104",
@@ -1958,7 +1958,7 @@
 	"Tier": 2,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4279154384",
@@ -1967,7 +1967,7 @@
 	"Tier": 3,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4273911792",
@@ -1976,7 +1976,7 @@
 	"Tier": 10,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4281284592",
@@ -1985,7 +1985,7 @@
 	"Tier": 4,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4284463088",
@@ -1994,7 +1994,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4285511376",
@@ -2003,7 +2003,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4277090288",
@@ -2012,7 +2012,7 @@
 	"Tier": 10,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4288657392",
@@ -2021,7 +2021,7 @@
 	"Tier": 6,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292851696",
@@ -2030,7 +2030,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4283381456",
@@ -2039,7 +2039,7 @@
 	"Tier": 2,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4289640144",
@@ -2048,7 +2048,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4280170480",
@@ -2057,7 +2057,7 @@
 	"Tier": 5,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4291737040",
@@ -2066,7 +2066,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4287543280",
@@ -2075,7 +2075,7 @@
 	"Tier": 6,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4283414224",
@@ -2084,7 +2084,7 @@
 	"Tier": 7,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293867216",
@@ -2093,7 +2093,7 @@
 	"Tier": 3,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4281284304",
@@ -2102,7 +2102,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4290689008",
@@ -2111,7 +2111,7 @@
 	"Tier": 3,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4287575760",
@@ -2120,7 +2120,7 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293801680",
@@ -2129,7 +2129,7 @@
 	"Tier": 2,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4288559088",
@@ -2138,7 +2138,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292818896",
@@ -2147,7 +2147,7 @@
 	"Tier": 6,
 	"Nation": "RN",
 	"ShipClass": "Battleship",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4282365648",
@@ -2156,7 +2156,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4281317360",
@@ -2165,7 +2165,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4277057520",
@@ -2174,7 +2174,7 @@
 	"Tier": 9,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4290754544",
@@ -2183,7 +2183,7 @@
 	"Tier": 4,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4290721776",
@@ -2192,7 +2192,7 @@
 	"Tier": 4,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4282365936",
@@ -2201,7 +2201,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4282333168",
@@ -2210,7 +2210,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4274927600",
@@ -2219,7 +2219,7 @@
 	"Tier": 4,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4286527472",
@@ -2228,7 +2228,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4288591856",
@@ -2237,7 +2237,7 @@
 	"Tier": 7,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4293867504",
@@ -2246,7 +2246,7 @@
 	"Tier": 3,
 	"Nation": "USN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4280203248",
@@ -2255,7 +2255,7 @@
 	"Tier": 8,
 	"Nation": "USN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4293801424",
@@ -2264,7 +2264,7 @@
 	"Tier": 5,
 	"Nation": "VMF",
 	"ShipClass": "Destroyer",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4281251536",
@@ -2273,7 +2273,7 @@
 	"Tier": 4,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4292785616",
@@ -2282,7 +2282,7 @@
 	"Tier": 2,
 	"Nation": "VMF",
 	"ShipClass": "Cruiser",
-	"Premium": true
+	"ShipStatus": "Special"
 },
 {
 	"ID": "4285445840",
@@ -2291,7 +2291,7 @@
 	"Tier": 8,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4282300112",
@@ -2300,7 +2300,7 @@
 	"Tier": 9,
 	"Nation": "IJN",
 	"ShipClass": "Cruiser",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4288624336",
@@ -2309,7 +2309,7 @@
 	"Tier": 6,
 	"Nation": "IJN",
 	"ShipClass": "Battleship",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4279219920",
@@ -2318,7 +2318,7 @@
 	"Tier": 9,
 	"Nation": "IJN",
 	"ShipClass": "Carrier",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4289607664",
@@ -2327,7 +2327,7 @@
 	"Tier": 6,
 	"Nation": "USN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 },
 {
 	"ID": "4290655952",
@@ -2336,5 +2336,5 @@
 	"Tier": 5,
 	"Nation": "IJN",
 	"ShipClass": "Destroyer",
-	"Premium": false
+	"ShipStatus": "Silver"
 }]

@@ -38,6 +38,7 @@ namespace JsonGenerator
         public enum Status
         {
             None,
+            Silver,
             Premium,
             Special,
             ARP
@@ -47,9 +48,9 @@ namespace JsonGenerator
         public string Name { get; }
         public string ImageName { get; }
         public int Tier { get; }
-        public Nations Nation { get; }
-        public Classes ShipClass { get; set; }
-        public Status ShipStatus { get; }
+        public string Nation { get; }
+        public string ShipClass { get; set; }
+        public string ShipStatus { get; }
 
         /// <summary>
         /// A ship object
@@ -64,9 +65,9 @@ namespace JsonGenerator
             this.Name = name;
             this.ImageName = imgName;
             this.Tier = tier;
-            this.Nation = nation;
-            this.ShipClass = cls;
-            this.ShipStatus = status;
+            this.Nation = nation.ToString();
+            this.ShipClass = cls.ToString();
+            this.ShipStatus = status.ToString();
         }
     }
 }

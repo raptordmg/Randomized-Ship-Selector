@@ -207,6 +207,8 @@ namespace Randomized_Ship_Selector
         {
             bool nonprem = cb_nonPremium.Checked;
             bool prem = cb_Premium.Checked;
+            bool arp = cb_ARP.Checked;
+
             List<int> tiers = PopulateTiers();
             List<string> nations = PopulateNations();
             List<string> classes = PopulateClasses();
@@ -214,7 +216,10 @@ namespace Randomized_Ship_Selector
             List<Ship> filtered = new List<Ship>();
 
             // Filter ships
-            filtered = ships.Where(s => (s.Premium == true && prem) || (s.Premium == false && nonprem))
+            filtered = ships.Where(s => (s.ShipStatus == Ship.Status.Premium && prem) 
+                                        || (s.ShipStatus == Ship.Status.Special && prem) 
+                                        || (s.ShipStatus == Ship.Status.Silver && nonprem) 
+                                        || (s.ShipStatus == Ship.Status.ARP && arp))
                 .Where(s => tiers.Contains(s.Tier))
                 .Where(s => nations.Contains(s.Nation.ToString()))
                 .Where(s => classes.Contains(s.ShipClass.ToString()))

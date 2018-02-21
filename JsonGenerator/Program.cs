@@ -14,30 +14,29 @@ namespace JsonGenerator
             RSSjsonMaker maker = new RSSjsonMaker(new string[] { "Cossack", "T-61", "Asashio", "Monaghan" });
 
             Console.WriteLine("Check difference with old file? y/n");
-            string response = Console.ReadLine();
-            if(response.Equals("y"))
+            ConsoleKey response = Console.ReadKey().Key;
+            if(response == ConsoleKey.Y)
             {
+                Console.WriteLine();
                 Console.WriteLine("New Ships:");
                 List<Ship> difference = maker.GetDifference();
                 foreach (Ship s in difference)
                 {
                     Console.WriteLine(s.ID + " - " + s.Name);
                 }
-
-                Console.WriteLine("Press enter to continue");
-                Console.Read();
             }
 
+            Console.WriteLine(Environment.NewLine + "Generate new Json? y/n");
+            ConsoleKey response2 = Console.ReadKey().Key;
+            Console.WriteLine();
 
-            Console.WriteLine("Generate new Json? y/n");
-            response = Console.ReadLine();
-
-            if (response.Equals("y"))
+            if (response2 == ConsoleKey.Y)
             {
                 maker.MakeJson();
             }
 
-            Console.Read();
+            Console.WriteLine("Finished!");
+            Console.ReadLine();
         }
     }
 }

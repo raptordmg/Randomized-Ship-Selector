@@ -55,7 +55,7 @@ namespace JsonGenerator
 
                     string resource = item.First()["ship_id_str"].ToString();
                     int tier = Int32.Parse(item.First()["tier"].ToString());
-                    Ship.Status status = GetPremium(item.First());
+                    Ship.Status status = GetStatus(item.First());
 
                     Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
                 }
@@ -153,7 +153,7 @@ namespace JsonGenerator
             return Ship.Classes.None;
         }
 
-        private Ship.Status GetPremium(JToken shipData)
+        private Ship.Status GetStatus(JToken shipData)
         {
             if (Boolean.Parse(shipData["is_premium"].ToString()))
             {
@@ -163,12 +163,15 @@ namespace JsonGenerator
             {
                 return Ship.Status.Special;
             }
-            else if(shipData["name"].Contains("ARP "))
+
+            string name = shipData["name"].ToString();
+
+            if (name.Contains("ARP"))
             {
                 return Ship.Status.ARP;
             }
 
-            return Ship.Status.None;
+            return Ship.Status.Silver;
         }
 
         /// <summary>
