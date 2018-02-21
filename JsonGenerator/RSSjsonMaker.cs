@@ -39,9 +39,6 @@ namespace JsonGenerator
 
                 foreach (var item in data)
                 {
-                    Ship.Nations nation = GetNation(item.First()["nation"].ToString());
-                    Ship.Classes shipClass = GetClasses(item.First()["type"].ToString());
-
                     string id = item.First()["ship_id"].ToString();
                     string name = item.First()["name"].ToString();
 
@@ -53,11 +50,14 @@ namespace JsonGenerator
                     if (IgnoreName.Contains(name))
                         continue;
 
+                    Ship.Nations nation = GetNation(item.First()["nation"].ToString());
+                    Ship.Classes shipClass = GetClasses(item.First()["type"].ToString());
+
                     string resource = item.First()["ship_id_str"].ToString();
                     int tier = Int32.Parse(item.First()["tier"].ToString());
-                    bool premium = GetPremium(item.First());
+                    Ship.Status status = GetPremium(item.First());
 
-                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, premium));
+                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
                 }
             }
         }
@@ -153,18 +153,22 @@ namespace JsonGenerator
             return Ship.Classes.None;
         }
 
-        private bool GetPremium(JToken shipData)
+        private Ship.Status GetPremium(JToken shipData)
         {
             if (Boolean.Parse(shipData["is_premium"].ToString()))
             {
-                return true;
+                return Ship.Status.Premium;
             }
             else if(Boolean.Parse(shipData["is_special"].ToString()))
             {
-                return true;
+                return Ship.Status.Special;
+            }
+            else if(shipData["name"].Contains("ARP "))
+            {
+                return Ship.Status.ARP;
             }
 
-            return false;
+            return Ship.Status.None;
         }
 
         /// <summary>

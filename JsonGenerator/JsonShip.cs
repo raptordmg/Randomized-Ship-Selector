@@ -26,7 +26,7 @@ namespace JsonGenerator
             USN, // United States Navy
             IJN, // Imperial Japanese Navy (Japan)
             VMF, // Vojenno-Morskoj Flot (Russia)
-            MN, // La Royale (French)
+            MN, // Marine Nationale (French)
             RM, // Regina Marina (Italy)
             KM, // Kriegsmarine (Germany)
             PA, // Pan-Asian Navy (Pan-Asia)
@@ -35,13 +35,21 @@ namespace JsonGenerator
             Commonwealth // Perth, Vampire (Australia)
         }
 
+        public enum Status
+        {
+            None,
+            Premium,
+            Special,
+            ARP
+        }
+
         public string ID { get; }
         public string Name { get; }
         public string ImageName { get; }
         public int Tier { get; }
-        public string Nation { get; }
-        public string ShipClass { get; set; }
-        public bool Premium { get; }
+        public Nations Nation { get; }
+        public Classes ShipClass { get; set; }
+        public Status ShipStatus { get; }
 
         /// <summary>
         /// A ship object
@@ -50,24 +58,15 @@ namespace JsonGenerator
         /// <param name="tier">Tier of the ship (1 - 10)</param>
         /// <param name="cls">Class of the ship</param>
         /// <param name="premium">Is it a premium</param>
-        public Ship(string id, string name, string imgName, int tier, Nations nation, Classes cls, bool premium)
+        public Ship(string id, string name, string imgName, int tier, Nations nation, Classes cls, Status status)
         {
             this.ID = id;
             this.Name = name;
             this.ImageName = imgName;
-
-            if (tier > 0 && tier <= 10)
-            {
-                this.Tier = tier;
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Tier must be between 1 and 10 inclusive.");
-            }
-
-            this.Nation = nation.ToString();
-            this.ShipClass = cls.ToString();
-            this.Premium = premium;
+            this.Tier = tier;
+            this.Nation = nation;
+            this.ShipClass = cls;
+            this.ShipStatus = status;
         }
     }
 }
