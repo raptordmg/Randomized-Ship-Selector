@@ -18,14 +18,14 @@ namespace JsonGenerator
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         // Ships to ignore by name
-        private string[] IgnoreName = null;
+        private string[] IgnoreByName = null;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public RSSjsonMaker(string[] ignoredShips)
         {
-            IgnoreName = ignoredShips;
+            IgnoreByName = ignoredShips;
 
             int pages = 1;
 
@@ -33,29 +33,32 @@ namespace JsonGenerator
             {
                 Console.WriteLine("Reading page " + page);
 
-                var json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
-                var data = json["data"];
 
-                foreach (var item in data)
+                JToken data = json["data"];
+                
+                foreach (JToken item in data)
                 {
-                    string id = item.First()["ship_id"].ToString();
-                    string name = item.First()["name"].ToString();
+                    JToken shipData = item.First();
+
+                    string id = shipData["ship_id"].ToString();
+                    string name = shipData["name"].ToString();
 
                     // Skip CB ships
                     if (name.Contains("["))
                         continue;
 
                     // Skip ignored by name
-                    if (IgnoreName.Contains(name))
+                    if (IgnoreByName.Contains(name))
                         continue;
 
-                    Ship.Nations nation = GetNation(item.First()["nation"].ToString());
-                    Ship.Classes shipClass = GetClasses(item.First()["type"].ToString());
+                    string resource = shipData["ship_id_str"].ToString();
+                    int tier = Int32.Parse(shipData["tier"].ToString());
 
-                    string resource = item.First()["ship_id_str"].ToString();
-                    int tier = Int32.Parse(item.First()["tier"].ToString());
-                    Ship.Status status = GetStatus(item.First());
+                    Ship.Nations nation = GetNation(shipData["nation"].ToString());
+                    Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
+                    Ship.Status status = GetStatus(shipData);
 
                     Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
                 }
