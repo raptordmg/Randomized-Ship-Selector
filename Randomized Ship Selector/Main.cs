@@ -190,7 +190,7 @@ namespace Randomized_Ship_Selector
         /// <summary>
         /// Returns a JSON string
         /// </summary>
-        /// <param name="url">Wargaming API URL</param>
+        /// <param name="uri">Wargaming API URL</param>
         /// <returns>JSON String</returns>
         private JObject GetJsonFromWeb(string uri)
         {
@@ -217,9 +217,9 @@ namespace Randomized_Ship_Selector
 
             // Filter ships
             filtered = ships.Where(s => (s.ShipStatus == Ship.Status.Premium && prem) 
-                                        || (s.ShipStatus == Ship.Status.Special && prem) 
-                                        || (s.ShipStatus == Ship.Status.Silver && nonprem) 
-                                        || (s.ShipStatus == Ship.Status.ARP && arp))
+                                     || (s.ShipStatus == Ship.Status.Special && prem) 
+                                     || (s.ShipStatus == Ship.Status.Silver && nonprem) 
+                                     || (s.ShipStatus == Ship.Status.ARP && arp))
                 .Where(s => tiers.Contains(s.Tier))
                 .Where(s => nations.Contains(s.Nation.ToString()))
                 .Where(s => classes.Contains(s.ShipClass.ToString()))
