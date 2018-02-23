@@ -32,6 +32,7 @@ You can still use the app without the prefilter (just like in v1.0).
 The ship contour icons I use here are provided (with approval) by Panzerschiffer from his mod: [Historical Ensigns Contour Icons](https://forum.worldofwarships.com/topic/68159-0702-historical-ensigns-contour-icons/).
 
 **Changelog**  
+v2.2 - Supports WoWs 0.7.1 - Added filter for ARP ships & added check for private status of account.
 v2.1 - Supports WoWs 0.7.1 - Fixed premium status of multiple ships.  
 v2.0 - Updated for WoWs 0.7.1 - Added player account support.  
 v1.0 - Released for WoWs 0.7.0 - Initial release.   
