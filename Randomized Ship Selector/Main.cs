@@ -114,7 +114,7 @@ namespace Randomized_Ship_Selector
 
                     if (idData == null)
                     {
-                        Log("No player with specified name.");
+                        Log("WARNING: No player with specified name.");
                         return;
                     }
 
@@ -125,7 +125,18 @@ namespace Randomized_Ship_Selector
                     }
                     catch
                     {
-                        Log("Problem fetching account ID");
+                        LogError("Could not fetch account ID");
+                        return;
+                    }
+
+                    // Step 1.5:  Get if user account is private:
+                    string privateUri = String.Format("https://api.worldofwarships.{0}/wows/account/info/?application_id={1}&account_id={2}", extension, AppID, userId);
+                    JObject privateObject = GetJsonFromWeb(privateUri);
+                    JToken privateData = privateObject["data"].First().First();
+                    if (Boolean.Parse(privateData["hidden_profile"].ToString()))
+                    {
+                        Log("WARNING: User account is hidden, at this point in time RSS cannot prefilter while account is hidden.");
+                        Log("No prefilter applied.");
                         return;
                     }
 
@@ -136,7 +147,14 @@ namespace Randomized_Ship_Selector
                     JObject shipsObj = GetJsonFromWeb(shipsUri);
                     try
                     {
-                        var shipsData = shipsObj["data"][userId];
+                        JToken shipsData = shipsObj["data"][userId];
+
+                        if(shipsData == null)
+                        {
+                            LogError("Could not find ships");
+                            return;
+                        }
+
                         foreach (var item in shipsData)
                         {
                             string id = item["ship_id"].ToString();
@@ -154,14 +172,14 @@ namespace Randomized_Ship_Selector
                     }
                     catch (Exception ex)
                     {
-                        Log("ERROR: Problem getting played ships.. " + ex.Message);
+                        LogError("Problem summing up ships");
                         return;
                     }
                 }
             }
             else
             {
-                Log("ERROR: Please select a valid server.");
+                Log("WARNING: Please select a valid server.");
                 return;
             }
         }
@@ -354,6 +372,13 @@ namespace Randomized_Ship_Selector
         private void Log(string text)
         {
             rtb_SearchOutput.AppendText(Environment.NewLine + text);
+        }
+
+        private void LogError(string text)
+        {
+            rtb_SearchOutput.AppendText(Environment.NewLine + "ERROR: " + text);
+            rtb_SearchOutput.AppendText(", this is an error. Please message me or open a issue on github:");
+            rtb_SearchOutput.AppendText(Environment.NewLine + "https://github.com/DInbound/Randomized-Ship-Selector/issues");
         }
 
         // Scrolls down the rich text box
