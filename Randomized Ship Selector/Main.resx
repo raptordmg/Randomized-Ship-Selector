@@ -1029,10 +1029,10 @@
     <value>7</value>
   </data>
   <data name="btn_Credits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 319</value>
+    <value>12, 318</value>
   </data>
   <data name="btn_Credits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 24</value>
+    <value>52, 24</value>
   </data>
   <data name="btn_Credits.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
