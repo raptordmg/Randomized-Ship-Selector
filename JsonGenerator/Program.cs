@@ -10,8 +10,33 @@ namespace JsonGenerator
     {
         static void Main(string[] args)
         {
-            RSSjsonMaker maker = new RSSjsonMaker(@"C:\Users\Daan\Source\Repos\Randomized-Ship-Selector\Randomized Ship Selector\Resources\Panzerschiffer_Icons\");
-            maker.MakeJson();
+            Console.WriteLine("Ship Json Generator Tool");
+            RSSjsonMaker maker = new RSSjsonMaker(new string[] { "Cossack", "T-61", "Asashio", "Monaghan" });
+
+            Console.WriteLine("Check difference with old file? y/n");
+            ConsoleKey response = Console.ReadKey().Key;
+            if(response == ConsoleKey.Y)
+            {
+                Console.WriteLine();
+                Console.WriteLine("New Ships:");
+                List<Ship> difference = maker.GetDifference();
+                foreach (Ship s in difference)
+                {
+                    Console.WriteLine(s.ID + " - " + s.Name);
+                }
+            }
+
+            Console.WriteLine(Environment.NewLine + "Generate new Json? y/n");
+            ConsoleKey response2 = Console.ReadKey().Key;
+            Console.WriteLine();
+
+            if (response2 == ConsoleKey.Y)
+            {
+                maker.MakeJson();
+            }
+
+            Console.WriteLine("Finished!");
+            Console.ReadLine();
         }
     }
 }

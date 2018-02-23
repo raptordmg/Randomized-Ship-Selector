@@ -13,51 +13,82 @@ namespace JsonGenerator
     internal class RSSjsonMaker
     {
         List<Ship> Ships = new List<Ship>();
+        List<Ship> OldShips = new List<Ship>();
 
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         // Ships to ignore by name
-        private string[] IgnoreName = new string[] { "Cossack", "T-61", "Asashio", "Monaghan" };
+        private string[] IgnoreByName = null;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="path">Path to JSON file</param>
-        public RSSjsonMaker(string path)
+        public RSSjsonMaker(string[] ignoredShips)
         {
+            IgnoreByName = ignoredShips;
+
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
             {
                 Console.WriteLine("Reading page " + page);
 
-                var json = GetJson(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
-                var data = json["data"];
 
-                foreach (var item in data)
+                JToken data = json["data"];
+                
+                foreach (JToken item in data)
                 {
-                    Ship.Nations nation = GetNation(item.First()["nation"].ToString());
-                    Ship.Classes shipClass = GetClasses(item.First()["type"].ToString());
+                    JToken shipData = item.First();
 
-                    string id = item.First()["ship_id"].ToString();
-                    string name = item.First()["name"].ToString();
+                    string id = shipData["ship_id"].ToString();
+                    string name = shipData["name"].ToString();
 
                     // Skip CB ships
                     if (name.Contains("["))
                         continue;
 
                     // Skip ignored by name
-                    if (IgnoreName.Contains(name))
+                    if (IgnoreByName.Contains(name))
                         continue;
 
-                    string resource = item.First()["ship_id_str"].ToString();
-                    int tier = Int32.Parse(item.First()["tier"].ToString());
-                    bool premium = GetPremium(item.First());
+                    string resource = shipData["ship_id_str"].ToString();
+                    int tier = Int32.Parse(shipData["tier"].ToString());
 
-                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, premium));
+                    Ship.Nations nation = GetNation(shipData["nation"].ToString());
+                    Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
+                    Ship.Status status = GetStatus(shipData);
+
+                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
                 }
             }
+        }
+
+        public List<Ship> GetDifference()
+        {
+            ReadOldFile();
+
+            List<Ship> difference = new List<Ship>();
+
+            foreach (Ship newShip in Ships)
+            {
+                bool found = false;
+
+                foreach(Ship oldShip in OldShips)
+                {
+                    if(newShip.ID == oldShip.ID)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found)
+                    difference.Add(newShip);
+            }
+
+            return difference;
         }
 
         public void MakeJson()
@@ -74,7 +105,18 @@ namespace JsonGenerator
             Console.WriteLine("Success!");
         }
 
-        public Ship.Nations GetNation(string name)
+        public void ReadOldFile()
+        {
+            using (StreamReader file = File.OpenText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
+            {
+                string json = file.ReadToEnd();
+
+                OldShips = JsonConvert.DeserializeObject<List<Ship>>(json);
+            }
+            
+        }
+
+        private Ship.Nations GetNation(string name)
         {
             if (name.Equals("germany"))
                 return Ship.Nations.KM;
@@ -87,7 +129,7 @@ namespace JsonGenerator
             if (name.Equals("uk"))
                 return Ship.Nations.RN;
             if (name.Equals("france"))
-                return Ship.Nations.FN;
+                return Ship.Nations.MN;
             if (name.Equals("pan_asia"))
                 return Ship.Nations.PA;
             if (name.Equals("commonwealth"))
@@ -100,7 +142,7 @@ namespace JsonGenerator
             return Ship.Nations.None;
         }
 
-        public Ship.Classes GetClasses(string name)
+        private Ship.Classes GetClasses(string name)
         {
             if (name.Equals("Cruiser"))
                 return Ship.Classes.Cruiser;
@@ -114,18 +156,25 @@ namespace JsonGenerator
             return Ship.Classes.None;
         }
 
-        public bool GetPremium(JToken shipData)
+        private Ship.Status GetStatus(JToken shipData)
         {
             if (Boolean.Parse(shipData["is_premium"].ToString()))
             {
-                return true;
+                return Ship.Status.Premium;
             }
             else if(Boolean.Parse(shipData["is_special"].ToString()))
             {
-                return true;
+                return Ship.Status.Special;
             }
 
-            return false;
+            string name = shipData["name"].ToString();
+
+            if (name.Contains("ARP"))
+            {
+                return Ship.Status.ARP;
+            }
+
+            return Ship.Status.Silver;
         }
 
         /// <summary>
@@ -133,7 +182,7 @@ namespace JsonGenerator
         /// </summary>
         /// <param name="url">Wargaming API URL</param>
         /// <returns>JSON String</returns>
-        private JObject GetJson(string uri)
+        private JObject GetJsonFromWeb(string uri)
         {
             using (WebClient client = new WebClient())
             using (Stream stream = client.OpenRead(uri))
