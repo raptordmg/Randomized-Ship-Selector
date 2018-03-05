@@ -369,6 +369,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="Resources\Panzerschiffer_Icons\PGSD508.png" />
+    <Content Include="Resources\Panzerschiffer_Icons\PRSC509.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA021.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA906.png" />
     <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA915.png" />

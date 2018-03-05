@@ -11,7 +11,7 @@ namespace JsonGenerator
         static void Main(string[] args)
         {
             Console.WriteLine("Ship Json Generator Tool");
-            RSSjsonMaker maker = new RSSjsonMaker(new string[] { "Cossack", "T-61", "Asashio", "Monaghan" });
+            RSSjsonMaker maker = new RSSjsonMaker();
 
             Console.WriteLine("Check difference with old file? y/n");
             ConsoleKey response = Console.ReadKey().Key;

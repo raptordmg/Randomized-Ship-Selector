@@ -17,16 +17,12 @@ namespace JsonGenerator
 
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
-        // Ships to ignore by name
-        private string[] IgnoreByName = null;
-
         /// <summary>
         /// Constructor
         /// </summary>
-        public RSSjsonMaker(string[] ignoredShips)
+        public RSSjsonMaker()
         {
-            IgnoreByName = ignoredShips;
-
+            List<string> ignoredShips = new List<string>();
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
@@ -50,8 +46,11 @@ namespace JsonGenerator
                         continue;
 
                     // Skip ignored by name
-                    if (IgnoreByName.Contains(name))
+                    if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
+                    {
+                        ignoredShips.Add(name);
                         continue;
+                    }
 
                     string resource = shipData["ship_id_str"].ToString();
                     int tier = Int32.Parse(shipData["tier"].ToString());
@@ -63,6 +62,8 @@ namespace JsonGenerator
                     Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
                 }
             }
+
+            PrintIgnoredShips(ignoredShips);
         }
 
         public List<Ship> GetDifference()
@@ -175,6 +176,19 @@ namespace JsonGenerator
             }
 
             return Ship.Status.Silver;
+        }
+
+        private void PrintIgnoredShips(List<string> ignoredShips)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Ships that are not included in the file");
+
+            for (int i = 0; i < ignoredShips.Count; i++)
+            {
+                Console.WriteLine(" - " + ignoredShips[i]);
+            }
+
+            Console.WriteLine();
         }
 
         /// <summary>
