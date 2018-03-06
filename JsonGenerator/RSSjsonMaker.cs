@@ -181,7 +181,7 @@ namespace JsonGenerator
         private void PrintIgnoredShips(List<string> ignoredShips)
         {
             Console.WriteLine();
-            Console.WriteLine("Ships that are not included in the file");
+            Console.WriteLine("Ships that have demo profile:");
 
             for (int i = 0; i < ignoredShips.Count; i++)
             {
