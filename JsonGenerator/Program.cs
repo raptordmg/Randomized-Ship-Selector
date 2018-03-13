@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace JsonGenerator
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Ship Json Generator Tool");
-            RSSjsonMaker maker = new RSSjsonMaker();
+            Generator gen = new Generator();
 
             Console.WriteLine("Check difference with old file? y/n");
             ConsoleKey response = Console.ReadKey().Key;
@@ -19,12 +19,14 @@ namespace JsonGenerator
             {
                 Console.WriteLine();
                 Console.WriteLine("New Ships:");
-                List<Ship> difference = maker.GetDifference();
+                List<Ship> difference = gen.GetDifference();
                 foreach (Ship s in difference)
                 {
                     Console.WriteLine(s.ID + " - " + s.Name);
                 }
             }
+
+            gen.PrintIgnoredShips();
 
             Console.WriteLine(Environment.NewLine + "Generate new Json? y/n");
             ConsoleKey response2 = Console.ReadKey().Key;
@@ -32,7 +34,7 @@ namespace JsonGenerator
 
             if (response2 == ConsoleKey.Y)
             {
-                maker.MakeJson();
+                gen.MakeJson();
             }
 
             Console.WriteLine("Finished!");

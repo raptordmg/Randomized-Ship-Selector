@@ -3,26 +3,29 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Drawing;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
 
 namespace JsonGenerator
 {
-    internal class RSSjsonMaker
+    internal class Generator
     {
-        List<Ship> Ships = new List<Ship>();
-        List<Ship> OldShips = new List<Ship>();
+        public List<Ship> NewShips { get; }
 
+        private List<Ship> OldShips = new List<Ship>();
+        private readonly List<string> IgnoredShips = new List<string>();
+
+        private const string outputDir = @"./output/";
+        private const string fileName = @"./output/shipdata.json";
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public RSSjsonMaker()
+        public Generator()
         {
-            List<string> ignoredShips = new List<string>();
+            NewShips = new List<Ship>();
+
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
@@ -33,46 +36,82 @@ namespace JsonGenerator
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
 
                 JToken data = json["data"];
-                
-                foreach (JToken item in data)
+
+                NewShips.AddRange(CreateList(data));
+            }
+        }
+
+        public List<Ship> CreateList(JToken data)
+        {
+            List<Ship> newShips = new List<Ship>();
+
+            foreach (JToken item in data)
+            {
+                JToken shipData = item.First();
+
+                string id = shipData["ship_id"].ToString();
+                string name = shipData["name"].ToString();
+
+                // Skip CB ships
+                if (name.Contains("["))
+                    continue;
+
+                // Skip ignored by name
+                if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
                 {
-                    JToken shipData = item.First();
-
-                    string id = shipData["ship_id"].ToString();
-                    string name = shipData["name"].ToString();
-
-                    // Skip CB ships
-                    if (name.Contains("["))
-                        continue;
-
-                    // Skip ignored by name
-                    if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
-                    {
-                        ignoredShips.Add(name);
-                        continue;
-                    }
-
-                    string resource = shipData["ship_id_str"].ToString();
-                    int tier = Int32.Parse(shipData["tier"].ToString());
-
-                    Ship.Nations nation = GetNation(shipData["nation"].ToString());
-                    Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
-                    Ship.Status status = GetStatus(shipData);
-
-                    Ships.Add(new Ship(id , name, resource, tier, nation, shipClass, status));
+                    IgnoredShips.Add(name);
+                    continue;
                 }
+
+                string resource = shipData["ship_id_str"].ToString();
+                int tier = Int32.Parse(shipData["tier"].ToString());
+
+                Ship.Nations nation = GetNation(shipData["nation"].ToString());
+                Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
+                Ship.Status status = GetStatus(shipData);
+
+                newShips.Add(new Ship(id, name, resource, tier, nation, shipClass, status));
             }
 
-            PrintIgnoredShips(ignoredShips);
+            return newShips;
+        }
+
+        public void MakeJson()
+        {
+            Console.WriteLine("Making JSON!");
+
+            if(!Directory.Exists(outputDir))
+                Directory.CreateDirectory(outputDir);
+
+            using (StreamWriter file = File.CreateText(fileName))
+            {
+                JsonSerializer s = new JsonSerializer();
+                s.Serialize(file, NewShips);
+            }
+
+            Console.WriteLine("Success!");
+        }
+
+        public void PrintIgnoredShips()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Ships that have demo profile:");
+
+            for (int i = 0; i < IgnoredShips.Count; i++)
+            {
+                Console.WriteLine(" - " + IgnoredShips[i]);
+            }
+
+            Console.WriteLine();
         }
 
         public List<Ship> GetDifference()
         {
-            ReadOldFile();
+            ReadExistingFile();
 
             List<Ship> difference = new List<Ship>();
 
-            foreach (Ship newShip in Ships)
+            foreach (Ship newShip in NewShips)
             {
                 bool found = false;
 
@@ -92,21 +131,7 @@ namespace JsonGenerator
             return difference;
         }
 
-        public void MakeJson()
-        {
-            Console.WriteLine("Making JSON!");
-
-            // ../../../Randomized Ship Selector/Resources
-            using (StreamWriter file = File.CreateText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
-            {
-                JsonSerializer s = new JsonSerializer();
-                s.Serialize(file, Ships);
-            }
-
-            Console.WriteLine("Success!");
-        }
-
-        public void ReadOldFile()
+        private void ReadExistingFile()
         {
             using (StreamReader file = File.OpenText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
             {
@@ -176,19 +201,6 @@ namespace JsonGenerator
             }
 
             return Ship.Status.Silver;
-        }
-
-        private void PrintIgnoredShips(List<string> ignoredShips)
-        {
-            Console.WriteLine();
-            Console.WriteLine("Ships that have demo profile:");
-
-            for (int i = 0; i < ignoredShips.Count; i++)
-            {
-                Console.WriteLine(" - " + ignoredShips[i]);
-            }
-
-            Console.WriteLine();
         }
 
         /// <summary>
