@@ -16,7 +16,7 @@ namespace JsonGenerator
         private readonly List<string> IgnoredShips = new List<string>();
 
         private const string outputDir = @"./output/";
-        private const string fileName = @"./output/shipdata.json";
+        private const string fileName = @"./shipdata.json";
         private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace JsonGenerator
             if(!Directory.Exists(outputDir))
                 Directory.CreateDirectory(outputDir);
 
-            using (StreamWriter file = File.CreateText(fileName))
+            using (StreamWriter file = File.CreateText(Path.Combine(outputDir, fileName)))
             {
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, NewShips);
