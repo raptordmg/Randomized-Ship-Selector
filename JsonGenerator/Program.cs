@@ -13,7 +13,9 @@ namespace JsonGenerator
             Console.WriteLine("Ship Json Generator Tool");
             Generator gen = new Generator();
 
-            Console.WriteLine("Check difference with old file? y/n");
+            gen.PrintIgnoredShips();
+
+            Console.Write("Check difference with old file? y/n ");
             ConsoleKey response = Console.ReadKey().Key;
             if(response == ConsoleKey.Y)
             {
@@ -26,9 +28,7 @@ namespace JsonGenerator
                 }
             }
 
-            gen.PrintIgnoredShips();
-
-            Console.WriteLine(Environment.NewLine + "Generate new Json? y/n");
+            Console.Write(Environment.NewLine + "Generate new Json? y/n ");
             ConsoleKey response2 = Console.ReadKey().Key;
             Console.WriteLine();
 
