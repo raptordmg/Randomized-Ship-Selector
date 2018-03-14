@@ -32,7 +32,7 @@ namespace Randomized_Ship_Selector
 
             AllShips = GetShipsFromResource();
 
-            lbl_Count.Text = AllShips.Count().ToString();
+            lbl_Count.Text = AllShips.Count.ToString();
         }
 
         /// Interactions ///
@@ -45,7 +45,7 @@ namespace Randomized_Ship_Selector
                 PictureBox output = pbOutput;
                 List<Ship> filteredShips = FilterShips(PlayerShips);
 
-                int count = filteredShips.Count();
+                int count = filteredShips.Count;
 
                 lbl_Count.Text = count.ToString();
 
@@ -61,7 +61,7 @@ namespace Randomized_Ship_Selector
                 PictureBox output = pbOutput;
                 List<Ship> filteredShips = FilterShips(AllShips);
 
-                int count = filteredShips.Count();
+                int count = filteredShips.Count;
 
                 lbl_Count.Text = count.ToString();
 
@@ -155,24 +155,24 @@ namespace Randomized_Ship_Selector
                             return;
                         }
 
-                        foreach (var item in shipsData)
+                        foreach (JToken item in shipsData)
                         {
                             string id = item["ship_id"].ToString();
 
-                            Ship aShip = AllShips.Where(s => s.ID == id).FirstOrDefault();
+                            Ship aShip = AllShips.FirstOrDefault(s => s.ID == id);
 
                             if (aShip != null)
                                 PlayerShips.Add(aShip);
                         }
 
                         Log("Finished fetching ships with more than 0 battles...");
-                        Log("Total ships found: " + PlayerShips.Count());
+                        Log("Total ships found: " + PlayerShips.Count);
                         UseIGN = true;
-                        lbl_Count.Text = FilterShips(PlayerShips).Count().ToString();
+                        lbl_Count.Text = FilterShips(PlayerShips).Count.ToString();
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        LogError("Problem summing up ships");
+                        LogError("Problem summing up ships.");
                         return;
                     }
                 }
@@ -231,7 +231,7 @@ namespace Randomized_Ship_Selector
             List<string> nations = PopulateNations();
             List<string> classes = PopulateClasses();
 
-            List<Ship> filtered = new List<Ship>();
+            List<Ship> filtered;
 
             // Filter ships
             filtered = ships.Where(s => (s.ShipStatus == Ship.Status.Premium && prem) 
