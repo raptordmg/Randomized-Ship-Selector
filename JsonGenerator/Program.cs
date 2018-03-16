@@ -20,11 +20,22 @@ namespace JsonGenerator
             if(response == ConsoleKey.Y)
             {
                 Console.WriteLine();
-                Console.WriteLine("New Ships:");
                 List<Ship> difference = gen.GetDifference();
-                foreach (Ship s in difference)
+                if (difference == null)
                 {
-                    Console.WriteLine(s.ID + " - " + s.Name);
+                    Console.WriteLine("No existing file was found.");
+                }
+                else if (difference.Count == 0)
+                {
+                    Console.WriteLine("No new ships found.");
+                }
+                else
+                { 
+                    Console.WriteLine("New Ships:");
+                    foreach (Ship s in difference)
+                    {
+                        Console.WriteLine(s.ID + " - " + s.Name);
+                    }
                 }
             }
 
@@ -37,7 +48,7 @@ namespace JsonGenerator
                 gen.MakeJson();
             }
 
-            Console.WriteLine("Finished!");
+            Console.WriteLine("Finished! Press <Enter> to exit.");
             Console.ReadLine();
         }
     }

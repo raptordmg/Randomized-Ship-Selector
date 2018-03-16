@@ -12,12 +12,11 @@ namespace JsonGenerator
     {
         public List<Ship> NewShips { get; }
 
-        private List<Ship> OldShips = new List<Ship>();
-        private readonly List<string> IgnoredShips = new List<string>();
+        private readonly List<string> _IgnoredShips = new List<string>();
 
-        private const string outputDir = @"./output/";
-        private const string fileName = @"./shipdata.json";
-        private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
+        private const string _OutputDir = @"./output/";
+        private const string _FileName = @"shipdata.json";
+        private const string _AppID = "68d50d230b5b9601ddd25f825c4a5b58";
 
         /// <summary>
         /// Constructor
@@ -30,10 +29,10 @@ namespace JsonGenerator
 
             for (int page = 1; page <= pages; page++)
             {
-                Console.WriteLine("Reading page " + page);
-
-                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", _AppID, page));
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
+
+                Console.WriteLine("Reading page " + page + "/" + pages);
 
                 JToken data = json["data"];
 
@@ -59,7 +58,7 @@ namespace JsonGenerator
                 // Skip ignored by name
                 if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
                 {
-                    IgnoredShips.Add(name);
+                    _IgnoredShips.Add(name);
                     continue;
                 }
 
@@ -80,15 +79,14 @@ namespace JsonGenerator
         {
             Console.WriteLine("Making JSON!");
 
-            if(!Directory.Exists(outputDir))
-                Directory.CreateDirectory(outputDir);
+            if(!Directory.Exists(_OutputDir))
+                Directory.CreateDirectory(_OutputDir);
 
-            using (StreamWriter file = File.CreateText(Path.Combine(outputDir, fileName)))
+            using (StreamWriter file = File.CreateText(Path.Combine(_OutputDir, _FileName)))
             {
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, NewShips);
             }
-
             Console.WriteLine("Success!");
         }
 
@@ -97,9 +95,9 @@ namespace JsonGenerator
             Console.WriteLine();
             Console.WriteLine("Ships that have demo profile:");
 
-            for (int i = 0; i < IgnoredShips.Count; i++)
+            for (int i = 0; i < _IgnoredShips.Count; i++)
             {
-                Console.WriteLine(" - " + IgnoredShips[i]);
+                Console.WriteLine(" - " + _IgnoredShips[i]);
             }
 
             Console.WriteLine();
@@ -107,7 +105,12 @@ namespace JsonGenerator
 
         public List<Ship> GetDifference()
         {
-            ReadExistingFile();
+            List<Ship> oldShips = ReadExistingFile();
+            if(oldShips.Count == 0)
+            {
+                // Return null because old file does not exist
+                return null;
+            }
 
             List<Ship> difference = new List<Ship>();
 
@@ -115,7 +118,7 @@ namespace JsonGenerator
             {
                 bool found = false;
 
-                foreach(Ship oldShip in OldShips)
+                foreach(Ship oldShip in oldShips)
                 {
                     if(newShip.ID == oldShip.ID)
                     {
@@ -131,15 +134,22 @@ namespace JsonGenerator
             return difference;
         }
 
-        private void ReadExistingFile()
+        private List<Ship> ReadExistingFile()
         {
-            using (StreamReader file = File.OpenText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
+            if (File.Exists(Path.Combine(_OutputDir, _FileName)))
             {
-                string json = file.ReadToEnd();
+                using (StreamReader file = File.OpenText(Path.Combine(_OutputDir, _FileName)))
+                {
+                    string json = file.ReadToEnd();
 
-                OldShips = JsonConvert.DeserializeObject<List<Ship>>(json);
+                    return JsonConvert.DeserializeObject<List<Ship>>(json);
+                }
             }
-            
+            else
+            {
+                // No existing file, return empty array.
+                return new List<Ship>();
+            }
         }
 
         private Ship.Nations GetNation(string name)
