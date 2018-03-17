@@ -40,6 +40,7 @@ namespace JsonGenerator
                 
             Generator gen = new Generator(settings.AppID);
 
+            gen.GetNewShips();
             gen.PrintIgnoredShips();
 
             Console.Write("Check difference with old file? y/n ");
@@ -48,21 +49,17 @@ namespace JsonGenerator
             {
                 Console.WriteLine();
                 List<Ship> difference = gen.GetDifference();
-                if (difference == null)
-                {
-                    Console.WriteLine("No existing file was found.");
-                }
-                else if (difference.Count == 0)
-                {
-                    Console.WriteLine("No new ships found.");
-                }
-                else
+                if(difference.Count > 0)
                 { 
                     Console.WriteLine("New Ships:");
                     foreach (Ship s in difference)
                     {
                         Console.WriteLine(s.ID + " - " + s.Name);
                     }
+                }
+                else
+                {
+                    Console.WriteLine("No new ships found.");
                 }
             }
 

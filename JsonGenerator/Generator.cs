@@ -24,10 +24,13 @@ namespace JsonGenerator
         public Generator(string appID)
         {
             NewShips = new List<Ship>();
+            _AppID = appID;
+        }
+
+        public void GetNewShips()
+        {
             int pages = 1;
 
-            _AppID = appID;
-            
             for (int page = 1; page <= pages; page++)
             {
                 JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", _AppID, page));
@@ -123,6 +126,8 @@ namespace JsonGenerator
         {
             if (File.Exists(Path.Combine(OUTPUTDIR, FILENAME)))
             {
+                Console.WriteLine("Found an existing file.");
+
                 using (StreamReader file = File.OpenText(Path.Combine(OUTPUTDIR, FILENAME)))
                 {
                     string json = file.ReadToEnd();
@@ -132,6 +137,7 @@ namespace JsonGenerator
             }
             else
             {
+                Console.WriteLine("No existing file was found.");
                 // No existing file, return empty array.
                 return new List<Ship>();
             }
