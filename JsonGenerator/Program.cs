@@ -15,14 +15,14 @@ namespace JsonGenerator
         {
             public string AppID { get; }
             public Uri FtpUrl { get; }
-            public Uri ShipDataFileName { get; }
+            public string ShipDataFileName { get; }
             public NetworkCredential FtpLogin { get; }
 
             public Settings(string appId, string ftpUrl, string sdFileName, string userName, string userPassword)
             {
                 AppID = appId;
                 FtpUrl = new Uri(ftpUrl);
-                ShipDataFileName = new Uri(sdFileName);
+                ShipDataFileName = sdFileName;
                 FtpLogin = new NetworkCredential(userName, userPassword);
             }
         }
