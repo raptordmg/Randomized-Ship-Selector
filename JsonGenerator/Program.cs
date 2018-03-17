@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -9,19 +11,21 @@ namespace JsonGenerator
 {
     static class Program
     {
+        private const string FILENAME = "shipdata.json";
+
         class Settings
         {
             public string AppID { get; }
             public string FtpUrl { get; }
-            public string UserName { get; }
-            public string UserPassword { get; }
+            public string JsonLocation { get; }
+            public NetworkCredential FtpLogin { get; }
 
-            public Settings(string appId, string ftpUrl, string userName, string userPassword)
+            public Settings(string appId, string ftpUrl, string jsonLocation, string userName, string userPassword)
             {
                 AppID = appId;
                 FtpUrl = ftpUrl;
-                UserName = userName;
-                UserPassword = userPassword;
+                JsonLocation = jsonLocation;
+                FtpLogin = new NetworkCredential(userName, userPassword);
             }
         }
 
@@ -35,10 +39,13 @@ namespace JsonGenerator
             Settings settings = new Settings(
                 config.DocumentElement.SelectSingleNode("wgAppID").InnerText,
                 config.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText,
+                config.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText,
                 config.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
                 config.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
                 
+            Uri sdJsonUri = new Uri(new Uri(settings.FtpUrl), settings.JsonLocation);
             Generator gen = new Generator(settings.AppID);
+
 
             gen.GetNewShips();
             gen.PrintIgnoredShips();
@@ -48,8 +55,8 @@ namespace JsonGenerator
             if(response == ConsoleKey.Y)
             {
                 Console.WriteLine();
-                List<Ship> difference = gen.GetDifference();
-                if(difference.Count > 0)
+                List<Ship> difference = gen.GetDifference(sdJsonUri, settings.FtpLogin);
+                if(difference != null && difference.Count > 0)
                 { 
                     Console.WriteLine("New Ships:");
                     foreach (Ship s in difference)
@@ -70,16 +77,16 @@ namespace JsonGenerator
             if (response2 == ConsoleKey.Y)
             {
                 gen.MakeJson();
-            }
 
-            Console.WriteLine();
-            Console.Write("Upload to server? y/n ");
-            ConsoleKey response3 = Console.ReadKey().Key;
-            Console.WriteLine();
+                Console.WriteLine();
+                Console.Write("Upload to server? y/n ");
+                ConsoleKey response3 = Console.ReadKey().Key;
+                Console.WriteLine();
 
-            if (response3 == ConsoleKey.Y)
-            {
-                gen.UploadJson(settings.FtpUrl, settings.UserName, settings.UserPassword);
+                if (response3 == ConsoleKey.Y)
+                {
+                    gen.UploadJson(sdJsonUri, settings.FtpLogin);
+                }
             }
 
             Console.WriteLine("Press <Enter> to exit.");

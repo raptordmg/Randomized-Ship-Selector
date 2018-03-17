@@ -48,7 +48,7 @@ namespace JsonGenerator
         {
             Console.WriteLine("Making JSON!");
 
-            if(!Directory.Exists(OUTPUTDIR))
+            if (!Directory.Exists(OUTPUTDIR))
                 Directory.CreateDirectory(OUTPUTDIR);
 
             using (StreamWriter file = File.CreateText(Path.Combine(OUTPUTDIR, FILENAME)))
@@ -56,10 +56,10 @@ namespace JsonGenerator
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, NewShips);
             }
-            Console.WriteLine("Success!");
+            Console.WriteLine("File created locally at {0}", Path.Combine(OUTPUTDIR, FILENAME).ToString());
         }
 
-        public void UploadJson(string ftpUrl, string ftpUsername, string ftpPassword)
+        public void UploadJson(Uri ftpUrl, NetworkCredential login)
         {
             Console.WriteLine("Uploading to FTP: " + ftpUrl);
 
@@ -67,7 +67,7 @@ namespace JsonGenerator
             {
                 using (WebClient client = new WebClient())
                 {
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.Credentials = login;
                     client.UploadFile(ftpUrl, Path.Combine(OUTPUTDIR, FILENAME));
                 }
                 Console.WriteLine("Upload Finished!");
@@ -75,7 +75,7 @@ namespace JsonGenerator
             catch (WebException ex)
             {
                 Console.WriteLine("Uploading Failed: " + ex.Message);
-            }            
+            }
         }
 
         public void PrintIgnoredShips()
@@ -91,13 +91,13 @@ namespace JsonGenerator
             Console.WriteLine();
         }
 
-        public List<Ship> GetDifference()
+        public List<Ship> GetDifference(Uri fileLocation, NetworkCredential login)
         {
-            List<Ship> oldShips = ReadExistingFile();
-            if(oldShips.Count == 0)
+            List<Ship> oldShips = ReadExistingFile(fileLocation, login);
+            if (oldShips.Count == 0)
             {
                 // Return null because old file does not exist
-                return null;
+                return new List<Ship>();
             }
 
             List<Ship> difference = new List<Ship>();
@@ -106,40 +106,56 @@ namespace JsonGenerator
             {
                 bool found = false;
 
-                foreach(Ship oldShip in oldShips)
+                foreach (Ship oldShip in oldShips)
                 {
-                    if(newShip.ID == oldShip.ID)
+                    if (newShip.ID == oldShip.ID)
                     {
                         found = true;
                         break;
                     }
                 }
 
-                if(!found)
+                if (!found)
                     difference.Add(newShip);
             }
 
             return difference;
         }
 
-        private List<Ship> ReadExistingFile()
+        private List<Ship> ReadExistingFile(Uri fileLocation, NetworkCredential login)
         {
-            if (File.Exists(Path.Combine(OUTPUTDIR, FILENAME)))
+            using (WebClient client = new WebClient())
             {
-                Console.WriteLine("Found an existing file.");
+                client.Credentials = login;
 
-                using (StreamReader file = File.OpenText(Path.Combine(OUTPUTDIR, FILENAME)))
+                try
                 {
-                    string json = file.ReadToEnd();
+                    using (Stream stream = client.OpenRead(fileLocation))
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string json = reader.ReadToEnd();
 
-                    return JsonConvert.DeserializeObject<List<Ship>>(json);
+                        Console.WriteLine("Found an existing file.");
+
+                        return JsonConvert.DeserializeObject<List<Ship>>(json);
+                    }
                 }
-            }
-            else
-            {
-                Console.WriteLine("No existing file was found.");
-                // No existing file, return empty array.
-                return new List<Ship>();
+                catch (WebException ex)
+                {
+                    if(ex.Status == WebExceptionStatus.ProtocolError)
+                    {
+                        if (ex.Response is FtpWebResponse response && response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
+                        {
+                                Console.WriteLine("File '{0}' not found on server", fileLocation.ToString());
+                        }
+                    }
+                    else
+                    {
+                        throw;
+                    }
+
+                    return new List<Ship>();
+                }
             }
         }
 
@@ -224,7 +240,7 @@ namespace JsonGenerator
             {
                 return Ship.Status.Premium;
             }
-            else if(Boolean.Parse(shipData["is_special"].ToString()))
+            else if (Boolean.Parse(shipData["is_special"].ToString()))
             {
                 return Ship.Status.Special;
             }
@@ -242,7 +258,7 @@ namespace JsonGenerator
         /// <summary>
         /// Returns a JSON string
         /// </summary>
-        /// <param name="url">Wargaming API URL</param>
+        /// <param name="uri">Wargaming API URL</param>
         /// <returns>JSON String</returns>
         private JObject GetJsonFromWeb(string uri)
         {
