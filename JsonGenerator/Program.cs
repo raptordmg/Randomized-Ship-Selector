@@ -3,15 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace JsonGenerator
 {
     static class Program
     {
+        class Settings
+        {
+            public string AppID { get; }
+            public string FtpUrl { get; }
+            public string UserName { get; }
+            public string UserPassword { get; }
+
+            public Settings(string appId, string ftpUrl, string userName, string userPassword)
+            {
+                AppID = appId;
+                FtpUrl = ftpUrl;
+                UserName = userName;
+                UserPassword = userPassword;
+            }
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Ship Json Generator Tool");
-            Generator gen = new Generator();
+
+            XmlDocument config = new XmlDocument();
+            config.Load("./generator.config");
+
+            Settings settings = new Settings(
+                config.DocumentElement.SelectSingleNode("wgAppID").InnerText,
+                config.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText,
+                config.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
+                config.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
+                
+            Generator gen = new Generator(settings.AppID);
 
             gen.PrintIgnoredShips();
 
@@ -48,7 +75,17 @@ namespace JsonGenerator
                 gen.MakeJson();
             }
 
-            Console.WriteLine("Finished! Press <Enter> to exit.");
+            Console.WriteLine();
+            Console.Write("Upload to server? y/n ");
+            ConsoleKey response3 = Console.ReadKey().Key;
+            Console.WriteLine();
+
+            if (response3 == ConsoleKey.Y)
+            {
+                gen.UploadJson(settings.FtpUrl, settings.UserName, settings.UserPassword);
+            }
+
+            Console.WriteLine("Press <Enter> to exit.");
             Console.ReadLine();
         }
     }

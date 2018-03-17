@@ -13,20 +13,21 @@ namespace JsonGenerator
         public List<Ship> NewShips { get; }
 
         private readonly List<string> _IgnoredShips = new List<string>();
+        private readonly string _AppID = null;
 
-        private const string _OutputDir = @"./output/";
-        private const string _FileName = @"shipdata.json";
-        private const string _AppID = "68d50d230b5b9601ddd25f825c4a5b58";
+        private const string OUTPUTDIR = @"./output/";
+        private const string FILENAME = @"shipdata.json";
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public Generator()
+        public Generator(string appID)
         {
             NewShips = new List<Ship>();
-
             int pages = 1;
 
+            _AppID = appID;
+            
             for (int page = 1; page <= pages; page++)
             {
                 JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", _AppID, page));
@@ -40,54 +41,38 @@ namespace JsonGenerator
             }
         }
 
-        public List<Ship> CreateList(JToken data)
-        {
-            List<Ship> newShips = new List<Ship>();
-
-            foreach (JToken item in data)
-            {
-                JToken shipData = item.First();
-
-                string id = shipData["ship_id"].ToString();
-                string name = shipData["name"].ToString();
-
-                // Skip CB ships
-                if (name.Contains("["))
-                    continue;
-
-                // Skip ignored by name
-                if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
-                {
-                    _IgnoredShips.Add(name);
-                    continue;
-                }
-
-                string resource = shipData["ship_id_str"].ToString();
-                int tier = Int32.Parse(shipData["tier"].ToString());
-
-                Ship.Nations nation = GetNation(shipData["nation"].ToString());
-                Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
-                Ship.Status status = GetStatus(shipData);
-
-                newShips.Add(new Ship(id, name, resource, tier, nation, shipClass, status));
-            }
-
-            return newShips;
-        }
-
         public void MakeJson()
         {
             Console.WriteLine("Making JSON!");
 
-            if(!Directory.Exists(_OutputDir))
-                Directory.CreateDirectory(_OutputDir);
+            if(!Directory.Exists(OUTPUTDIR))
+                Directory.CreateDirectory(OUTPUTDIR);
 
-            using (StreamWriter file = File.CreateText(Path.Combine(_OutputDir, _FileName)))
+            using (StreamWriter file = File.CreateText(Path.Combine(OUTPUTDIR, FILENAME)))
             {
                 JsonSerializer s = new JsonSerializer();
                 s.Serialize(file, NewShips);
             }
             Console.WriteLine("Success!");
+        }
+
+        public void UploadJson(string ftpUrl, string ftpUsername, string ftpPassword)
+        {
+            Console.WriteLine("Uploading to FTP: " + ftpUrl);
+
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpUrl, Path.Combine(OUTPUTDIR, FILENAME));
+                }
+                Console.WriteLine("Upload Finished!");
+            }
+            catch (WebException ex)
+            {
+                Console.WriteLine("Uploading Failed: " + ex.Message);
+            }            
         }
 
         public void PrintIgnoredShips()
@@ -136,9 +121,9 @@ namespace JsonGenerator
 
         private List<Ship> ReadExistingFile()
         {
-            if (File.Exists(Path.Combine(_OutputDir, _FileName)))
+            if (File.Exists(Path.Combine(OUTPUTDIR, FILENAME)))
             {
-                using (StreamReader file = File.OpenText(Path.Combine(_OutputDir, _FileName)))
+                using (StreamReader file = File.OpenText(Path.Combine(OUTPUTDIR, FILENAME)))
                 {
                     string json = file.ReadToEnd();
 
@@ -150,6 +135,41 @@ namespace JsonGenerator
                 // No existing file, return empty array.
                 return new List<Ship>();
             }
+        }
+
+        private List<Ship> CreateList(JToken data)
+        {
+            List<Ship> newShips = new List<Ship>();
+
+            foreach (JToken item in data)
+            {
+                JToken shipData = item.First();
+
+                string id = shipData["ship_id"].ToString();
+                string name = shipData["name"].ToString();
+
+                // Skip CB ships
+                if (name.Contains("["))
+                    continue;
+
+                // Skip ignored by name
+                if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
+                {
+                    _IgnoredShips.Add(name);
+                    continue;
+                }
+
+                string resource = shipData["ship_id_str"].ToString();
+                int tier = Int32.Parse(shipData["tier"].ToString());
+
+                Ship.Nations nation = GetNation(shipData["nation"].ToString());
+                Ship.Classes shipClass = GetClasses(shipData["type"].ToString());
+                Ship.Status status = GetStatus(shipData);
+
+                newShips.Add(new Ship(id, name, resource, tier, nation, shipClass, status));
+            }
+
+            return newShips;
         }
 
         private Ship.Nations GetNation(string name)
