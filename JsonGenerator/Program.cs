@@ -14,15 +14,15 @@ namespace JsonGenerator
         class Settings
         {
             public string AppID { get; }
-            public string FtpUrl { get; }
-            public string JsonLocation { get; }
+            public Uri FtpUrl { get; }
+            public Uri ShipDataFileName { get; }
             public NetworkCredential FtpLogin { get; }
 
-            public Settings(string appId, string ftpUrl, string jsonLocation, string userName, string userPassword)
+            public Settings(string appId, string ftpUrl, string sdFileName, string userName, string userPassword)
             {
                 AppID = appId;
-                FtpUrl = ftpUrl;
-                JsonLocation = jsonLocation;
+                FtpUrl = new Uri(ftpUrl);
+                ShipDataFileName = new Uri(sdFileName);
                 FtpLogin = new NetworkCredential(userName, userPassword);
             }
         }
@@ -41,7 +41,7 @@ namespace JsonGenerator
                 config.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
                 config.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
                 
-            Uri sdJsonUri = new Uri(new Uri(settings.FtpUrl), settings.JsonLocation);
+            Uri shipDataJsonUri = new Uri(settings.FtpUrl, settings.ShipDataFileName);
             Generator gen = new Generator(settings.AppID);
 
 
@@ -53,7 +53,7 @@ namespace JsonGenerator
             if(response == ConsoleKey.Y)
             {
                 Console.WriteLine();
-                List<Ship> difference = gen.GetDifference(sdJsonUri, settings.FtpLogin);
+                List<Ship> difference = gen.GetDifference(shipDataJsonUri, settings.FtpLogin);
                 if(difference != null && difference.Count > 0)
                 { 
                     Console.WriteLine("New Ships:");
@@ -83,7 +83,7 @@ namespace JsonGenerator
 
                 if (response3 == ConsoleKey.Y)
                 {
-                    gen.UploadJson(sdJsonUri, settings.FtpLogin);
+                    gen.UploadJson(shipDataJsonUri, settings.FtpLogin);
                 }
             }
 
