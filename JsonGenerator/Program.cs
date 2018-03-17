@@ -11,8 +11,6 @@ namespace JsonGenerator
 {
     static class Program
     {
-        private const string FILENAME = "shipdata.json";
-
         class Settings
         {
             public string AppID { get; }
