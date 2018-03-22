@@ -78,7 +78,7 @@
             resources.ApplyResources(this.btnRandom, "btnRandom");
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.UseVisualStyleBackColor = true;
-            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            this.btnRandom.Click += new System.EventHandler(this.BtnRandom_Click);
             // 
             // pbOutput
             // 
@@ -356,7 +356,7 @@
             this.btn_Credits.Name = "btn_Credits";
             this.btn_Credits.TabStop = false;
             this.btn_Credits.UseVisualStyleBackColor = true;
-            this.btn_Credits.Click += new System.EventHandler(this.btn_Credits_Click);
+            this.btn_Credits.Click += new System.EventHandler(this.Btn_Credits_Click);
             // 
             // tb_UserName
             // 
@@ -373,7 +373,7 @@
             resources.ApplyResources(this.btn_Search, "btn_Search");
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // rtb_SearchOutput
             // 
@@ -382,7 +382,7 @@
             this.rtb_SearchOutput.Name = "rtb_SearchOutput";
             this.rtb_SearchOutput.ReadOnly = true;
             this.rtb_SearchOutput.TabStop = false;
-            this.rtb_SearchOutput.TextChanged += new System.EventHandler(this.rtb_SearchOutput_TextChanged);
+            this.rtb_SearchOutput.TextChanged += new System.EventHandler(this.Rtb_SearchOutput_TextChanged);
             // 
             // cb_Server
             // 

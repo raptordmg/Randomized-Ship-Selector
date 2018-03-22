@@ -1,12 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -17,28 +13,37 @@ namespace Randomized_Ship_Selector
 {
     public partial class Main : Form
     {
-        private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
-
+        // Lists of ships
         private List<Ship> AllShips = null;
         private List<Ship> PlayerShips = new List<Ship>();
+
+        // Helper Variables
         private Random Rnd = new Random();
         private bool UseIGN = false;
 
         private Ship CurrentShip = null;
 
+        // Helper Objects
+        private ConnectionController CC;
+        private Config Config;
+        private Logger Logger;
+
         public Main()
         {
             InitializeComponent();
 
-            AllShips = GetShipsFromResource();
+            CC = new ConnectionController();
+            Config = new Config();
+            Logger = new Logger(rtb_SearchOutput);
 
-            lbl_Count.Text = AllShips.Count.ToString();
+            // Start with an update to the master list
+            UpdateMasterList();
         }
 
         /// Interactions ///
 
         // Selects a random ship
-        private void btnRandom_Click(object sender, EventArgs e)
+        private void BtnRandom_Click(object sender, EventArgs e)
         {
             if (UseIGN)
             {
@@ -52,7 +57,7 @@ namespace Randomized_Ship_Selector
                 if (count > 0)
                 {
                     CurrentShip = filteredShips[Rnd.Next(filteredShips.Count)];
-                     
+
                     output.Image = CurrentShip.Image;
                 }
             }
@@ -65,7 +70,8 @@ namespace Randomized_Ship_Selector
 
                 lbl_Count.Text = count.ToString();
 
-                if (count > 0) {
+                if (count > 0)
+                {
                     CurrentShip = filteredShips[Rnd.Next(filteredShips.Count)];
                     output.Image = CurrentShip.Image;
                 }
@@ -73,20 +79,81 @@ namespace Randomized_Ship_Selector
         }
 
         // Opens credits window
-        private void btn_Credits_Click(object sender, EventArgs e)
+        private void Btn_Credits_Click(object sender, EventArgs e)
         {
             Form creditForm = new Credits();
             creditForm.Show();
         }
 
         // Get User info
-        private void btn_Search_Click(object sender, EventArgs e)
+        private void Btn_Search_Click(object sender, EventArgs e)
+        {
+            SearchPlayer();
+        }
+
+        /// HELPERS ///
+        
+        private void UpdateMasterList()
+        {
+            try
+            {
+                AllShips = CC.GetShips(Config.LocalShipDataJson);
+            }
+            catch (FileNotFoundException)
+            {
+                Logger.Log("Local shipdata file not found, try updating local data.");
+                return;
+            }
+
+            int count = AllShips.Count;
+            Logger.Log("Loaded " + count.ToString() + " ships.");
+            lbl_Count.Text = count.ToString();
+        }
+
+        // Filters ships with set filters
+        private List<Ship> FilterShips(List<Ship> ships)
+        {
+            if(ships == null || ships.Count <= 0)
+            {
+                Logger.Log("No ships to filter on.");
+            }
+
+            bool nonprem = cb_nonPremium.Checked;
+            bool prem = cb_Premium.Checked;
+            bool arp = cb_ARP.Checked;
+
+            List<int> tiers = PopulateTiers();
+            List<string> nations = PopulateNations();
+            List<string> classes = PopulateClasses();
+
+            List<Ship> filtered;
+
+            // Filter ships
+            filtered = ships.Where(s => (s.ShipStatus == Ship.Status.Premium && prem)
+                                        || (s.ShipStatus == Ship.Status.Special && prem)
+                                        || (s.ShipStatus == Ship.Status.Silver && nonprem)
+                                        || (s.ShipStatus == Ship.Status.ARP && arp))
+                .Where(s => tiers.Contains(s.Tier))
+                .Where(s => nations.Contains(s.Nation.ToString()))
+                .Where(s => classes.Contains(s.ShipClass.ToString()))
+                    .ToList();
+
+            return filtered;
+        }
+
+        // Gets player and fills playerships list and set UseIGN to true.
+        private void SearchPlayer()
         {
             string server = cb_Server.Text;
             string userName = tb_UserName.Text;
             string userId = null;
 
             PlayerShips = new List<Ship>();
+
+            if(AllShips == null || AllShips.Count <= 0)
+            {
+                Logger.Log("No local ships found. Try updating first.");
+            }
 
             if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
             {
@@ -104,54 +171,84 @@ namespace Randomized_Ship_Selector
                 if (userName != "")
                 {
                     // Step 1: Get user ID
-                    Log("Fetching account ID...");
-                    string idUri = String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, AppID, userName);
+                    Logger.Log("Fetching account ID...");
+                    Uri idUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, Config.AppID, userName));
 
-                    JObject idObj = GetJsonFromWeb(idUri);
+                    JObject idObj;
+                    try
+                    {
+                        idObj = CC.GetJObject(idUri);
+                    }
+                    catch (WebException ex)
+                    {
+                        Logger.CatchWebEx(ex);
+                        return;
+                    }
 
                     // T-T (cri every time)
                     JToken idData = idObj["data"].FirstOrDefault();
 
                     if (idData == null)
                     {
-                        Log("WARNING: No player with specified name.");
+                        Logger.Log("WARNING: No player with specified name.");
                         return;
                     }
 
                     try
                     {
                         userId = idData["account_id"].ToString();
-                        Log("Account ID fetched: " + userId);
+                        Logger.Log("Account ID fetched: " + userId);
                     }
                     catch
                     {
-                        LogError("Could not fetch account ID");
+                        Logger.LogError("Could not fetch account ID.");
                         return;
                     }
 
                     // Step 1.5:  Get if user account is private:
-                    string privateUri = String.Format("https://api.worldofwarships.{0}/wows/account/info/?application_id={1}&account_id={2}", extension, AppID, userId);
-                    JObject privateObject = GetJsonFromWeb(privateUri);
+                    Uri privateUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/account/info/?application_id={1}&account_id={2}", extension, Config.AppID, userId));
+
+                    JObject privateObject;
+                    try
+                    {
+                        privateObject = CC.GetJObject(privateUri);
+                    }
+                    catch (WebException ex)
+                    {
+                        Logger.CatchWebEx(ex);
+                        return;
+                    }
+
                     JToken privateData = privateObject["data"].First().First();
                     if (Boolean.Parse(privateData["hidden_profile"].ToString()))
                     {
-                        Log("WARNING: User account is hidden, at this point in time RSS cannot prefilter while account is hidden.");
-                        Log("No prefilter applied.");
+                        Logger.Log("WARNING: User account is hidden, at this point in time RSS cannot prefilter while account is hidden.");
+                        Logger.Log("No prefilter applied.");
                         return;
                     }
 
                     // Step 2: Get all ships that are in port
-                    Log("Fetching all ships...");
+                    Logger.Log("Fetching all ships...");
 
-                    string shipsUri = String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, AppID, userId);
-                    JObject shipsObj = GetJsonFromWeb(shipsUri);
+                    Uri shipsUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, Config.AppID, userId));
+                    JObject shipsObj;
+                    try
+                    {
+                        shipsObj = CC.GetJObject(shipsUri);
+                    }
+                    catch (WebException ex)
+                    {
+                        Logger.CatchWebEx(ex);
+                        return;
+                    }
+
                     try
                     {
                         JToken shipsData = shipsObj["data"][userId];
 
-                        if(shipsData == null)
+                        if (shipsData == null)
                         {
-                            LogError("Could not find ships");
+                            Logger.LogError("Could not find ships");
                             return;
                         }
 
@@ -165,93 +262,60 @@ namespace Randomized_Ship_Selector
                                 PlayerShips.Add(aShip);
                         }
 
-                        Log("Finished fetching ships with more than 0 battles...");
-                        Log("Total ships found: " + PlayerShips.Count);
+                        Logger.Log("Finished fetching ships with more than 0 battles...");
+                        Logger.Log("Total ships found: " + PlayerShips.Count);
                         UseIGN = true;
                         lbl_Count.Text = FilterShips(PlayerShips).Count.ToString();
                     }
                     catch
                     {
-                        LogError("Problem summing up ships.");
+                        Logger.LogError("Problem summing up ships.");
                         return;
                     }
                 }
             }
             else
             {
-                Log("WARNING: Please select a valid server.");
+                Logger.Log("WARNING: Please select a valid server.");
                 return;
             }
         }
 
-        /// HELPERS ///
-
-        // Imports all ships that are currently availaible.
-        private List<Ship> GetShipsFromResource()
+        private void UpdateLocalData()
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            string resourceName = "Randomized_Ship_Selector.Resources.shipdata.json";
+            Logger.Log("Updating...");
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            try
             {
-                using (StreamReader r = new StreamReader(stream))
-                {
-                    string json = r.ReadToEnd();
-
-                    List<Ship> ships = JsonConvert.DeserializeObject<List<Ship>>(json);
-
-                    return ships;
-                }
+                CC.DownloadFile(Config.WebShipDataJson, Config.LocalShipDataJson);
             }
-        }
-
-        /// <summary>
-        /// Returns a JSON string
-        /// </summary>
-        /// <param name="url">Wargaming API URL</param>
-        /// <returns>JSON String</returns>
-        private JObject GetJsonFromWeb(string uri)
-        {
-            using (WebClient client = new WebClient())
-            using (Stream stream = client.OpenRead(uri))
-            using (StreamReader reader = new StreamReader(stream))
+            catch (WebException ex)
             {
-                return JObject.Parse(reader.ReadLine());
+                Logger.CatchWebEx(ex);
+                return;
             }
+            
+            Logger.Log("File(s) successfully updated!");
+            UpdateMasterList();
         }
 
-        // Filters ships with set filters
-        private List<Ship> FilterShips(List<Ship> ships)
+        // Scrolls down the rich text box
+        private void Rtb_SearchOutput_TextChanged(object sender, EventArgs e)
         {
-            bool nonprem = cb_nonPremium.Checked;
-            bool prem = cb_Premium.Checked;
-            bool arp = cb_ARP.Checked;
-
-            List<int> tiers = PopulateTiers();
-            List<string> nations = PopulateNations();
-            List<string> classes = PopulateClasses();
-
-            List<Ship> filtered;
-
-            // Filter ships
-            filtered = ships.Where(s => (s.ShipStatus == Ship.Status.Premium && prem) 
-                                        || (s.ShipStatus == Ship.Status.Special && prem) 
-                                        || (s.ShipStatus == Ship.Status.Silver && nonprem) 
-                                        || (s.ShipStatus == Ship.Status.ARP && arp))
-                .Where(s => tiers.Contains(s.Tier))
-                .Where(s => nations.Contains(s.Nation.ToString()))
-                .Where(s => classes.Contains(s.ShipClass.ToString()))
-                    .ToList();
-
-            return filtered;
+            // set the current caret position to the end
+            rtb_SearchOutput.SelectionStart = rtb_SearchOutput.Text.Length;
+            // scroll it automatically
+            rtb_SearchOutput.ScrollToCaret();
         }
 
-        // Fills tiers list for filtering
+        /// Populaters ///
+        
+        // Fills tiers list for filtering based on checked checkboxes.
         private List<int> PopulateTiers()
         {
             List<int> tiers = new List<int>();
 
-            if(cb_T1.Checked)
+            if (cb_T1.Checked)
             {
                 tiers.Add(1);
             }
@@ -263,18 +327,19 @@ namespace Randomized_Ship_Selector
             {
                 tiers.Add(3);
             }
-            if(cb_T4.Checked)
+            if (cb_T4.Checked)
             {
                 tiers.Add(4);
             }
-            if(cb_T5.Checked) {
+            if (cb_T5.Checked)
+            {
                 tiers.Add(5);
             }
-            if(cb_T6.Checked)
+            if (cb_T6.Checked)
             {
                 tiers.Add(6);
             }
-            if(cb_T7.Checked)
+            if (cb_T7.Checked)
             {
                 tiers.Add(7);
             }
@@ -294,12 +359,12 @@ namespace Randomized_Ship_Selector
             return tiers;
         }
 
-        // Fills nations list for filtering
+        // Fills nations list for filtering based on checked checkboxes.
         private List<string> PopulateNations()
         {
             List<string> nations = new List<string>();
 
-            if(cb_N_USN.Checked)
+            if (cb_N_USN.Checked)
             {
                 nations.Add("USN");
             }
@@ -343,7 +408,7 @@ namespace Randomized_Ship_Selector
             return nations;
         }
 
-        // Fills classes list for filtering
+        // Fills classes list for filtering based on checked checkboxes.
         private List<string> PopulateClasses()
         {
             List<string> classes = new List<string>();
@@ -366,28 +431,6 @@ namespace Randomized_Ship_Selector
             }
 
             return classes;
-        }
-
-        // Logs a string to the rich text box
-        private void Log(string text)
-        {
-            rtb_SearchOutput.AppendText(Environment.NewLine + text);
-        }
-
-        private void LogError(string text)
-        {
-            rtb_SearchOutput.AppendText(Environment.NewLine + "ERROR: " + text);
-            rtb_SearchOutput.AppendText(", this is an error. Please message me or open a issue on github:");
-            rtb_SearchOutput.AppendText(Environment.NewLine + "https://github.com/DInbound/Randomized-Ship-Selector/issues");
-        }
-
-        // Scrolls down the rich text box
-        private void rtb_SearchOutput_TextChanged(object sender, EventArgs e)
-        {
-            // set the current caret position to the end
-            rtb_SearchOutput.SelectionStart = rtb_SearchOutput.Text.Length;
-            // scroll it automatically
-            rtb_SearchOutput.ScrollToCaret();
         }
     }
 }

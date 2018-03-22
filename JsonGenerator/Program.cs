@@ -15,13 +15,15 @@ namespace JsonGenerator
         {
             public string AppID { get; }
             public Uri FtpUrl { get; }
+            public Uri ShipDataUrl { get; }
             public string ShipDataFileName { get; }
             public NetworkCredential FtpLogin { get; }
 
-            public Settings(string appId, string ftpUrl, string sdFileName, string userName, string userPassword)
+            public Settings(string appId, string ftpUrl, string shipDataUrl, string sdFileName, string userName, string userPassword)
             {
                 AppID = appId;
                 FtpUrl = new Uri(ftpUrl);
+                ShipDataUrl = new Uri(shipDataUrl);
                 ShipDataFileName = sdFileName;
                 FtpLogin = new NetworkCredential(userName, userPassword);
             }
@@ -31,19 +33,19 @@ namespace JsonGenerator
         {
             Console.WriteLine("Ship Json Generator Tool");
 
-            XmlDocument config = new XmlDocument();
-            config.Load("./generator.config");
+            XmlDocument docReader = new XmlDocument();
+            docReader.Load("./generator.config");
 
             Settings settings = new Settings(
-                config.DocumentElement.SelectSingleNode("wgAppID").InnerText,
-                config.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText,
-                config.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText,
-                config.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
-                config.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
+                docReader.DocumentElement.SelectSingleNode("wgAppID").InnerText,
+                docReader.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText,
+                docReader.DocumentElement.SelectSingleNode("ftpData/shipDataUrl").InnerText,
+                docReader.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText,
+                docReader.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
+                docReader.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
                 
             Uri shipDataJsonUri = new Uri(settings.FtpUrl, settings.ShipDataFileName);
             Generator gen = new Generator(settings.AppID);
-
 
             gen.GetNewShips();
             gen.PrintIgnoredShips();
@@ -53,7 +55,7 @@ namespace JsonGenerator
             if(response == ConsoleKey.Y)
             {
                 Console.WriteLine();
-                List<Ship> difference = gen.GetDifference(shipDataJsonUri, settings.FtpLogin);
+                List<Ship> difference = gen.GetDifference(settings.ShipDataUrl);
                 if(difference != null && difference.Count > 0)
                 { 
                     Console.WriteLine("New Ships:");

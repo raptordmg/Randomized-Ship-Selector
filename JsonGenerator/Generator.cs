@@ -91,9 +91,9 @@ namespace JsonGenerator
             Console.WriteLine();
         }
 
-        public List<Ship> GetDifference(Uri fileLocation, NetworkCredential login)
+        public List<Ship> GetDifference(Uri fileLocation)
         {
-            List<Ship> oldShips = ReadExistingFile(fileLocation, login);
+            List<Ship> oldShips = ReadExistingFile(fileLocation);
             if (oldShips.Count == 0)
             {
                 // Return null because old file does not exist
@@ -122,39 +122,36 @@ namespace JsonGenerator
             return difference;
         }
 
-        private List<Ship> ReadExistingFile(Uri fileLocation, NetworkCredential login)
+        private List<Ship> ReadExistingFile(Uri fileLocation)
         {
             using (WebClient client = new WebClient())
             {
-                client.Credentials = login;
-
                 try
                 {
-                    using (Stream stream = client.OpenRead(fileLocation))
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
-                        string json = reader.ReadToEnd();
+                    string json = client.DownloadString(fileLocation);
 
-                        Console.WriteLine("Found an existing file.");
+                    Console.WriteLine("Found an existing file.");
 
-                        return JsonConvert.DeserializeObject<List<Ship>>(json);
-                    }
+                    return JsonConvert.DeserializeObject<List<Ship>>(json);
                 }
                 catch (WebException ex)
                 {
-                    if(ex.Status == WebExceptionStatus.ProtocolError)
+                    if (ex.Status == WebExceptionStatus.ProtocolError)
                     {
                         if (ex.Response is FtpWebResponse response && response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
                         {
-                                Console.WriteLine("File '{0}' not found on server", fileLocation.ToString());
+                            Console.WriteLine("File '{0}' not found on server", fileLocation.ToString());
+                            return new List<Ship>();
+                        }
+                        else
+                        {
+                            throw;
                         }
                     }
                     else
                     {
                         throw;
                     }
-
-                    return new List<Ship>();
                 }
             }
         }

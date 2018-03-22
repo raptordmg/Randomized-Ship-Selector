@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Randomized_Ship_Selector
 {
-    class Ship
+    public class Ship
     {
         public enum Classes
         {
@@ -64,10 +64,9 @@ namespace Randomized_Ship_Selector
             this.ID = id;
             this.Name = name;
 
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            string resourceName = "Randomized_Ship_Selector.Resources.Panzerschiffer_Icons." + imageName + ".png";
+            string resourceName = @"Resources/Panzerschiffer_Icons/" + imageName + ".png";
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (Stream stream = new FileStream(resourceName, FileMode.Open))
             {
                 this.Image = Image.FromStream(stream);
             }
