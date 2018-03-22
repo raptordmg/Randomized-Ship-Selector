@@ -18,6 +18,8 @@ namespace JsonGenerator
         private const string OUTPUTDIR = @"./output/";
         private const string FILENAME = @"shipdata.json";
 
+        private string WoWsVersion;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -44,8 +46,8 @@ namespace JsonGenerator
             }
         }
 
-        public void MakeJson()
-        {
+        public void MakeJson(string version)
+        {            
             Console.WriteLine("Making JSON!");
 
             if (!Directory.Exists(OUTPUTDIR))
@@ -53,10 +55,11 @@ namespace JsonGenerator
 
             using (StreamWriter file = File.CreateText(Path.Combine(OUTPUTDIR, FILENAME)))
             {
-                JsonSerializer s = new JsonSerializer();
-                s.Serialize(file, NewShips);
+                JsonSerializer s = new JsonSerializer();                
+                s.Serialize(file, new JsonModel(version, NewShips));
             }
             Console.WriteLine("File created locally at {0}", Path.Combine(OUTPUTDIR, FILENAME).ToString());
+            
         }
 
         public void UploadJson(Uri ftpUrl, NetworkCredential login)
@@ -93,11 +96,11 @@ namespace JsonGenerator
 
         public List<Ship> GetDifference(Uri fileLocation)
         {
-            List<Ship> oldShips = ReadExistingFile(fileLocation);
-            if (oldShips.Count == 0)
+            JsonModel model = ReadExistingFile(fileLocation);
+            if (model == null || model.data.Count == 0)
             {
-                // Return null because old file does not exist
-                return new List<Ship>();
+                // Return nothing because old file does not exist
+                return null;
             }
 
             List<Ship> difference = new List<Ship>();
@@ -106,7 +109,7 @@ namespace JsonGenerator
             {
                 bool found = false;
 
-                foreach (Ship oldShip in oldShips)
+                foreach (Ship oldShip in model.data)
                 {
                     if (newShip.ID == oldShip.ID)
                     {
@@ -122,7 +125,7 @@ namespace JsonGenerator
             return difference;
         }
 
-        private List<Ship> ReadExistingFile(Uri fileLocation)
+        private JsonModel ReadExistingFile(Uri fileLocation)
         {
             using (WebClient client = new WebClient())
             {
@@ -132,7 +135,7 @@ namespace JsonGenerator
 
                     Console.WriteLine("Found an existing file.");
 
-                    return JsonConvert.DeserializeObject<List<Ship>>(json);
+                    return JsonConvert.DeserializeObject<JsonModel>(json);
                 }
                 catch (WebException ex)
                 {
@@ -141,7 +144,7 @@ namespace JsonGenerator
                         if (ex.Response is FtpWebResponse response && response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
                         {
                             Console.WriteLine("File '{0}' not found on server", fileLocation.ToString());
-                            return new List<Ship>();
+                            return null;
                         }
                         else
                         {

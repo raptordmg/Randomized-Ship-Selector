@@ -76,7 +76,10 @@ namespace JsonGenerator
 
             if (response2 == ConsoleKey.Y)
             {
-                gen.MakeJson();
+                Console.WriteLine("Current WoWs Version:");
+                string version = Console.ReadLine();
+
+                gen.MakeJson(version);
 
                 Console.WriteLine();
                 Console.Write("Upload to server? y/n ");

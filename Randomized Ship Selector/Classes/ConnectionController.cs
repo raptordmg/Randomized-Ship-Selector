@@ -50,9 +50,9 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        public bool DownloadImages(Uri webUri, string saveAs)
+        public void DownloadImages(Uri webUri, string saveAs)
         {
-            return false;
+            return;
         }
     }
 }

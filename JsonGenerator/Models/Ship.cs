@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace JsonGenerator
 {
-    class Ship
+    public class Ship
     {
         public enum Classes
         {
