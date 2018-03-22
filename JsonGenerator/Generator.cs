@@ -135,7 +135,7 @@ namespace JsonGenerator
 
                     Console.WriteLine("Found an existing file.");
 
-                    return JsonConvert.DeserializeObject<JsonModel>(json);
+                    return JsonConvert.DeserializeObject<JsonModel>(json); ;
                 }
                 catch (WebException ex)
                 {
