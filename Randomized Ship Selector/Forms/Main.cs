@@ -97,7 +97,7 @@ namespace Randomized_Ship_Selector
         {
             try
             {
-                AllShips = CC.GetShips(Config.LocalShipDataJson);
+                AllShips = CC.GetLocalShips(Config.LocalShipDataJson);
             }
             catch (FileNotFoundException)
             {
@@ -287,7 +287,10 @@ namespace Randomized_Ship_Selector
 
             try
             {
+                // Download new JSON
                 CC.DownloadFile(Config.WebShipDataJson, Config.LocalShipDataJson);
+                
+                // TODO: Download new images
             }
             catch (WebException ex)
             {

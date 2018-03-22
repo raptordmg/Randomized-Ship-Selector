@@ -16,17 +16,7 @@ namespace Randomized_Ship_Selector
 
         }
 
-        public JObject GetJObject(Uri webUri)
-        {
-            using (WebClient client = new WebClient())
-            using (StreamReader reader = new StreamReader(client.OpenRead(webUri)))
-            {
-                return JObject.Parse(reader.ReadToEnd());
-
-            }
-        }
-
-        public List<Ship> GetShips(string fileLocation)
+        public List<Ship> GetLocalShips(string fileLocation)
         {
             if (File.Exists(fileLocation))
             {
@@ -42,22 +32,27 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        public bool DownloadFile(Uri webUri, string saveAs)
+        public JObject GetJObject(Uri webUri)
+        {
+            using (WebClient client = new WebClient())
+            using (StreamReader reader = new StreamReader(client.OpenRead(webUri)))
+            {
+                return JObject.Parse(reader.ReadToEnd());
+
+            }
+        }
+
+        public void DownloadFile(Uri webUri, string saveAs)
         {
             using (WebClient client = new WebClient())
             {
                 client.DownloadFile(webUri, saveAs);
-                return true;
             }
         }
 
-        public bool DownloadFile(Uri webUri, string saveAs, Uri localPath)
+        public bool DownloadImages(Uri webUri, string saveAs)
         {
-            using (WebClient client = new WebClient())
-            {
-                client.DownloadFile(webUri, Path.Combine(localPath.ToString(), saveAs));
-                return true;
-            }
+            return false;
         }
     }
 }
