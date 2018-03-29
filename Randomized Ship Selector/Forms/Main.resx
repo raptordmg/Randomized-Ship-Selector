@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRandom.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>41</value>
   </data>
   <data name="pbOutput.Location" type="System.Drawing.Point, System.Drawing">
     <value>452, 320</value>
@@ -162,7 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbOutput.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>40</value>
   </data>
   <data name="lblOutput.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -189,7 +189,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutput.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>38</value>
   </data>
   <data name="cb_nonPremium.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -216,7 +216,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_nonPremium.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>39</value>
   </data>
   <data name="cb_Premium.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -243,7 +243,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_Premium.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>37</value>
   </data>
   <data name="lbl_Tiers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -270,7 +270,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_Tiers.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>36</value>
   </data>
   <data name="lbl_Ships.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -297,7 +297,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_Ships.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>35</value>
   </data>
   <data name="cb_T1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -324,7 +324,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T1.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>34</value>
   </data>
   <data name="cb_T2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -351,7 +351,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T2.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>33</value>
   </data>
   <data name="cb_T3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -378,7 +378,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T3.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>32</value>
   </data>
   <data name="cb_T4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -405,7 +405,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T4.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <data name="cb_T5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -432,7 +432,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T5.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="cb_T6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -459,7 +459,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T6.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="cb_T7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -486,7 +486,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T7.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="cb_T8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -513,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T8.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="cb_T9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -540,7 +540,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T9.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="cb_T10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -567,7 +567,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_T10.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="cb_N_USN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -594,7 +594,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_USN.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="cb_N_IJN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -621,7 +621,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_IJN.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="cb_N_VMF.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -648,7 +648,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_VMF.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="cb_N_FN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -675,7 +675,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_FN.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="cb_N_RM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -702,7 +702,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_RM.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="cb_N_KM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -729,7 +729,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_KM.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="cb_N_PA.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -756,7 +756,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_PA.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="cb_N_RN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -783,7 +783,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_RN.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="cb_N_ORP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -810,7 +810,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_ORP.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="cb_N_Commonwealth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -837,7 +837,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_N_Commonwealth.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lbl_CountTxt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -864,7 +864,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_CountTxt.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lbl_Count.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -891,7 +891,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_Count.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lbl_Classes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -918,7 +918,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_Classes.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cb_C_Destroyer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -945,7 +945,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_C_Destroyer.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="cb_C_Cruiser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -972,7 +972,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_C_Cruiser.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cb_C_Battleship.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -999,7 +999,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_C_Battleship.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cb_C_Carrier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1026,7 +1026,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_C_Carrier.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btn_Credits.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 319</value>
@@ -1050,7 +1050,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Credits.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tb_UserName.Location" type="System.Drawing.Point, System.Drawing">
     <value>363, 62</value>
@@ -1071,7 +1071,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tb_UserName.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lbl_NameInput.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1099,7 +1099,7 @@ player's account. Can be left empty.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_NameInput.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btn_Search.Location" type="System.Drawing.Point, System.Drawing">
     <value>408, 89</value>
@@ -1123,7 +1123,7 @@ player's account. Can be left empty.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_Search.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="rtb_SearchOutput.Location" type="System.Drawing.Point, System.Drawing">
     <value>363, 118</value>
@@ -1147,7 +1147,7 @@ player's account. Can be left empty.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rtb_SearchOutput.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cb_Server.Items" xml:space="preserve">
     <value>ru</value>
@@ -1180,7 +1180,7 @@ player's account. Can be left empty.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_Server.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cb_ARP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1207,6 +1207,30 @@ player's account. Can be left empty.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cb_ARP.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 266</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

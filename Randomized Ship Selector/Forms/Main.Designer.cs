@@ -70,6 +70,7 @@
             this.rtb_SearchOutput = new System.Windows.Forms.RichTextBox();
             this.cb_Server = new System.Windows.Forms.ComboBox();
             this.cb_ARP = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -404,10 +405,18 @@
             this.cb_ARP.TabStop = false;
             this.cb_ARP.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cb_ARP);
             this.Controls.Add(this.cb_Server);
             this.Controls.Add(this.rtb_SearchOutput);
@@ -502,6 +511,7 @@
         private System.Windows.Forms.RichTextBox rtb_SearchOutput;
         private System.Windows.Forms.ComboBox cb_Server;
         private System.Windows.Forms.CheckBox cb_ARP;
+        private System.Windows.Forms.Button button1;
     }
 }
 

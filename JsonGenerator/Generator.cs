@@ -18,8 +18,6 @@ namespace JsonGenerator
         private const string OUTPUTDIR = @"./output/";
         private const string FILENAME = @"shipdata.json";
 
-        private string WoWsVersion;
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -31,6 +29,8 @@ namespace JsonGenerator
 
         public void GetNewShips()
         {
+            NewShips.Clear();
+
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
@@ -83,20 +83,34 @@ namespace JsonGenerator
 
         public void PrintIgnoredShips()
         {
-            Console.WriteLine();
             Console.WriteLine("Ships that have demo profile:");
 
             for (int i = 0; i < _IgnoredShips.Count; i++)
             {
                 Console.WriteLine(" - " + _IgnoredShips[i]);
             }
-
-            Console.WriteLine();
         }
 
-        public List<Ship> GetDifference(Uri fileLocation)
+        public void PrintNewShips(Uri oldFile)
         {
-            JsonModel model = ReadExistingFile(fileLocation);
+            List<Ship> difference = GetDifference(oldFile);
+            if (difference != null && difference.Count > 0)
+            {
+                Console.WriteLine("New Ships:");
+                foreach (Ship s in difference)
+                {
+                    Console.WriteLine(s.ID + " - " + s.Name);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No new ships found.");
+            }
+        }
+
+        public List<Ship> GetDifference(Uri oldFile)
+        {
+            JsonModel model = ReadExistingFile(oldFile);
             if (model == null || model.data.Count == 0)
             {
                 // Return nothing because old file does not exist

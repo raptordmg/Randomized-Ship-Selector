@@ -19,13 +19,13 @@ namespace JsonGenerator
             public string ShipDataFileName { get; }
             public NetworkCredential FtpLogin { get; }
 
-            public Settings(string appId, string ftpUrl, string shipDataUrl, string sdFileName, string userName, string userPassword)
+            public Settings(XmlDocument doc)
             {
-                AppID = appId;
-                FtpUrl = new Uri(ftpUrl);
-                ShipDataUrl = new Uri(shipDataUrl);
-                ShipDataFileName = sdFileName;
-                FtpLogin = new NetworkCredential(userName, userPassword);
+                AppID = doc.DocumentElement.SelectSingleNode("wgAppID").InnerText;
+                FtpUrl = new Uri(doc.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText);
+                ShipDataUrl = new Uri(doc.DocumentElement.SelectSingleNode("ftpData/shipDataUrl").InnerText);
+                ShipDataFileName = doc.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText;
+                FtpLogin = new NetworkCredential(doc.DocumentElement.SelectSingleNode("ftpData/userName").InnerText, doc.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
             }
         }
 
@@ -33,43 +33,25 @@ namespace JsonGenerator
         {
             Console.WriteLine("Ship Json Generator Tool");
 
-            XmlDocument docReader = new XmlDocument();
-            docReader.Load("./generator.config");
-
-            Settings settings = new Settings(
-                docReader.DocumentElement.SelectSingleNode("wgAppID").InnerText,
-                docReader.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText,
-                docReader.DocumentElement.SelectSingleNode("ftpData/shipDataUrl").InnerText,
-                docReader.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText,
-                docReader.DocumentElement.SelectSingleNode("ftpData/userName").InnerText,
-                docReader.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
+            // Load Settings
+            XmlDocument settingsDoc = new XmlDocument();
+            settingsDoc.Load("./generator.config");
+            Settings settings = new Settings(settingsDoc);
                 
+            // Set up variables
             Uri shipDataJsonUri = new Uri(settings.FtpUrl, settings.ShipDataFileName);
             Generator gen = new Generator(settings.AppID);
 
+            // Get new ships
             gen.GetNewShips();
+
+            // Print for interface
+            Console.WriteLine();
+            gen.PrintNewShips(settings.ShipDataUrl);
+
+            Console.WriteLine();
             gen.PrintIgnoredShips();
-
-            Console.Write("Check difference with old file? y/n ");
-            ConsoleKey response = Console.ReadKey().Key;
-            if(response == ConsoleKey.Y)
-            {
-                Console.WriteLine();
-                List<Ship> difference = gen.GetDifference(settings.ShipDataUrl);
-                if(difference != null && difference.Count > 0)
-                { 
-                    Console.WriteLine("New Ships:");
-                    foreach (Ship s in difference)
-                    {
-                        Console.WriteLine(s.ID + " - " + s.Name);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No new ships found.");
-                }
-            }
-
+            
             Console.Write(Environment.NewLine + "Generate new Json? y/n ");
             ConsoleKey response2 = Console.ReadKey().Key;
             Console.WriteLine();

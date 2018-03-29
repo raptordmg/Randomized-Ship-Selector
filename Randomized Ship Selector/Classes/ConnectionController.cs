@@ -20,10 +20,24 @@ namespace Randomized_Ship_Selector
         {
             if (File.Exists(fileLocation))
             {
+                JObject jObject = JObject.Parse(File.ReadAllText(fileLocation));
+                return JsonConvert.DeserializeObject<List<Ship>>(jObject["data"].ToString());
+            }
+            else
+            {
+                throw new FileNotFoundException("Local shipdata file not found");
+            }
+        }
+
+        public string GetLocalVersion(string fileLocation)
+        {
+            if (File.Exists(fileLocation))
+            {
                 using (Stream fileStream = File.OpenRead(fileLocation))
                 using (StreamReader reader = new StreamReader(fileStream))
                 {
-                    return JsonConvert.DeserializeObject<List<Ship>>(reader.ReadToEnd());
+                    JObject jObject = JObject.Parse(reader.ReadToEnd());
+                    return jObject["meta"]["wowsversion"].ToString();
                 }
             }
             else
