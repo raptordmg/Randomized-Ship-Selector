@@ -78,30 +78,34 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        // Opens credits window
-        private void Btn_Credits_Click(object sender, EventArgs e)
-        {
-            Form creditForm = new Credits();
-            creditForm.Show();
-        }
-
         // Get User info
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             SearchPlayer();
         }
 
+        private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateLocalData();
+        }
+
+        private void CreditsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form creditForm = new Credits();
+            creditForm.Show();
+        }
+
         /// HELPERS ///
-        
+
         private void UpdateMasterList()
         {
             try
             {
                 AllShips = CC.GetLocalShips(Config.LocalShipDataJson);
             }
-            catch (FileNotFoundException)
+            catch (Exception ex) when (ex is FileLoadException || ex is FileNotFoundException)
             {
-                Logger.Log("Local shipdata file not found, try updating local data.");
+                Logger.Log(ex.Message);
                 return;
             }
 
@@ -434,11 +438,6 @@ namespace Randomized_Ship_Selector
             }
 
             return classes;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UpdateLocalData();
         }
     }
 }

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
 namespace Randomized_Ship_Selector
 {
@@ -63,18 +57,19 @@ namespace Randomized_Ship_Selector
         {
             this.ID = id;
             this.Name = name;
-
-            string resourceName = @"Resources/Panzerschiffer_Icons/" + imageName + ".png";
-
-            using (Stream stream = new FileStream(resourceName, FileMode.Open))
-            {
-                this.Image = Image.FromStream(stream);
-            }
-
+            this.Image = GetImage(@"Resources/Panzerschiffer_Icons/" + imageName + ".png");
             this.Tier = tier;
             this.Nation = nation;
             this.ShipClass = shipClass;
             this.ShipStatus = shipStatus;
+        }
+        
+        private Image GetImage(string imageLocation)
+        {
+            using (Stream stream = new FileStream(imageLocation, FileMode.Open))
+            {
+                return Image.FromStream(stream);
+            }
         }
     }
 }

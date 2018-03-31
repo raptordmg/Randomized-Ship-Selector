@@ -13,19 +13,33 @@ namespace Randomized_Ship_Selector
     {
         public ConnectionController()
         {
-
+            // Do constructor things
         }
 
+        /// <summary>
+        /// Get a list of ships from a local shipdata.json file.
+        /// </summary>
+        /// <param name="fileLocation">The location of the file. Base is executable folder.</param>
+        /// <returns>A list of ships that is derived from the file.</returns>
+        /// <exception cref="FileNotFoundException">Could not find local file.</exception>
+        /// <exception cref="FileLoadException">The json does not have the expected format.</exception>
         public List<Ship> GetLocalShips(string fileLocation)
         {
             if (File.Exists(fileLocation))
             {
-                JObject jObject = JObject.Parse(File.ReadAllText(fileLocation));
-                return JsonConvert.DeserializeObject<List<Ship>>(jObject["data"].ToString());
+                try
+                {
+                    JObject jObject = JObject.Parse(File.ReadAllText(fileLocation));
+                    return JsonConvert.DeserializeObject<List<Ship>>(jObject["data"].ToString());
+                }
+                catch
+                {
+                    throw new FileLoadException("The shipdata file does not have a correct format. Try updating local data.");
+                }
             }
             else
             {
-                throw new FileNotFoundException("Local shipdata file not found");
+                throw new FileNotFoundException("Local shipdata file not found. Try updating local data.");
             }
         }
 

@@ -63,15 +63,18 @@
             this.cb_C_Cruiser = new System.Windows.Forms.CheckBox();
             this.cb_C_Battleship = new System.Windows.Forms.CheckBox();
             this.cb_C_Carrier = new System.Windows.Forms.CheckBox();
-            this.btn_Credits = new System.Windows.Forms.Button();
             this.tb_UserName = new System.Windows.Forms.TextBox();
             this.lbl_NameInput = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
             this.rtb_SearchOutput = new System.Windows.Forms.RichTextBox();
             this.cb_Server = new System.Windows.Forms.ComboBox();
             this.cb_ARP = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRandom
@@ -351,14 +354,6 @@
             this.cb_C_Carrier.TabStop = false;
             this.cb_C_Carrier.UseVisualStyleBackColor = true;
             // 
-            // btn_Credits
-            // 
-            resources.ApplyResources(this.btn_Credits, "btn_Credits");
-            this.btn_Credits.Name = "btn_Credits";
-            this.btn_Credits.TabStop = false;
-            this.btn_Credits.UseVisualStyleBackColor = true;
-            this.btn_Credits.Click += new System.EventHandler(this.Btn_Credits_Click);
-            // 
             // tb_UserName
             // 
             resources.ApplyResources(this.tb_UserName, "tb_UserName");
@@ -405,25 +400,43 @@
             this.cb_ARP.TabStop = false;
             this.cb_ARP.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // menuStrip1
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.creditsToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
+            // 
+            // creditsToolStripMenuItem
+            // 
+            this.creditsToolStripMenuItem.Name = "creditsToolStripMenuItem";
+            resources.ApplyResources(this.creditsToolStripMenuItem, "creditsToolStripMenuItem");
+            this.creditsToolStripMenuItem.Click += new System.EventHandler(this.CreditsToolStripMenuItem_Click);
             // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cb_ARP);
             this.Controls.Add(this.cb_Server);
             this.Controls.Add(this.rtb_SearchOutput);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.lbl_NameInput);
             this.Controls.Add(this.tb_UserName);
-            this.Controls.Add(this.btn_Credits);
             this.Controls.Add(this.cb_C_Carrier);
             this.Controls.Add(this.cb_C_Battleship);
             this.Controls.Add(this.cb_C_Cruiser);
@@ -458,11 +471,15 @@
             this.Controls.Add(this.cb_nonPremium);
             this.Controls.Add(this.pbOutput);
             this.Controls.Add(this.btnRandom);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,14 +521,16 @@
         private System.Windows.Forms.CheckBox cb_C_Cruiser;
         private System.Windows.Forms.CheckBox cb_C_Battleship;
         private System.Windows.Forms.CheckBox cb_C_Carrier;
-        private System.Windows.Forms.Button btn_Credits;
         private System.Windows.Forms.TextBox tb_UserName;
         private System.Windows.Forms.Label lbl_NameInput;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.RichTextBox rtb_SearchOutput;
         private System.Windows.Forms.ComboBox cb_Server;
         private System.Windows.Forms.CheckBox cb_ARP;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
     }
 }
 
