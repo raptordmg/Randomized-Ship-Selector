@@ -28,6 +28,9 @@ namespace Randomized_Ship_Selector
         private Config Config;
         private Logger Logger;
 
+        // Check box lists
+        private List<CheckBox> Tiers;
+
         public Main()
         {
             InitializeComponent();
@@ -438,6 +441,45 @@ namespace Randomized_Ship_Selector
             }
 
             return classes;
+        }
+
+        private void Cb_Tiers_CheckedChanged(object sender, EventArgs e)
+        {
+            bool c = cb_Tiers.Checked;
+            cb_T1.Checked = c;
+            cb_T2.Checked = c;
+            cb_T3.Checked = c;
+            cb_T4.Checked = c;
+            cb_T5.Checked = c;
+            cb_T6.Checked = c;
+            cb_T7.Checked = c;
+            cb_T8.Checked = c;
+            cb_T9.Checked = c;
+            cb_T10.Checked = c;
+        }
+
+        private void Cb_Nations_CheckedChanged(object sender, EventArgs e)
+        {
+            bool c = cb_Nations.Checked;
+            cb_N_Commonwealth.Checked = c;
+            cb_N_FN.Checked = c;
+            cb_N_IJN.Checked = c;
+            cb_N_KM.Checked = c;
+            cb_N_ORP.Checked = c;
+            cb_N_PA.Checked = c;
+            cb_N_RM.Checked = c;
+            cb_N_RN.Checked = c;
+            cb_N_USN.Checked = c;
+            cb_N_VMF.Checked = c;
+        }
+
+        private void Cb_Classes_CheckedChanged(object sender, EventArgs e)
+        {
+            bool c = cb_Classes.Checked;
+            cb_C_Battleship.Checked = c;
+            cb_C_Carrier.Checked = c;
+            cb_C_Cruiser.Checked = c;
+            cb_C_Destroyer.Checked = c;
         }
     }
 }

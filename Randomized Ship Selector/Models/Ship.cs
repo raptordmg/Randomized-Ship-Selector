@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using Ionic.Zip;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 
 namespace Randomized_Ship_Selector
@@ -57,18 +59,24 @@ namespace Randomized_Ship_Selector
         {
             this.ID = id;
             this.Name = name;
-            this.Image = GetImage(@"Resources/Panzerschiffer_Icons/" + imageName + ".png");
+            this.Image = GetImage(imageName + ".png");
             this.Tier = tier;
             this.Nation = nation;
             this.ShipClass = shipClass;
             this.ShipStatus = shipStatus;
         }
         
-        private Image GetImage(string imageLocation)
-        {
-            using (Stream stream = new FileStream(imageLocation, FileMode.Open))
+        private Image GetImage(string imageName)
+        { 
+            using(ZipFile zip = ZipFile.Read(@"Resources/PanzerschifferIcons.zip"))
             {
-                return Image.FromStream(stream);
+                ZipEntry e = zip["Panzerschiffer_Icons/" + imageName];
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    e.Extract(ms);
+                    return Image.FromStream(ms);
+                }
             }
         }
     }
