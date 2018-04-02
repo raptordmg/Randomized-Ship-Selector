@@ -7,6 +7,8 @@ namespace Randomized_Ship_Selector
 {
     public class Ship
     {
+        private const string ZIPLOCATION = @"Resources/PanzerschifferIcons.zip";
+
         public enum Classes
         {
             None,
@@ -67,16 +69,23 @@ namespace Randomized_Ship_Selector
         }
         
         private Image GetImage(string imageName)
-        { 
-            using(ZipFile zip = ZipFile.Read(@"Resources/PanzerschifferIcons.zip"))
-            {
-                ZipEntry e = zip["Panzerschiffer_Icons/" + imageName];
+        {
+            if (File.Exists(ZIPLOCATION))            {
 
-                using (MemoryStream ms = new MemoryStream())
+                using (ZipFile zip = ZipFile.Read(ZIPLOCATION))
                 {
-                    e.Extract(ms);
-                    return Image.FromStream(ms);
+                    ZipEntry e = zip["Panzerschiffer_Icons/" + imageName];
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        e.Extract(ms);
+                        return Image.FromStream(ms);
+                    }
                 }
+            }
+            else
+            {
+                throw new FileNotFoundException("Cannot find the file: " + ZIPLOCATION + " try reinstalling or updating local data");
             }
         }
     }

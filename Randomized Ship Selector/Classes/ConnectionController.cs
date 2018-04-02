@@ -32,9 +32,16 @@ namespace Randomized_Ship_Selector
                     JObject jObject = JObject.Parse(File.ReadAllText(fileLocation));
                     return JsonConvert.DeserializeObject<List<Ship>>(jObject["data"].ToString());
                 }
-                catch
+                catch (Exception ex)
                 {
-                    throw new FileLoadException("The shipdata file does not have a correct format. Try updating local data.");
+                    if (ex is FileNotFoundException)
+                    {
+                        throw new FileNotFoundException(ex.Message);
+                    }
+                    else
+                    {
+                        throw new FileLoadException("The shipdata file does not have a correct format. Try updating local data.");
+                    }
                 }
             }
             else
