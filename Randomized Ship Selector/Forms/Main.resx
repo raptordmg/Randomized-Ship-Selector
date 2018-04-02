@@ -195,16 +195,16 @@
     <value>True</value>
   </data>
   <data name="cb_nonPremium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 36</value>
+    <value>72, 36</value>
   </data>
   <data name="cb_nonPremium.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
+    <value>52, 17</value>
   </data>
   <data name="cb_nonPremium.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="cb_nonPremium.Text" xml:space="preserve">
-    <value>Non Premium</value>
+    <value>Silver</value>
   </data>
   <data name="&gt;&gt;cb_nonPremium.Name" xml:space="preserve">
     <value>cb_nonPremium</value>
@@ -222,7 +222,7 @@
     <value>True</value>
   </data>
   <data name="cb_Premium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 36</value>
+    <value>130, 36</value>
   </data>
   <data name="cb_Premium.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 17</value>
@@ -1081,7 +1081,7 @@ player's account. Can be left empty.</value>
     <value>True</value>
   </data>
   <data name="cb_ARP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 36</value>
+    <value>202, 36</value>
   </data>
   <data name="cb_ARP.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 17</value>
@@ -1107,36 +1107,6 @@ player's account. Can be left empty.</value>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 24</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="ts_Menu.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="updateToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -1172,6 +1142,36 @@ player's account. Can be left empty.</value>
   </data>
   <data name="creditsToolStripMenuItem.Text" xml:space="preserve">
     <value>Credits</value>
+  </data>
+  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="ts_Menu.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 24</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="cb_Tiers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

@@ -28,9 +28,6 @@ namespace Randomized_Ship_Selector
         private Config Config;
         private Logger Logger;
 
-        // Check box lists
-        private List<CheckBox> Tiers;
-
         public Main()
         {
             InitializeComponent();
