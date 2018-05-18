@@ -46,7 +46,7 @@ namespace JsonGenerator
             }
         }
 
-        public void MakeJson(string version)
+        public void MakeJson(string wowsVersion, string appVersion)
         {            
             Console.WriteLine("Making JSON!");
 
@@ -56,7 +56,7 @@ namespace JsonGenerator
             using (StreamWriter file = File.CreateText(Path.Combine(OUTPUTDIR, FILENAME)))
             {
                 JsonSerializer s = new JsonSerializer();                
-                s.Serialize(file, new JsonModel(version, NewShips));
+                s.Serialize(file, new JsonModel(wowsVersion, appVersion, NewShips));
             }
             Console.WriteLine("File created locally at {0}", Path.Combine(OUTPUTDIR, FILENAME).ToString());
             

@@ -77,6 +77,7 @@
             this.p_Nations = new System.Windows.Forms.Panel();
             this.p_Classes = new System.Windows.Forms.Panel();
             this.p_PlayerFilter = new System.Windows.Forms.Panel();
+            this.checkVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.p_Tiers.SuspendLayout();
@@ -404,7 +405,8 @@
             // 
             this.ts_Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateToolStripMenuItem,
-            this.creditsToolStripMenuItem});
+            this.creditsToolStripMenuItem,
+            this.checkVersionToolStripMenuItem});
             this.ts_Menu.Name = "ts_Menu";
             resources.ApplyResources(this.ts_Menu, "ts_Menu");
             // 
@@ -502,6 +504,12 @@
             resources.ApplyResources(this.p_PlayerFilter, "p_PlayerFilter");
             this.p_PlayerFilter.Name = "p_PlayerFilter";
             // 
+            // checkVersionToolStripMenuItem
+            // 
+            this.checkVersionToolStripMenuItem.Name = "checkVersionToolStripMenuItem";
+            resources.ApplyResources(this.checkVersionToolStripMenuItem, "checkVersionToolStripMenuItem");
+            this.checkVersionToolStripMenuItem.Click += new System.EventHandler(this.checkVersionToolStripMenuItem_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -590,6 +598,7 @@
         private System.Windows.Forms.Panel p_Nations;
         private System.Windows.Forms.Panel p_Classes;
         private System.Windows.Forms.Panel p_PlayerFilter;
+        private System.Windows.Forms.ToolStripMenuItem checkVersionToolStripMenuItem;
     }
 }
 

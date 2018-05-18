@@ -274,14 +274,12 @@ namespace Randomized_Ship_Selector
                     catch
                     {
                         Logger.LogError("Problem summing up ships.");
-                        return;
                     }
                 }
             }
             else
             {
                 Logger.Log("WARNING: Please select a valid server.");
-                return;
             }
         }
 
@@ -477,6 +475,23 @@ namespace Randomized_Ship_Selector
             cb_C_Carrier.Checked = c;
             cb_C_Cruiser.Checked = c;
             cb_C_Destroyer.Checked = c;
+        }
+
+        private void checkVersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckVersions();
+        }
+
+        private void CheckVersions()
+        {
+            Logger.Log("Checking Versions");
+            JToken remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
+            JToken local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
+
+            Logger.Log("Shipdata version: Current " + local["wowsversion"] + " / Newest " + remote["wowsversion"]);
+
+            // TODO: Check versions on startup.
+            // TODO: Message if there is a newer app version.
         }
     }
 }

@@ -1119,7 +1119,7 @@ player's account. Can be left empty.</value>
 </value>
   </data>
   <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="updateToolStripMenuItem.Text" xml:space="preserve">
     <value>Update</value>
@@ -1138,10 +1138,16 @@ player's account. Can be left empty.</value>
 </value>
   </data>
   <data name="creditsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="creditsToolStripMenuItem.Text" xml:space="preserve">
     <value>Credits</value>
+  </data>
+  <data name="checkVersionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="checkVersionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Check Version</value>
   </data>
   <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 20</value>
@@ -3208,6 +3214,12 @@ player's account. Can be left empty.</value>
     <value>creditsToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;creditsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkVersionToolStripMenuItem.Name" xml:space="preserve">
+    <value>checkVersionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;checkVersionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

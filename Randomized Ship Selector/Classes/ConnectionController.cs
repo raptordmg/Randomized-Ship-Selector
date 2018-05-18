@@ -50,7 +50,7 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        public string GetLocalVersion(string fileLocation)
+        public JToken GetLocalVersionNumbers(string fileLocation)
         {
             if (File.Exists(fileLocation))
             {
@@ -58,12 +58,21 @@ namespace Randomized_Ship_Selector
                 using (StreamReader reader = new StreamReader(fileStream))
                 {
                     JObject jObject = JObject.Parse(reader.ReadToEnd());
-                    return jObject["meta"]["wowsversion"].ToString();
+                    return jObject["meta"];
                 }
             }
             else
             {
                 throw new FileNotFoundException("Local shipdata file not found");
+            }
+        }
+
+        public JToken GetRemoteVersionNumbers(Uri apiLocation)
+        {
+            using (WebClient client = new WebClient())
+            using (StreamReader reader = new StreamReader(client.OpenRead(apiLocation)))
+            {
+                return JObject.Parse(reader.ReadToEnd());
             }
         }
 
@@ -73,21 +82,16 @@ namespace Randomized_Ship_Selector
             using (StreamReader reader = new StreamReader(client.OpenRead(webUri)))
             {
                 return JObject.Parse(reader.ReadToEnd());
-
             }
         }
 
-        public void DownloadFile(Uri webUri, string saveAs)
+        public bool DownloadFile(Uri webUri, string saveAs)
         {
             using (WebClient client = new WebClient())
             {
                 client.DownloadFile(webUri, saveAs);
+                return true;
             }
-        }
-
-        public void DownloadImages(Uri webUri, string saveAs)
-        {
-            return;
         }
     }
 }

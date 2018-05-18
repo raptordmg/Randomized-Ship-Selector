@@ -11,11 +11,12 @@ namespace JsonGenerator
         public Dictionary<string, string> meta { get; set; }
         public List<Ship> data { get; set;  }
 
-        public JsonModel(string version, List<Ship> ships)
+        public JsonModel(string wowsVersion, string appVersion, List<Ship> ships)
         {
             meta = new Dictionary<string, string>
             {
-                { "wowsversion", version }
+                { "wowsversion", wowsVersion },
+                { "appversion", appVersion }
             };
 
             data = ships;
