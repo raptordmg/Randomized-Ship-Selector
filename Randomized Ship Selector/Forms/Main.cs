@@ -86,7 +86,7 @@ namespace Randomized_Ship_Selector
 
         private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateLocalData();
+            CheckVersions();
         }
 
         private void CreditsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -477,19 +477,47 @@ namespace Randomized_Ship_Selector
             cb_C_Destroyer.Checked = c;
         }
 
-        private void checkVersionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CheckVersions();
-        }
-
         private void CheckVersions()
         {
-            Logger.Log("Checking Versions");
+            Logger.Log("Checking Versions...");
             JToken remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
             JToken local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
 
-            Logger.Log("Shipdata version: Current " + local["wowsversion"] + " / Newest " + remote["wowsversion"]);
+            string localv = local["wowsversion"].ToString();
+            string remotev = remote["wowsversion"].ToString();
 
+            // TODO: Change this to actual version number
+            string locala = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string remotea = remote["appversion"].ToString();
+
+            if (localv.Equals(remotev) && locala.Equals(remotea))
+            {
+                Logger.Log("Files are up to date");
+            }
+            else if(!localv.Equals(remotev))
+            {
+                // Update local data                
+                string message = String.Format("Current version (" + localv + ") is lower than the newest version (" + remotev + "). Download newer files?");
+
+                DialogResult result = MessageBox.Show(message, "Local data out of date", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+;               
+                if(result == DialogResult.Yes)
+                {
+                    UpdateLocalData();
+                }
+                else if (result == DialogResult.No)
+                {
+                    Logger.Log("Update not executed.");
+                }
+            }
+            else if(!locala.Equals(remotea))
+            {
+                // Message with update app
+                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + " Updating is suggested.");
+
+                MessageBox.Show(message, "Newer app version available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
             // TODO: Check versions on startup.
             // TODO: Message if there is a newer app version.
         }
