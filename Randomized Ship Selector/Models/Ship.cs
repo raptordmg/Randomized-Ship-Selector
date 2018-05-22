@@ -85,7 +85,7 @@ namespace Randomized_Ship_Selector
             }
             else
             {
-                throw new FileNotFoundException("Cannot find the file: " + ZIPLOCATION + " try reinstalling or updating local data");
+                throw new FileNotFoundException("Cannot find the file: " + ZIPLOCATION + " try reinstalling or updating local data.");
             }
         }
     }

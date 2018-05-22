@@ -283,6 +283,85 @@ namespace Randomized_Ship_Selector
             }
         }
 
+        // Checks if local data exists and connects to the internet to check latest version.
+        private void CheckVersions()
+        {
+            Logger.Log("Checking Versions...");
+
+            JToken remote = null;
+            JToken local = null;
+
+            try
+            {
+                remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
+                local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
+            }
+            catch (Exception ex)
+            {
+                if (ex is FileNotFoundException)
+                {
+                    DialogResult result = MessageBox.Show("No local files found, download new files?", "No local files.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if (result == DialogResult.Yes)
+                    {
+                        UpdateLocalData();
+                        return;
+                    }
+                    else
+                    {
+                        Logger.Log("No local files downloaded, application will not work correctly untill the required files are downloaded.");
+                        return;
+                    }
+                }
+                else if (ex is WebException)
+                {
+                    Logger.CatchWebEx((WebException)ex);
+                    return;
+                }
+                else
+                {
+                    Logger.LogError("Unknown error has occured: " + ex.Message);
+                    return;
+                }
+            }
+
+            string localv = local["wowsversion"].ToString();
+            string remotev = remote["wowsversion"].ToString();
+
+            string locala = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string remotea = remote["appversion"].ToString();
+
+            if (localv.Equals(remotev) && locala.Equals(remotea))
+            {
+                Logger.Log("Files are up to date");
+            }
+            else if (!localv.Equals(remotev))
+            {
+                // Update local data                
+                string message = String.Format("Current version (" + localv + ") is lower than the newest version (" + remotev + "). Download newer files?");
+
+                DialogResult result = MessageBox.Show(message, "Local data out of date", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                ;
+                if (result == DialogResult.Yes)
+                {
+                    UpdateLocalData();
+                }
+                else if (result == DialogResult.No)
+                {
+                    Logger.Log("Update not executed.");
+                }
+            }
+            else if (!locala.Equals(remotea))
+            {
+                // Message with update app
+                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ".");
+
+                Logger.Log("Newer app version found.");
+                MessageBox.Show(message, "Newer app version available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // TODO: Check versions on startup.
+        }
+
         private void UpdateLocalData()
         {
             Logger.Log("Updating...");
@@ -291,8 +370,9 @@ namespace Randomized_Ship_Selector
             {
                 // Download new JSON
                 CC.DownloadFile(Config.WebShipDataJson, Config.LocalShipDataJson);
-                
-                // TODO: Download new images
+
+                // Download new images
+                CC.DownloadFile(Config.WebImages, Config.LocalImages);
             }
             catch (WebException ex)
             {
@@ -475,79 +555,6 @@ namespace Randomized_Ship_Selector
             cb_C_Carrier.Checked = c;
             cb_C_Cruiser.Checked = c;
             cb_C_Destroyer.Checked = c;
-        }
-
-        private void CheckVersions()
-        {
-            Logger.Log("Checking Versions...");
-
-            JToken remote;
-            JToken local;
-
-            try
-            {
-                remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
-                local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
-            }
-            catch (Exception ex) 
-            {
-                if(ex is FileNotFoundException)
-                {
-                    DialogResult result = MessageBox.Show("No local files found, download new files?", "No local files.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                    if(result == DialogResult.Yes)
-                    {
-                        UpdateLocalData();
-                        return;
-                    }
-                    else
-                    {
-                        Logger.Log("No local files downloaded, application will not work correctly untill the required files are downloaded.");
-                        return;
-                    }
-                }
-                else
-                {
-                    Logger.LogError("Unknown error has occured: " + ex.Message);
-                    return;
-                }
-            }
-
-            string localv = local["wowsversion"].ToString();
-            string remotev = remote["wowsversion"].ToString();
-
-            string locala = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string remotea = remote["appversion"].ToString();
-
-            if (localv.Equals(remotev) && locala.Equals(remotea))
-            {
-                Logger.Log("Files are up to date");
-            }
-            else if(!localv.Equals(remotev))
-            {
-                // Update local data                
-                string message = String.Format("Current version (" + localv + ") is lower than the newest version (" + remotev + "). Download newer files?");
-
-                DialogResult result = MessageBox.Show(message, "Local data out of date", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-;               
-                if(result == DialogResult.Yes)
-                {
-                    UpdateLocalData();
-                }
-                else if (result == DialogResult.No)
-                {
-                    Logger.Log("Update not executed.");
-                }
-            }
-            else if(!locala.Equals(remotea))
-            {
-                // Message with update app
-                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ".");
-
-                Logger.Log("Newer app version found.");
-                MessageBox.Show(message, "Newer app version available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
-            // TODO: Check versions on startup.
         }
     }
 }

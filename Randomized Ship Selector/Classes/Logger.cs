@@ -37,26 +37,28 @@ namespace Randomized_Ship_Selector
         private void LogWebError(string text)
         {
             _output.AppendText(Environment.NewLine + "ERROR: " + text);
-            _output.AppendText(Environment.NewLine + "Check your internet connection or and try again later.");
+            _output.AppendText(Environment.NewLine + "Check your internet connection and try again later.");
         }
 
         public void CatchWebEx(WebException ex)
         {
-            if (ex.Status == WebExceptionStatus.ConnectFailure)
+            switch (ex.Status)
             {
-                LogWebError("Could not connect to server.");
-            }
-            else if (ex.Status == WebExceptionStatus.Timeout)
-            {
-                LogWebError("Request timed out.");
-            }
-            else if (ex.Status == WebExceptionStatus.SendFailure)
-            {
-                LogWebError("Failed to send data.");
-            }
-            else
-            {
-                LogWebError(ex.Status.ToString());
+                case WebExceptionStatus.ConnectFailure:
+                    LogWebError("Could not connect to server.");
+                    break;
+                case WebExceptionStatus.Timeout:
+                    LogWebError("Request timed out.");
+                    break;
+                case WebExceptionStatus.SendFailure:
+                    LogWebError("Failed to send data.");
+                    break;
+                case WebExceptionStatus.NameResolutionFailure:
+                    LogWebError("Failed to connect to DNS.");
+                    break;
+                default:
+                    LogWebError(ex.Status.ToString());
+                    break;
             }
         }
     }
