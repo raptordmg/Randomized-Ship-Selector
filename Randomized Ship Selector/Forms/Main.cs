@@ -480,13 +480,41 @@ namespace Randomized_Ship_Selector
         private void CheckVersions()
         {
             Logger.Log("Checking Versions...");
-            JToken remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
-            JToken local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
+
+            JToken remote;
+            JToken local;
+
+            try
+            {
+                remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
+                local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
+            }
+            catch (Exception ex) 
+            {
+                if(ex is FileNotFoundException)
+                {
+                    DialogResult result = MessageBox.Show("No local files found, download new files?", "No local files.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    if(result == DialogResult.Yes)
+                    {
+                        UpdateLocalData();
+                        return;
+                    }
+                    else
+                    {
+                        Logger.Log("No local files downloaded, application will not work correctly untill the required files are downloaded.");
+                        return;
+                    }
+                }
+                else
+                {
+                    Logger.LogError("Unknown error has occured: " + ex.Message);
+                    return;
+                }
+            }
 
             string localv = local["wowsversion"].ToString();
             string remotev = remote["wowsversion"].ToString();
 
-            // TODO: Change this to actual version number
             string locala = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string remotea = remote["appversion"].ToString();
 
@@ -513,13 +541,13 @@ namespace Randomized_Ship_Selector
             else if(!locala.Equals(remotea))
             {
                 // Message with update app
-                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + " Updating is suggested.");
+                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ".");
 
+                Logger.Log("Newer app version found.");
                 MessageBox.Show(message, "Newer app version available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
             // TODO: Check versions on startup.
-            // TODO: Message if there is a newer app version.
         }
     }
 }
