@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace JsonGenerator
             public string AppID { get; }
             public Uri FtpUrl { get; }
             public Uri ShipDataUrl { get; }
+            public Uri ApiUrl { get; }
             public string ShipDataFileName { get; }
             public NetworkCredential FtpLogin { get; }
 
@@ -24,6 +26,7 @@ namespace JsonGenerator
                 AppID = doc.DocumentElement.SelectSingleNode("wgAppID").InnerText;
                 FtpUrl = new Uri(doc.DocumentElement.SelectSingleNode("ftpData/ftpUrl").InnerText);
                 ShipDataUrl = new Uri(doc.DocumentElement.SelectSingleNode("ftpData/shipDataUrl").InnerText);
+                ApiUrl = new Uri(doc.DocumentElement.SelectSingleNode("ftpData/apiUrl").InnerText);
                 ShipDataFileName = doc.DocumentElement.SelectSingleNode("ftpData/jsonFile").InnerText;
                 FtpLogin = new NetworkCredential(doc.DocumentElement.SelectSingleNode("ftpData/userName").InnerText, doc.DocumentElement.SelectSingleNode("ftpData/userPassword").InnerText);
             }
@@ -58,10 +61,12 @@ namespace JsonGenerator
 
             if (response2 == ConsoleKey.Y)
             {
-                Console.WriteLine("Current WoWs Version:");
+                JToken meta = GetRemoteVersionNumbers(settings.ApiUrl);
+
+                Console.WriteLine("WoWs Version (Current=" + meta["wowsversion"] + ")");
                 string wowsVersion = Console.ReadLine();
 
-                Console.WriteLine("Current App Version:");
+                Console.WriteLine("App Version (Current=" + meta["appversion"] + ")");
                 string appVersion = Console.ReadLine();
 
                 gen.MakeJson(wowsVersion, appVersion);
@@ -79,6 +84,15 @@ namespace JsonGenerator
 
             Console.WriteLine("Press <Enter> to exit.");
             Console.ReadLine();
+        }
+
+        public static JToken GetRemoteVersionNumbers(Uri apiLocation)
+        {
+            using (WebClient client = new WebClient())
+            using (StreamReader reader = new StreamReader(client.OpenRead(apiLocation)))
+            {
+                return JObject.Parse(reader.ReadToEnd());
+            }
         }
     }
 }
