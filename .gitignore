@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /JsonGenerator/generator.config
 /Randomized Ship Selector/Resources/rss.config
+/Randomized Ship Selector/Resources/PanzerschifferIcons
