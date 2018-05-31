@@ -12,28 +12,33 @@ namespace JsonGenerator
     {
         public List<Ship> NewShips { get; }
 
-        private List<Ship> OldShips = new List<Ship>();
-        private readonly List<string> IgnoredShips = new List<string>();
+        private readonly List<string> _IgnoredShips = new List<string>();
+        private readonly string _AppID = null;
 
-        private const string outputDir = @"./output/";
-        private const string fileName = @"./shipdata.json";
-        private const string AppID = "68d50d230b5b9601ddd25f825c4a5b58";
+        private const string OUTPUTDIR = @"./output/";
+        private const string FILENAME = @"shipdata.json";
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public Generator()
+        public Generator(string appID)
         {
             NewShips = new List<Ship>();
+            _AppID = appID;
+        }
+
+        public void GetNewShips()
+        {
+            NewShips.Clear();
 
             int pages = 1;
 
             for (int page = 1; page <= pages; page++)
             {
-                Console.WriteLine("Reading page " + page);
-
-                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", AppID, page));
+                JToken json = GetJsonFromWeb(String.Format("https://api.worldofwarships.eu/wows/encyclopedia/ships/?application_id={0}&page_no={1}", _AppID, page));
                 pages = Int32.Parse(json["meta"]["page_total"].ToString());
+
+                Console.WriteLine("Reading page " + page + "/" + pages);
 
                 JToken data = json["data"];
 
@@ -41,7 +46,134 @@ namespace JsonGenerator
             }
         }
 
-        public List<Ship> CreateList(JToken data)
+        public void MakeJson(string wowsVersion, string appVersion)
+        {            
+            Console.WriteLine("Making JSON!");
+
+            if (!Directory.Exists(OUTPUTDIR))
+                Directory.CreateDirectory(OUTPUTDIR);
+
+            using (StreamWriter file = File.CreateText(Path.Combine(OUTPUTDIR, FILENAME)))
+            {
+                JsonSerializer s = new JsonSerializer();                
+                s.Serialize(file, new JsonModel(wowsVersion, appVersion, NewShips));
+            }
+            Console.WriteLine("File created locally at {0}", Path.Combine(OUTPUTDIR, FILENAME).ToString());
+            
+        }
+
+        public void UploadJson(Uri ftpUrl, NetworkCredential login)
+        {
+            Console.WriteLine("Uploading to FTP: " + ftpUrl);
+
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.Credentials = login;
+                    client.UploadFile(ftpUrl, Path.Combine(OUTPUTDIR, FILENAME));
+                }
+                Console.WriteLine("Upload Finished!");
+            }
+            catch (WebException ex)
+            {
+                Console.WriteLine("Uploading Failed: " + ex.Message);
+            }
+        }
+
+        public void PrintIgnoredShips()
+        {
+            Console.WriteLine("Ships that have demo profile:");
+
+            for (int i = 0; i < _IgnoredShips.Count; i++)
+            {
+                Console.WriteLine(" - " + _IgnoredShips[i]);
+            }
+        }
+
+        public void PrintNewShips(Uri oldFile)
+        {
+            List<Ship> difference = GetDifference(oldFile);
+            if (difference != null && difference.Count > 0)
+            {
+                Console.WriteLine("New Ships:");
+                foreach (Ship s in difference)
+                {
+                    Console.WriteLine(s.ID + " - " + s.Name);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No new ships found.");
+            }
+        }
+
+        public List<Ship> GetDifference(Uri oldFile)
+        {
+            JsonModel model = ReadExistingFile(oldFile);
+            if (model == null || model.data.Count == 0)
+            {
+                // Return nothing because old file does not exist
+                return null;
+            }
+
+            List<Ship> difference = new List<Ship>();
+
+            foreach (Ship newShip in NewShips)
+            {
+                bool found = false;
+
+                foreach (Ship oldShip in model.data)
+                {
+                    if (newShip.ID == oldShip.ID)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                    difference.Add(newShip);
+            }
+
+            return difference;
+        }
+
+        private JsonModel ReadExistingFile(Uri fileLocation)
+        {
+            using (WebClient client = new WebClient())
+            {
+                try
+                {
+                    string json = client.DownloadString(fileLocation);
+
+                    Console.WriteLine("Found an existing file.");
+
+                    return JsonConvert.DeserializeObject<JsonModel>(json); ;
+                }
+                catch (WebException ex)
+                {
+                    if (ex.Status == WebExceptionStatus.ProtocolError)
+                    {
+                        if (ex.Response is FtpWebResponse response && response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
+                        {
+                            Console.WriteLine("File '{0}' not found on server", fileLocation.ToString());
+                            return null;
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
+
+        private List<Ship> CreateList(JToken data)
         {
             List<Ship> newShips = new List<Ship>();
 
@@ -59,7 +191,7 @@ namespace JsonGenerator
                 // Skip ignored by name
                 if (Boolean.Parse(shipData["has_demo_profile"].ToString()))
                 {
-                    IgnoredShips.Add(name);
+                    _IgnoredShips.Add(name);
                     continue;
                 }
 
@@ -74,72 +206,6 @@ namespace JsonGenerator
             }
 
             return newShips;
-        }
-
-        public void MakeJson()
-        {
-            Console.WriteLine("Making JSON!");
-
-            if(!Directory.Exists(outputDir))
-                Directory.CreateDirectory(outputDir);
-
-            using (StreamWriter file = File.CreateText(Path.Combine(outputDir, fileName)))
-            {
-                JsonSerializer s = new JsonSerializer();
-                s.Serialize(file, NewShips);
-            }
-
-            Console.WriteLine("Success!");
-        }
-
-        public void PrintIgnoredShips()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Ships that have demo profile:");
-
-            for (int i = 0; i < IgnoredShips.Count; i++)
-            {
-                Console.WriteLine(" - " + IgnoredShips[i]);
-            }
-
-            Console.WriteLine();
-        }
-
-        public List<Ship> GetDifference()
-        {
-            ReadExistingFile();
-
-            List<Ship> difference = new List<Ship>();
-
-            foreach (Ship newShip in NewShips)
-            {
-                bool found = false;
-
-                foreach(Ship oldShip in OldShips)
-                {
-                    if(newShip.ID == oldShip.ID)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-
-                if(!found)
-                    difference.Add(newShip);
-            }
-
-            return difference;
-        }
-
-        private void ReadExistingFile()
-        {
-            using (StreamReader file = File.OpenText(@"../../../Randomized Ship Selector/Resources/shipdata.json"))
-            {
-                string json = file.ReadToEnd();
-
-                OldShips = JsonConvert.DeserializeObject<List<Ship>>(json);
-            }
-            
         }
 
         private Ship.Nations GetNation(string name)
@@ -188,7 +254,7 @@ namespace JsonGenerator
             {
                 return Ship.Status.Premium;
             }
-            else if(Boolean.Parse(shipData["is_special"].ToString()))
+            else if (Boolean.Parse(shipData["is_special"].ToString()))
             {
                 return Ship.Status.Special;
             }
@@ -206,7 +272,7 @@ namespace JsonGenerator
         /// <summary>
         /// Returns a JSON string
         /// </summary>
-        /// <param name="url">Wargaming API URL</param>
+        /// <param name="uri">Wargaming API URL</param>
         /// <returns>JSON String</returns>
         private JObject GetJsonFromWeb(string uri)
         {

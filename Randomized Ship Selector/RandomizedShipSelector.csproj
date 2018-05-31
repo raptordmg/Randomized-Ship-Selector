@@ -11,6 +11,9 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -51,9 +53,19 @@
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,25 +80,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Credits.cs">
+    <Compile Include="Classes\ConnectionController.cs" />
+    <Compile Include="Forms\Credits.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Credits.Designer.cs">
+    <Compile Include="Forms\Credits.Designer.cs">
       <DependentUpon>Credits.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ship.cs" />
-    <EmbeddedResource Include="Credits.resx">
+    <Compile Include="Classes\Config.cs" />
+    <Compile Include="Models\Ship.cs" />
+    <EmbeddedResource Include="Forms\Credits.resx">
       <DependentUpon>Credits.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -108,258 +123,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA004.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA010.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA013.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA015.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB004.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB008.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB013.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB017.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB018.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB034.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB509.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB518.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB705.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB708.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC003.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC004.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC005.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC007.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC014.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC017.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC020.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC024.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC044.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC045.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC707.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD005.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD008.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD013.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD014.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD019.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD021.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD027.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD029.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD502.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD709.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB517.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB527.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC101.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSC507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSD503.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSD506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSD507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC101.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSD506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSA508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB503.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC502.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC706.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSD506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PISB505.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PISB508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PISC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PISC507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA009.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA011.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA015.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA017.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB003.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB006.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB007.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB008.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB010.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB011.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB013.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB018.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB021.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB509.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB705.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB706.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB707.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB708.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC004.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC005.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC007.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC008.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC009.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC013.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC015.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC026.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC034.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC035.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC037.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC038.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC503.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC705.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC707.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC708.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC709.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC717.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC727.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC737.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD003.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD004.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD012.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD017.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD024.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD025.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD026.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD206.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD207.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD208.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD209.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD706.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD708.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSB001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSB505.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC002.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC003.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC101.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC503.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC505.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC508.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC606.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD001.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD205.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD206.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD207.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD208.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD209.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD210.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD308.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD409.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD505.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD507.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PUSC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PUSD503.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PWSD501.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSC101.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSC506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD102.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PZSD508.png" />
-    <EmbeddedResource Include="Resources\shipdata.json" />
+    <None Include="FodyWeavers.xml" />
+    <Content Include="Resources\shipdata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\rss.config" />
+    <EmbeddedResource Include="Resources\rss.example.config" />
+    <Content Include="Resources\PanzerschifferIcons.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -369,42 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
-    <Content Include="Resources\Panzerschiffer_Icons\PGSD508.png" />
-    <Content Include="Resources\Panzerschiffer_Icons\PRSC509.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA021.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA906.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASA915.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASB917.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASC710.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PASD506.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB207.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSB910.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PBSD605.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB103.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB104.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB105.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB106.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB107.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB108.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB109.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSB110.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PFSD605.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSA509.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSA510.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSB910.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PGSC910.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSA917.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB799.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSB918.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC014.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC018.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSC934.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD014.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD518.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PJSD912.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC010.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSC910.png" />
-    <EmbeddedResource Include="Resources\Panzerschiffer_Icons\PRSD910.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -419,4 +155,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\netstandard1.4\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_BuildVersioningStyle="None.Increment.DayStamp.None" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
