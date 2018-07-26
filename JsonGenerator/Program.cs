@@ -47,7 +47,14 @@ namespace JsonGenerator
 
             // Print for interface
             Console.WriteLine();
-            gen.PrintNewShips(settings.ShipDataUrl);
+            Console.Write("Search for old file? y/n ");
+            ConsoleKey response4 = Console.ReadKey().Key;
+            Console.WriteLine();
+
+            if(response4 == ConsoleKey.Y)
+            {
+                gen.PrintNewShips(settings.ShipDataUrl);
+            }
 
             Console.WriteLine();
             gen.PrintIgnoredShips();

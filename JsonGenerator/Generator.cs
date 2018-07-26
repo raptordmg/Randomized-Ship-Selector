@@ -149,7 +149,7 @@ namespace JsonGenerator
 
                     Console.WriteLine("Found an existing file.");
 
-                    return JsonConvert.DeserializeObject<JsonModel>(json); ;
+                    return JsonConvert.DeserializeObject<JsonModel>(json);
                 }
                 catch (WebException ex)
                 {
@@ -223,7 +223,9 @@ namespace JsonGenerator
             if (name.Equals("france"))
                 return Ship.Nations.MN;
             if (name.Equals("pan_asia"))
-                return Ship.Nations.PA;
+                return Ship.Nations.PAS;
+            if (name.Equals("pan_america"))
+                return Ship.Nations.PAM;
             if (name.Equals("commonwealth"))
                 return Ship.Nations.Commonwealth;
             if (name.Equals("italy"))

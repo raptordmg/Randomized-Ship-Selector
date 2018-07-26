@@ -50,7 +50,7 @@
             this.cb_N_FN = new System.Windows.Forms.CheckBox();
             this.cb_N_RM = new System.Windows.Forms.CheckBox();
             this.cb_N_KM = new System.Windows.Forms.CheckBox();
-            this.cb_N_PA = new System.Windows.Forms.CheckBox();
+            this.cb_N_PAS = new System.Windows.Forms.CheckBox();
             this.cb_N_RN = new System.Windows.Forms.CheckBox();
             this.cb_N_ORP = new System.Windows.Forms.CheckBox();
             this.cb_N_Commonwealth = new System.Windows.Forms.CheckBox();
@@ -77,6 +77,7 @@
             this.p_Nations = new System.Windows.Forms.Panel();
             this.p_Classes = new System.Windows.Forms.Panel();
             this.p_PlayerFilter = new System.Windows.Forms.Panel();
+            this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.p_Tiers.SuspendLayout();
@@ -265,14 +266,14 @@
             this.cb_N_KM.TabStop = false;
             this.cb_N_KM.UseVisualStyleBackColor = true;
             // 
-            // cb_N_PA
+            // cb_N_PAS
             // 
-            resources.ApplyResources(this.cb_N_PA, "cb_N_PA");
-            this.cb_N_PA.Checked = true;
-            this.cb_N_PA.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_N_PA.Name = "cb_N_PA";
-            this.cb_N_PA.TabStop = false;
-            this.cb_N_PA.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_N_PAS, "cb_N_PAS");
+            this.cb_N_PAS.Checked = true;
+            this.cb_N_PAS.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_PAS.Name = "cb_N_PAS";
+            this.cb_N_PAS.TabStop = false;
+            this.cb_N_PAS.UseVisualStyleBackColor = true;
             // 
             // cb_N_RN
             // 
@@ -468,6 +469,7 @@
             // 
             // p_Nations
             // 
+            this.p_Nations.Controls.Add(this.cb_N_PAM);
             this.p_Nations.Controls.Add(this.cb_Nations);
             this.p_Nations.Controls.Add(this.cb_N_USN);
             this.p_Nations.Controls.Add(this.cb_N_IJN);
@@ -475,7 +477,7 @@
             this.p_Nations.Controls.Add(this.cb_N_FN);
             this.p_Nations.Controls.Add(this.cb_N_RM);
             this.p_Nations.Controls.Add(this.cb_N_KM);
-            this.p_Nations.Controls.Add(this.cb_N_PA);
+            this.p_Nations.Controls.Add(this.cb_N_PAS);
             this.p_Nations.Controls.Add(this.cb_N_RN);
             this.p_Nations.Controls.Add(this.cb_N_ORP);
             this.p_Nations.Controls.Add(this.cb_N_Commonwealth);
@@ -501,6 +503,15 @@
             this.p_PlayerFilter.Controls.Add(this.btn_Search);
             resources.ApplyResources(this.p_PlayerFilter, "p_PlayerFilter");
             this.p_PlayerFilter.Name = "p_PlayerFilter";
+            // 
+            // cb_N_PAM
+            // 
+            resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
+            this.cb_N_PAM.Checked = true;
+            this.cb_N_PAM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_PAM.Name = "cb_N_PAM";
+            this.cb_N_PAM.TabStop = false;
+            this.cb_N_PAM.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -563,7 +574,7 @@
         private System.Windows.Forms.CheckBox cb_N_FN;
         private System.Windows.Forms.CheckBox cb_N_RM;
         private System.Windows.Forms.CheckBox cb_N_KM;
-        private System.Windows.Forms.CheckBox cb_N_PA;
+        private System.Windows.Forms.CheckBox cb_N_PAS;
         private System.Windows.Forms.CheckBox cb_N_RN;
         private System.Windows.Forms.CheckBox cb_N_ORP;
         private System.Windows.Forms.CheckBox cb_N_Commonwealth;
@@ -590,6 +601,7 @@
         private System.Windows.Forms.Panel p_Nations;
         private System.Windows.Forms.Panel p_Classes;
         private System.Windows.Forms.Panel p_PlayerFilter;
+        private System.Windows.Forms.CheckBox cb_N_PAM;
     }
 }
 

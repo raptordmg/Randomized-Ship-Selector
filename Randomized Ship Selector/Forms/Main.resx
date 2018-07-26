@@ -540,7 +540,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_USN.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cb_N_IJN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -567,7 +567,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_IJN.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cb_N_VMF.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -594,7 +594,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_VMF.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cb_N_FN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -621,7 +621,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_FN.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cb_N_RM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -648,7 +648,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_RM.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cb_N_KM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -675,40 +675,40 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_KM.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
-  <data name="cb_N_PA.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cb_N_PAS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cb_N_PA.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cb_N_PAS.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 165</value>
   </data>
-  <data name="cb_N_PA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
+  <data name="cb_N_PAS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
   </data>
-  <data name="cb_N_PA.TabIndex" type="System.Int32, mscorlib">
+  <data name="cb_N_PAS.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="cb_N_PA.Text" xml:space="preserve">
-    <value>PA (Pan Asia)</value>
+  <data name="cb_N_PAS.Text" xml:space="preserve">
+    <value>PAS (Pan Asia)</value>
   </data>
-  <data name="&gt;&gt;cb_N_PA.Name" xml:space="preserve">
-    <value>cb_N_PA</value>
+  <data name="&gt;&gt;cb_N_PAS.Name" xml:space="preserve">
+    <value>cb_N_PAS</value>
   </data>
-  <data name="&gt;&gt;cb_N_PA.Type" xml:space="preserve">
+  <data name="&gt;&gt;cb_N_PAS.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cb_N_PA.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cb_N_PAS.Parent" xml:space="preserve">
     <value>p_Nations</value>
   </data>
-  <data name="&gt;&gt;cb_N_PA.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;cb_N_PAS.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="cb_N_RN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cb_N_RN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 190</value>
+    <value>14, 210</value>
   </data>
   <data name="cb_N_RN.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -729,13 +729,13 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_RN.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cb_N_ORP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cb_N_ORP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 213</value>
+    <value>14, 233</value>
   </data>
   <data name="cb_N_ORP.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>
@@ -756,13 +756,13 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_ORP.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cb_N_Commonwealth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cb_N_Commonwealth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 235</value>
+    <value>14, 255</value>
   </data>
   <data name="cb_N_Commonwealth.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
@@ -783,7 +783,7 @@
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_N_Commonwealth.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lbl_CountTxt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1107,48 +1107,6 @@ player's account. Can be left empty.</value>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="updateToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABFklEQVRIS+2Uy07CQBRAuwET5EOMSmCD
-        wt/5A/gAA0u/g8TwE+iOJVs2yEJ5RM9p2sQFbQcJiSSc5KTM5M6901tmohNHQQ2f8A0Xif5+wCv8zV3y
-        DOIM+7jB7wzXaPESmty5IEw+Qhd8oklu8TyxjRZfojGT5BlcYIAGT7HuRAY3aMvS5EEF7Lltced5ySVt
-        y04FHtFA25LHtuRayDsa6OtnkZVcC/lAA6vx6ADM8aAFQlq0F+lH7sajMF7QNZ14VMA1ekL9mzacKMA3
-        NV4vnAjhGd2RBy2vSBNnaKx3UzBlfEUXfmEPW+iHr6C7ti0rNGaIrtkJF5jYVzfJNj3xHkjvrj/jlXyP
-        Y/SMpNe1iS/xxL8min4AkOtgw/vAz8UAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="updateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Check for updates</value>
-  </data>
-  <data name="creditsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABbUlEQVRIS92UyU0EMRBFR2wXlkCAKIA7
-        iDUHxE4ULFmAICBAgIAgEFzgAu9ZU5ceu93q43zpSXaVXe4uu2ow9pqBPbiDF/ge4ljbLriml7bgA/4q
-        vMMmdNYkXEMEeIBjWILZIY616Yt1VzABVUXwH9iHtk1+zAG41j2X0CrTEsFXNHTUKsQhGxpy8rIi5355
-        Tvokp0PQ9wbZi/e1uMC8+us5tR3gnkfQv6OhqXvQeZRm/XQKxrhNs4ZeQedimvXTMhjDOhnRF+icS7O8
-        9EtJ86DfWCOKA1xUUu2ABdD/mWYNdUlR7YDWFNlbdJ6kWV61A85B/02aNWTj0ulT6/tMn0D/toamLA4b
-        lwss/5zaDrA36bPQpjXkZFd0kWVv+XfVGvyCe9c1tMmuGIdY/qV0qSnwyyP4BVRl97QrukG8EyvUF2KN
-        iOMziJxH8E7tOmRXNJ8RoIRrqmkpycuycdlbnsFiFMfafC3FCx0HDQb/rqaACSUwg0IAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="creditsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="creditsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Credits</value>
-  </data>
-  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="ts_Menu.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1172,6 +1130,48 @@ player's account. Can be left empty.</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="ts_Menu.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="updateToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABFklEQVRIS+2Uy07CQBRAuwET5EOMSmCD
+        wt/5A/gAA0u/g8TwE+iOJVs2yEJ5RM9p2sQFbQcJiSSc5KTM5M6901tmohNHQQ2f8A0Xif5+wCv8zV3y
+        DOIM+7jB7wzXaPESmty5IEw+Qhd8oklu8TyxjRZfojGT5BlcYIAGT7HuRAY3aMvS5EEF7Lltced5ySVt
+        y04FHtFA25LHtuRayDsa6OtnkZVcC/lAA6vx6ADM8aAFQlq0F+lH7sajMF7QNZ14VMA1ekL9mzacKMA3
+        NV4vnAjhGd2RBy2vSBNnaKx3UzBlfEUXfmEPW+iHr6C7ti0rNGaIrtkJF5jYVzfJNj3xHkjvrj/jlXyP
+        Y/SMpNe1iS/xxL8min4AkOtgw/vAz8UAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="updateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="creditsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABbUlEQVRIS92UyU0EMRBFR2wXlkCAKIA7
+        iDUHxE4ULFmAICBAgIAgEFzgAu9ZU5ceu93q43zpSXaVXe4uu2ow9pqBPbiDF/ge4ljbLriml7bgA/4q
+        vMMmdNYkXEMEeIBjWILZIY616Yt1VzABVUXwH9iHtk1+zAG41j2X0CrTEsFXNHTUKsQhGxpy8rIi5355
+        Tvokp0PQ9wbZi/e1uMC8+us5tR3gnkfQv6OhqXvQeZRm/XQKxrhNs4ZeQedimvXTMhjDOhnRF+icS7O8
+        9EtJ86DfWCOKA1xUUu2ABdD/mWYNdUlR7YDWFNlbdJ6kWV61A85B/02aNWTj0ulT6/tMn0D/toamLA4b
+        lwss/5zaDrA36bPQpjXkZFd0kWVv+XfVGvyCe9c1tMmuGIdY/qV0qSnwyyP4BVRl97QrukG8EyvUF2KN
+        iOMziJxH8E7tOmRXNJ8RoIRrqmkpycuycdlbnsFiFMfafC3FCx0HDQb/rqaACSUwg0IAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="creditsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 22</value>
+  </data>
+  <data name="creditsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Credits</value>
   </data>
   <data name="cb_Tiers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1225,7 +1225,7 @@ player's account. Can be left empty.</value>
     <value>p_Nations</value>
   </data>
   <data name="&gt;&gt;cb_Nations.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cb_Classes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1275,11 +1275,42 @@ player's account. Can be left empty.</value>
   <data name="&gt;&gt;p_Tiers.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="cb_N_PAM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cb_N_PAM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cb_N_PAM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 187</value>
+  </data>
+  <data name="cb_N_PAM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="cb_N_PAM.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="cb_N_PAM.Text" xml:space="preserve">
+    <value>PAM (Pan America)</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Name" xml:space="preserve">
+    <value>cb_N_PAM</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Parent" xml:space="preserve">
+    <value>p_Nations</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="p_Nations.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 66</value>
   </data>
   <data name="p_Nations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 261</value>
+    <value>126, 280</value>
   </data>
   <data name="p_Nations.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>

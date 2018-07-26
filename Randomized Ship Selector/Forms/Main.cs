@@ -474,9 +474,13 @@ namespace Randomized_Ship_Selector
             {
                 nations.Add("KM");
             }
-            if (cb_N_PA.Checked)
+            if (cb_N_PAS.Checked)
             {
-                nations.Add("PA");
+                nations.Add("PAS");
+            }
+            if(cb_N_PAM.Checked)
+            {
+                nations.Add("PAM");
             }
             if (cb_N_RN.Checked)
             {
@@ -542,7 +546,8 @@ namespace Randomized_Ship_Selector
             cb_N_IJN.Checked = c;
             cb_N_KM.Checked = c;
             cb_N_ORP.Checked = c;
-            cb_N_PA.Checked = c;
+            cb_N_PAS.Checked = c;
+            cb_N_PAM.Checked = c;
             cb_N_RM.Checked = c;
             cb_N_RN.Checked = c;
             cb_N_USN.Checked = c;
