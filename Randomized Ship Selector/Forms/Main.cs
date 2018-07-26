@@ -173,7 +173,7 @@ namespace Randomized_Ship_Selector
                     extension = server;
                 }
 
-                if (userName != "")
+                if (userName.Length > 3)
                 {
                     // Step 1: Get user ID
                     Logger.Log("Fetching account ID...");
@@ -276,6 +276,10 @@ namespace Randomized_Ship_Selector
                     {
                         Logger.LogError("Problem summing up ships.");
                     }
+                }
+                else
+                {
+                    Logger.Log("WARNING: Username must be more than 3 characters long");
                 }
             }
             else
