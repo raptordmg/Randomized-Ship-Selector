@@ -36,7 +36,7 @@ namespace Randomized_Ship_Selector
             Config = new Config();
             Logger = new Logger(rtb_SearchOutput);
 
-            //CheckVersions();
+            CheckVersions();
 
             UpdateMasterList();
         }
