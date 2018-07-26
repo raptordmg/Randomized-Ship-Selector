@@ -335,6 +335,14 @@ namespace Randomized_Ship_Selector
             {
                 Logger.Log("Files are up to date");
             }
+            else if (!locala.Equals(remotea))
+            {
+                // Message with update app
+                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ". Make sure to update the application to prevent problems.");
+
+                Logger.Log(@"Newer app version found: https://github.com/DInbound/Randomized-Ship-Selector/releases/latest");
+                MessageBox.Show(message, "Newer app version available!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (!localv.Equals(remotev))
             {
                 // Update local data                
@@ -351,16 +359,6 @@ namespace Randomized_Ship_Selector
                     Logger.Log("Update not executed.");
                 }
             }
-            else if (!locala.Equals(remotea))
-            {
-                // Message with update app
-                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ".");
-
-                Logger.Log("Newer app version found.");
-                MessageBox.Show(message, "Newer app version available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            // TODO: Check versions on startup.
         }
 
         private void UpdateLocalData()
