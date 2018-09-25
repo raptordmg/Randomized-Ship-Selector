@@ -30,7 +30,7 @@ namespace JsonGenerator
             RM, // Regina Marina (Italy)
             KM, // Kriegsmarine (Germany)
             PAS, // Pan-Asian Navy (Pan-Asia)
-            PAM, // Pan-Ameracan Navy (Pan-America)
+            PAM, // Pan-American Navy (Pan-America)
             RN, // Royal Navy (England)
             ORP, // Okręt Rzeczypospolitej Polskiej (Poland)
             Commonwealth // Perth, Vampire (Australia)

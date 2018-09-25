@@ -173,6 +173,11 @@ namespace JsonGenerator
             }
         }
 
+        /// <summary>
+        /// Changes raw json data into usable object oriented data.
+        /// </summary>
+        /// <param name="data">Raw JSON retrieved from Wargaming's API.</param>
+        /// <returns>The converted data in list format.</returns>
         private List<Ship> CreateList(JToken data)
         {
             List<Ship> newShips = new List<Ship>();
@@ -266,6 +271,11 @@ namespace JsonGenerator
             if (name.Contains("ARP"))
             {
                 return Ship.Status.ARP;
+            }
+            // This is so bad
+            else if(name.Contains("Missouri") || name.Contains("Flint") || name.Contains("Black") || name.Contains("Stalingrad") || name.Contains("Kronshtadt"))
+            {
+                return Ship.Status.Special;
             }
 
             return Ship.Status.Silver;
