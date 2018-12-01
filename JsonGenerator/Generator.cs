@@ -273,7 +273,19 @@ namespace JsonGenerator
                 return Ship.Status.ARP;
             }
             // This is so bad
-            else if(name.Contains("Missouri") || name.Contains("Flint") || name.Contains("Black") || name.Contains("Stalingrad") || name.Contains("Kronshtadt"))
+            // Send help
+            else if(name.Contains("Missouri") || 
+                    name.Contains("Flint") || 
+                    name.Contains("Black") && !name.Contains("Swan") || 
+                    name.Contains("Stalingrad") || 
+                    name.Contains("Kronshtadt") || 
+                    name.Contains("Musashi") ||
+                    name.Contains("Eastern Dragon") ||
+                    name.Contains("Southern Dragon") ||
+                    name.Contains("Alabama S") ||
+                    name.Contains("Nelson") ||
+                    name.Contains("Bourgogne") ||
+                    name.Contains("Salem"))
             {
                 return Ship.Status.Special;
             }
