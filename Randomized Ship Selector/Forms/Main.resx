@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRandom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 347</value>
+    <value>26, 331</value>
   </data>
   <data name="btnRandom.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 32</value>
@@ -144,7 +144,7 @@
     <value>9</value>
   </data>
   <data name="pbOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 352</value>
+    <value>388, 338</value>
   </data>
   <data name="pbOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -168,7 +168,7 @@
     <value>True</value>
   </data>
   <data name="lblOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 365</value>
+    <value>202, 341</value>
   </data>
   <data name="lblOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 13</value>
@@ -195,7 +195,7 @@
     <value>True</value>
   </data>
   <data name="cb_nonPremium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 36</value>
+    <value>61, 27</value>
   </data>
   <data name="cb_nonPremium.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 17</value>
@@ -222,7 +222,7 @@
     <value>True</value>
   </data>
   <data name="cb_Premium.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 36</value>
+    <value>119, 27</value>
   </data>
   <data name="cb_Premium.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 17</value>
@@ -789,16 +789,16 @@
     <value>True</value>
   </data>
   <data name="lbl_CountTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 350</value>
+    <value>211, 317</value>
   </data>
   <data name="lbl_CountTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 13</value>
+    <value>54, 13</value>
   </data>
   <data name="lbl_CountTxt.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="lbl_CountTxt.Text" xml:space="preserve">
-    <value>Amount of ships to choose from:</value>
+    <value>Ship pool:</value>
   </data>
   <data name="&gt;&gt;lbl_CountTxt.Name" xml:space="preserve">
     <value>lbl_CountTxt</value>
@@ -815,8 +815,11 @@
   <data name="lbl_Count.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl_Count.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="lbl_Count.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 350</value>
+    <value>271, 317</value>
   </data>
   <data name="lbl_Count.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -1081,7 +1084,7 @@ player's account. Can be left empty.</value>
     <value>True</value>
   </data>
   <data name="cb_ARP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 36</value>
+    <value>191, 27</value>
   </data>
   <data name="cb_ARP.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 17</value>
@@ -1107,11 +1110,17 @@ player's account. Can be left empty.</value>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="ts_Menu.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>584, 24</value>
+    <value>563, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -1130,12 +1139,6 @@ player's account. Can be left empty.</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="ts_Menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="ts_Menu.Text" xml:space="preserve">
-    <value>Menu</value>
   </data>
   <data name="updateToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1255,7 +1258,7 @@ player's account. Can be left empty.</value>
     <value>0</value>
   </data>
   <data name="p_Tiers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 66</value>
+    <value>18, 50</value>
   </data>
   <data name="p_Tiers.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 261</value>
@@ -1274,6 +1277,39 @@ player's account. Can be left empty.</value>
   </data>
   <data name="&gt;&gt;p_Tiers.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Name" xml:space="preserve">
+    <value>cb_N_PAM</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.Parent" xml:space="preserve">
+    <value>p_Nations</value>
+  </data>
+  <data name="&gt;&gt;cb_N_PAM.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="p_Nations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 50</value>
+  </data>
+  <data name="p_Nations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 280</value>
+  </data>
+  <data name="p_Nations.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;p_Nations.Name" xml:space="preserve">
+    <value>p_Nations</value>
+  </data>
+  <data name="&gt;&gt;p_Nations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;p_Nations.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;p_Nations.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="cb_N_PAM.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1306,29 +1342,8 @@ player's account. Can be left empty.</value>
   <data name="&gt;&gt;cb_N_PAM.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="p_Nations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 66</value>
-  </data>
-  <data name="p_Nations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 280</value>
-  </data>
-  <data name="p_Nations.TabIndex" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="&gt;&gt;p_Nations.Name" xml:space="preserve">
-    <value>p_Nations</value>
-  </data>
-  <data name="&gt;&gt;p_Nations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;p_Nations.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;p_Nations.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="p_Classes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 66</value>
+    <value>214, 50</value>
   </data>
   <data name="p_Classes.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 123</value>
@@ -1349,7 +1364,7 @@ player's account. Can be left empty.</value>
     <value>1</value>
   </data>
   <data name="p_PlayerFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 66</value>
+    <value>323, 50</value>
   </data>
   <data name="p_PlayerFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 280</value>
@@ -1376,7 +1391,7 @@ player's account. Can be left empty.</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 388</value>
+    <value>563, 368</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

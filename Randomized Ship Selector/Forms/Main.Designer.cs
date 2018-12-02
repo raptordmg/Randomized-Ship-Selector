@@ -75,9 +75,9 @@
             this.cb_Classes = new System.Windows.Forms.CheckBox();
             this.p_Tiers = new System.Windows.Forms.Panel();
             this.p_Nations = new System.Windows.Forms.Panel();
+            this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             this.p_Classes = new System.Windows.Forms.Panel();
             this.p_PlayerFilter = new System.Windows.Forms.Panel();
-            this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.p_Tiers.SuspendLayout();
@@ -484,6 +484,15 @@
             resources.ApplyResources(this.p_Nations, "p_Nations");
             this.p_Nations.Name = "p_Nations";
             // 
+            // cb_N_PAM
+            // 
+            resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
+            this.cb_N_PAM.Checked = true;
+            this.cb_N_PAM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_PAM.Name = "cb_N_PAM";
+            this.cb_N_PAM.TabStop = false;
+            this.cb_N_PAM.UseVisualStyleBackColor = true;
+            // 
             // p_Classes
             // 
             this.p_Classes.Controls.Add(this.cb_Classes);
@@ -503,15 +512,6 @@
             this.p_PlayerFilter.Controls.Add(this.btn_Search);
             resources.ApplyResources(this.p_PlayerFilter, "p_PlayerFilter");
             this.p_PlayerFilter.Name = "p_PlayerFilter";
-            // 
-            // cb_N_PAM
-            // 
-            resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
-            this.cb_N_PAM.Checked = true;
-            this.cb_N_PAM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_N_PAM.Name = "cb_N_PAM";
-            this.cb_N_PAM.TabStop = false;
-            this.cb_N_PAM.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
