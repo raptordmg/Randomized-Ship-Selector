@@ -263,11 +263,6 @@ namespace JsonGenerator
 
             string name = shipData["name"].ToString();
 
-            if (name.Contains("ARP"))
-            {
-                return Ship.Status.ARP;
-            }
-
             return Ship.Status.Silver;
         }
 
