@@ -30,7 +30,7 @@ namespace Randomized_Ship_Selector
             PAS, // Pan-Asian Navy (Pan-Asia)
             PAM, // Pan-Ameracan Navy (Pan-America)
             RN, // Royal Navy (England)
-            ORP, // Okręt Rzeczypospolitej Polskiej (Poland)
+            PAE, // Pan Europe (Pan-Europe)
             Commonwealth // Perth, Vampire (Australia)
         }
 
