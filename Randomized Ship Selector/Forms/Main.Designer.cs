@@ -65,7 +65,6 @@
             this.btn_Search = new System.Windows.Forms.Button();
             this.rtb_SearchOutput = new System.Windows.Forms.RichTextBox();
             this.cb_Server = new System.Windows.Forms.ComboBox();
-            this.cb_ARP = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ts_Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -385,15 +384,6 @@
             resources.ApplyResources(this.cb_Server, "cb_Server");
             this.cb_Server.Name = "cb_Server";
             // 
-            // cb_ARP
-            // 
-            resources.ApplyResources(this.cb_ARP, "cb_ARP");
-            this.cb_ARP.Checked = true;
-            this.cb_ARP.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_ARP.Name = "cb_ARP";
-            this.cb_ARP.TabStop = false;
-            this.cb_ARP.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -519,7 +509,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.p_PlayerFilter);
             this.Controls.Add(this.p_Classes);
-            this.Controls.Add(this.cb_ARP);
             this.Controls.Add(this.lbl_Count);
             this.Controls.Add(this.lbl_CountTxt);
             this.Controls.Add(this.cb_Premium);
@@ -589,7 +578,6 @@
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.RichTextBox rtb_SearchOutput;
         private System.Windows.Forms.ComboBox cb_Server;
-        private System.Windows.Forms.CheckBox cb_ARP;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ts_Menu;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
