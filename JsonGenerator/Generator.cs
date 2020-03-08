@@ -230,8 +230,8 @@ namespace JsonGenerator
                 return Ship.Nations.Commonwealth;
             if (name.Equals("italy"))
                 return Ship.Nations.RM;
-            if (name.Equals("poland"))
-                return Ship.Nations.ORP;
+            if (name.Equals("europe"))
+                return Ship.Nations.PAE;
 
             return Ship.Nations.None;
         }
