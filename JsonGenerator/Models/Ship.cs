@@ -41,8 +41,7 @@ namespace JsonGenerator
             None,
             Silver,
             Premium,
-            Special,
-            ARP
+            Special
         }
 
         public string ID { get; }
