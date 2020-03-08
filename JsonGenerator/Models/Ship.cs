@@ -32,7 +32,7 @@ namespace JsonGenerator
             PAS, // Pan-Asian Navy (Pan-Asia)
             PAM, // Pan-Ameracan Navy (Pan-America)
             RN, // Royal Navy (England)
-            ORP, // Okręt Rzeczypospolitej Polskiej (Poland)
+            PAE, // Pan-Ameracan Navy (Pan-Europe)
             Commonwealth // Perth, Vampire (Australia)
         }
 
