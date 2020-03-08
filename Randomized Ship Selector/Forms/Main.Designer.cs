@@ -52,7 +52,7 @@
             this.cb_N_KM = new System.Windows.Forms.CheckBox();
             this.cb_N_PAS = new System.Windows.Forms.CheckBox();
             this.cb_N_RN = new System.Windows.Forms.CheckBox();
-            this.cb_N_ORP = new System.Windows.Forms.CheckBox();
+            this.cb_N_PAE = new System.Windows.Forms.CheckBox();
             this.cb_N_Commonwealth = new System.Windows.Forms.CheckBox();
             this.lbl_CountTxt = new System.Windows.Forms.Label();
             this.lbl_Count = new System.Windows.Forms.Label();
@@ -75,9 +75,9 @@
             this.cb_Classes = new System.Windows.Forms.CheckBox();
             this.p_Tiers = new System.Windows.Forms.Panel();
             this.p_Nations = new System.Windows.Forms.Panel();
+            this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             this.p_Classes = new System.Windows.Forms.Panel();
             this.p_PlayerFilter = new System.Windows.Forms.Panel();
-            this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.p_Tiers.SuspendLayout();
@@ -284,14 +284,14 @@
             this.cb_N_RN.TabStop = false;
             this.cb_N_RN.UseVisualStyleBackColor = true;
             // 
-            // cb_N_ORP
+            // cb_N_PAE
             // 
-            resources.ApplyResources(this.cb_N_ORP, "cb_N_ORP");
-            this.cb_N_ORP.Checked = true;
-            this.cb_N_ORP.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_N_ORP.Name = "cb_N_ORP";
-            this.cb_N_ORP.TabStop = false;
-            this.cb_N_ORP.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_N_PAE, "cb_N_PAE");
+            this.cb_N_PAE.Checked = true;
+            this.cb_N_PAE.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_PAE.Name = "cb_N_PAE";
+            this.cb_N_PAE.TabStop = false;
+            this.cb_N_PAE.UseVisualStyleBackColor = true;
             // 
             // cb_N_Commonwealth
             // 
@@ -479,10 +479,19 @@
             this.p_Nations.Controls.Add(this.cb_N_KM);
             this.p_Nations.Controls.Add(this.cb_N_PAS);
             this.p_Nations.Controls.Add(this.cb_N_RN);
-            this.p_Nations.Controls.Add(this.cb_N_ORP);
+            this.p_Nations.Controls.Add(this.cb_N_PAE);
             this.p_Nations.Controls.Add(this.cb_N_Commonwealth);
             resources.ApplyResources(this.p_Nations, "p_Nations");
             this.p_Nations.Name = "p_Nations";
+            // 
+            // cb_N_PAM
+            // 
+            resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
+            this.cb_N_PAM.Checked = true;
+            this.cb_N_PAM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_PAM.Name = "cb_N_PAM";
+            this.cb_N_PAM.TabStop = false;
+            this.cb_N_PAM.UseVisualStyleBackColor = true;
             // 
             // p_Classes
             // 
@@ -503,15 +512,6 @@
             this.p_PlayerFilter.Controls.Add(this.btn_Search);
             resources.ApplyResources(this.p_PlayerFilter, "p_PlayerFilter");
             this.p_PlayerFilter.Name = "p_PlayerFilter";
-            // 
-            // cb_N_PAM
-            // 
-            resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
-            this.cb_N_PAM.Checked = true;
-            this.cb_N_PAM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_N_PAM.Name = "cb_N_PAM";
-            this.cb_N_PAM.TabStop = false;
-            this.cb_N_PAM.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -576,7 +576,7 @@
         private System.Windows.Forms.CheckBox cb_N_KM;
         private System.Windows.Forms.CheckBox cb_N_PAS;
         private System.Windows.Forms.CheckBox cb_N_RN;
-        private System.Windows.Forms.CheckBox cb_N_ORP;
+        private System.Windows.Forms.CheckBox cb_N_PAE;
         private System.Windows.Forms.CheckBox cb_N_Commonwealth;
         private System.Windows.Forms.Label lbl_CountTxt;
         private System.Windows.Forms.Label lbl_Count;

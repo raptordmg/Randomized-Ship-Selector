@@ -731,31 +731,31 @@
   <data name="&gt;&gt;cb_N_RN.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cb_N_ORP.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cb_N_PAE.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cb_N_ORP.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cb_N_PAE.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 233</value>
   </data>
-  <data name="cb_N_ORP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
+  <data name="cb_N_PAE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
   </data>
-  <data name="cb_N_ORP.TabIndex" type="System.Int32, mscorlib">
+  <data name="cb_N_PAE.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="cb_N_ORP.Text" xml:space="preserve">
-    <value>ORP (Poland)</value>
+  <data name="cb_N_PAE.Text" xml:space="preserve">
+    <value>PAE (Pan Europe)</value>
   </data>
-  <data name="&gt;&gt;cb_N_ORP.Name" xml:space="preserve">
-    <value>cb_N_ORP</value>
+  <data name="&gt;&gt;cb_N_PAE.Name" xml:space="preserve">
+    <value>cb_N_PAE</value>
   </data>
-  <data name="&gt;&gt;cb_N_ORP.Type" xml:space="preserve">
+  <data name="&gt;&gt;cb_N_PAE.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cb_N_ORP.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cb_N_PAE.Parent" xml:space="preserve">
     <value>p_Nations</value>
   </data>
-  <data name="&gt;&gt;cb_N_ORP.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cb_N_PAE.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="cb_N_Commonwealth.AutoSize" type="System.Boolean, mscorlib">

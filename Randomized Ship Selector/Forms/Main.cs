@@ -484,9 +484,9 @@ namespace Randomized_Ship_Selector
             {
                 nations.Add("RN");
             }
-            if (cb_N_ORP.Checked)
+            if (cb_N_PAE.Checked)
             {
-                nations.Add("ORP");
+                nations.Add("PAE");
             }
             if (cb_N_Commonwealth.Checked)
             {
@@ -543,7 +543,7 @@ namespace Randomized_Ship_Selector
             cb_N_FN.Checked = c;
             cb_N_IJN.Checked = c;
             cb_N_KM.Checked = c;
-            cb_N_ORP.Checked = c;
+            cb_N_PAE.Checked = c;
             cb_N_PAS.Checked = c;
             cb_N_PAM.Checked = c;
             cb_N_RM.Checked = c;
