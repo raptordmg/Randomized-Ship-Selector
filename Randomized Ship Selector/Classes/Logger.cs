@@ -31,7 +31,7 @@ namespace Randomized_Ship_Selector
         {
             _output.AppendText(Environment.NewLine + "ERROR: " + text);
             _output.AppendText(", this is an error. Please message me or open a issue on github:");
-            _output.AppendText(Environment.NewLine + "https://github.com/DInbound/Randomized-Ship-Selector/issues");
+            _output.AppendText(Environment.NewLine + "https://github.com/raptordmg/Randomized-Ship-Selector/issues");
         }
 
         private void LogWebError(string text)
