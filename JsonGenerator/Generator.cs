@@ -232,6 +232,10 @@ namespace JsonGenerator
                 return Ship.Nations.RM;
             if (name.Equals("europe"))
                 return Ship.Nations.PAE;
+            if (name.Equals("netherlands"))
+                return Ship.Nations.Netherlands;
+            if (name.Equals("spain"))
+                return Ship.Nations.Spain;
 
             return Ship.Nations.None;
         }
@@ -246,6 +250,8 @@ namespace JsonGenerator
                 return Ship.Classes.Carrier;
             if (name.Equals("Destroyer"))
                 return Ship.Classes.Destroyer;
+            if (name.Equals("Submarine"))
+                return Ship.Classes.Submarine;
 
             return Ship.Classes.None;
         }

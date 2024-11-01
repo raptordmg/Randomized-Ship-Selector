@@ -60,29 +60,25 @@
             this.cb_C_Cruiser = new System.Windows.Forms.CheckBox();
             this.cb_C_Battleship = new System.Windows.Forms.CheckBox();
             this.cb_C_Carrier = new System.Windows.Forms.CheckBox();
-            this.tb_UserName = new System.Windows.Forms.TextBox();
-            this.lbl_NameInput = new System.Windows.Forms.Label();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.rtb_SearchOutput = new System.Windows.Forms.RichTextBox();
-            this.cb_Server = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ts_Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cb_Tiers = new System.Windows.Forms.CheckBox();
             this.cb_Nations = new System.Windows.Forms.CheckBox();
             this.cb_Classes = new System.Windows.Forms.CheckBox();
             this.p_Tiers = new System.Windows.Forms.Panel();
+            this.cb_T11 = new System.Windows.Forms.CheckBox();
             this.p_Nations = new System.Windows.Forms.Panel();
+            this.cb_N_Spain = new System.Windows.Forms.CheckBox();
+            this.cb_N_Netherlands = new System.Windows.Forms.CheckBox();
             this.cb_N_PAM = new System.Windows.Forms.CheckBox();
             this.p_Classes = new System.Windows.Forms.Panel();
-            this.p_PlayerFilter = new System.Windows.Forms.Panel();
+            this.cb_C_Submarine = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.p_Tiers.SuspendLayout();
             this.p_Nations.SuspendLayout();
             this.p_Classes.SuspendLayout();
-            this.p_PlayerFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRandom
@@ -347,45 +343,10 @@
             this.cb_C_Carrier.TabStop = false;
             this.cb_C_Carrier.UseVisualStyleBackColor = true;
             // 
-            // tb_UserName
-            // 
-            resources.ApplyResources(this.tb_UserName, "tb_UserName");
-            this.tb_UserName.Name = "tb_UserName";
-            // 
-            // lbl_NameInput
-            // 
-            resources.ApplyResources(this.lbl_NameInput, "lbl_NameInput");
-            this.lbl_NameInput.Name = "lbl_NameInput";
-            // 
-            // btn_Search
-            // 
-            resources.ApplyResources(this.btn_Search, "btn_Search");
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
-            // 
-            // rtb_SearchOutput
-            // 
-            this.rtb_SearchOutput.AcceptsTab = true;
-            resources.ApplyResources(this.rtb_SearchOutput, "rtb_SearchOutput");
-            this.rtb_SearchOutput.Name = "rtb_SearchOutput";
-            this.rtb_SearchOutput.ReadOnly = true;
-            this.rtb_SearchOutput.TabStop = false;
-            this.rtb_SearchOutput.TextChanged += new System.EventHandler(this.Rtb_SearchOutput_TextChanged);
-            // 
-            // cb_Server
-            // 
-            this.cb_Server.FormattingEnabled = true;
-            this.cb_Server.Items.AddRange(new object[] {
-            resources.GetString("cb_Server.Items"),
-            resources.GetString("cb_Server.Items1"),
-            resources.GetString("cb_Server.Items2"),
-            resources.GetString("cb_Server.Items3")});
-            resources.ApplyResources(this.cb_Server, "cb_Server");
-            this.cb_Server.Name = "cb_Server";
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts_Menu});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -394,16 +355,9 @@
             // ts_Menu
             // 
             this.ts_Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem,
             this.creditsToolStripMenuItem});
             this.ts_Menu.Name = "ts_Menu";
             resources.ApplyResources(this.ts_Menu, "ts_Menu");
-            // 
-            // updateToolStripMenuItem
-            // 
-            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // creditsToolStripMenuItem
             // 
@@ -443,6 +397,7 @@
             // 
             // p_Tiers
             // 
+            this.p_Tiers.Controls.Add(this.cb_T11);
             this.p_Tiers.Controls.Add(this.cb_Tiers);
             this.p_Tiers.Controls.Add(this.cb_T1);
             this.p_Tiers.Controls.Add(this.cb_T2);
@@ -457,8 +412,19 @@
             resources.ApplyResources(this.p_Tiers, "p_Tiers");
             this.p_Tiers.Name = "p_Tiers";
             // 
+            // cb_T11
+            // 
+            resources.ApplyResources(this.cb_T11, "cb_T11");
+            this.cb_T11.Checked = true;
+            this.cb_T11.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_T11.Name = "cb_T11";
+            this.cb_T11.TabStop = false;
+            this.cb_T11.UseVisualStyleBackColor = true;
+            // 
             // p_Nations
             // 
+            this.p_Nations.Controls.Add(this.cb_N_Spain);
+            this.p_Nations.Controls.Add(this.cb_N_Netherlands);
             this.p_Nations.Controls.Add(this.cb_N_PAM);
             this.p_Nations.Controls.Add(this.cb_Nations);
             this.p_Nations.Controls.Add(this.cb_N_USN);
@@ -474,6 +440,24 @@
             resources.ApplyResources(this.p_Nations, "p_Nations");
             this.p_Nations.Name = "p_Nations";
             // 
+            // cb_N_Spain
+            // 
+            resources.ApplyResources(this.cb_N_Spain, "cb_N_Spain");
+            this.cb_N_Spain.Checked = true;
+            this.cb_N_Spain.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_Spain.Name = "cb_N_Spain";
+            this.cb_N_Spain.TabStop = false;
+            this.cb_N_Spain.UseVisualStyleBackColor = true;
+            // 
+            // cb_N_Netherlands
+            // 
+            resources.ApplyResources(this.cb_N_Netherlands, "cb_N_Netherlands");
+            this.cb_N_Netherlands.Checked = true;
+            this.cb_N_Netherlands.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_N_Netherlands.Name = "cb_N_Netherlands";
+            this.cb_N_Netherlands.TabStop = false;
+            this.cb_N_Netherlands.UseVisualStyleBackColor = true;
+            // 
             // cb_N_PAM
             // 
             resources.ApplyResources(this.cb_N_PAM, "cb_N_PAM");
@@ -485,6 +469,7 @@
             // 
             // p_Classes
             // 
+            this.p_Classes.Controls.Add(this.cb_C_Submarine);
             this.p_Classes.Controls.Add(this.cb_Classes);
             this.p_Classes.Controls.Add(this.cb_C_Destroyer);
             this.p_Classes.Controls.Add(this.cb_C_Cruiser);
@@ -493,21 +478,20 @@
             resources.ApplyResources(this.p_Classes, "p_Classes");
             this.p_Classes.Name = "p_Classes";
             // 
-            // p_PlayerFilter
+            // cb_C_Submarine
             // 
-            this.p_PlayerFilter.Controls.Add(this.rtb_SearchOutput);
-            this.p_PlayerFilter.Controls.Add(this.tb_UserName);
-            this.p_PlayerFilter.Controls.Add(this.lbl_NameInput);
-            this.p_PlayerFilter.Controls.Add(this.cb_Server);
-            this.p_PlayerFilter.Controls.Add(this.btn_Search);
-            resources.ApplyResources(this.p_PlayerFilter, "p_PlayerFilter");
-            this.p_PlayerFilter.Name = "p_PlayerFilter";
+            resources.ApplyResources(this.cb_C_Submarine, "cb_C_Submarine");
+            this.cb_C_Submarine.Checked = true;
+            this.cb_C_Submarine.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_C_Submarine.Name = "cb_C_Submarine";
+            this.cb_C_Submarine.TabStop = false;
+            this.cb_C_Submarine.UseVisualStyleBackColor = true;
+            this.cb_C_Submarine.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.p_PlayerFilter);
             this.Controls.Add(this.p_Classes);
             this.Controls.Add(this.lbl_Count);
             this.Controls.Add(this.lbl_CountTxt);
@@ -533,8 +517,6 @@
             this.p_Nations.PerformLayout();
             this.p_Classes.ResumeLayout(false);
             this.p_Classes.PerformLayout();
-            this.p_PlayerFilter.ResumeLayout(false);
-            this.p_PlayerFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,14 +555,8 @@
         private System.Windows.Forms.CheckBox cb_C_Cruiser;
         private System.Windows.Forms.CheckBox cb_C_Battleship;
         private System.Windows.Forms.CheckBox cb_C_Carrier;
-        private System.Windows.Forms.TextBox tb_UserName;
-        private System.Windows.Forms.Label lbl_NameInput;
-        private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.RichTextBox rtb_SearchOutput;
-        private System.Windows.Forms.ComboBox cb_Server;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ts_Menu;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creditsToolStripMenuItem;
         private System.Windows.Forms.CheckBox cb_Tiers;
         private System.Windows.Forms.CheckBox cb_Nations;
@@ -588,8 +564,11 @@
         private System.Windows.Forms.Panel p_Tiers;
         private System.Windows.Forms.Panel p_Nations;
         private System.Windows.Forms.Panel p_Classes;
-        private System.Windows.Forms.Panel p_PlayerFilter;
         private System.Windows.Forms.CheckBox cb_N_PAM;
+        private System.Windows.Forms.CheckBox cb_C_Submarine;
+        private System.Windows.Forms.CheckBox cb_T11;
+        private System.Windows.Forms.CheckBox cb_N_Spain;
+        private System.Windows.Forms.CheckBox cb_N_Netherlands;
     }
 }
 

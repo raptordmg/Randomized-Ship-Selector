@@ -34,9 +34,6 @@ namespace Randomized_Ship_Selector
 
             CC = new ConnectionController();
             Config = new Config();
-            Logger = new Logger(rtb_SearchOutput);
-
-            CheckVersions();
 
             UpdateMasterList();
         }
@@ -79,16 +76,8 @@ namespace Randomized_Ship_Selector
             }
         }
 
-        // Get User info
-        private void Btn_Search_Click(object sender, EventArgs e)
-        {
-            SearchPlayer();
-        }
 
-        private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CheckVersions();
-        }
+
 
         private void CreditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -111,7 +100,6 @@ namespace Randomized_Ship_Selector
             }
 
             int count = AllShips.Count;
-            Logger.Log("Loaded " + count.ToString() + " ships.");
             lbl_Count.Text = count.ToString();
         }
 
@@ -145,251 +133,8 @@ namespace Randomized_Ship_Selector
             return filtered;
         }
 
-        // Gets player and fills playerships list and set UseIGN to true.
-        private void SearchPlayer()
-        {
-            string server = cb_Server.Text;
-            string userName = tb_UserName.Text;
-            string userId = null;
 
-            PlayerShips = new List<Ship>();
 
-            if(AllShips == null || AllShips.Count <= 0)
-            {
-                Logger.Log("No local ships found. Try updating first.");
-            }
-
-            if (server.Equals("ru") || server.Equals("eu") || server.Equals("na") || server.Equals("asia"))
-            {
-                string extension = "";
-
-                if (server.Equals("na"))
-                {
-                    extension = "com";
-                }
-                else
-                {
-                    extension = server;
-                }
-
-                if (userName != "")
-                {
-                    // Step 1: Get user ID
-                    Logger.Log("Fetching account ID...");
-                    Uri idUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/account/list/?application_id={1}&search={2}", extension, Config.AppID, userName));
-
-                    JObject idObj;
-                    try
-                    {
-                        idObj = CC.GetJObject(idUri);
-                    }
-                    catch (WebException ex)
-                    {
-                        Logger.CatchWebEx(ex);
-                        return;
-                    }
-
-                    // T-T (cri every time)
-                    JToken idData = idObj["data"].FirstOrDefault();
-
-                    if (idData == null)
-                    {
-                        Logger.Log("WARNING: No player with specified name.");
-                        return;
-                    }
-
-                    try
-                    {
-                        userId = idData["account_id"].ToString();
-                        Logger.Log("Account ID fetched: " + userId);
-                    }
-                    catch
-                    {
-                        Logger.LogError("Could not fetch account ID.");
-                        return;
-                    }
-
-                    // Step 1.5:  Get if user account is private:
-                    Uri privateUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/account/info/?application_id={1}&account_id={2}", extension, Config.AppID, userId));
-
-                    JObject privateObject;
-                    try
-                    {
-                        privateObject = CC.GetJObject(privateUri);
-                    }
-                    catch (WebException ex)
-                    {
-                        Logger.CatchWebEx(ex);
-                        return;
-                    }
-
-                    JToken privateData = privateObject["data"].First().First();
-                    if (Boolean.Parse(privateData["hidden_profile"].ToString()))
-                    {
-                        Logger.Log("WARNING: User account is hidden, at this point in time RSS cannot prefilter while account is hidden.");
-                        Logger.Log("No prefilter applied.");
-                        return;
-                    }
-
-                    // Step 2: Get all ships that are in port
-                    Logger.Log("Fetching all ships...");
-
-                    Uri shipsUri = new Uri(String.Format("https://api.worldofwarships.{0}/wows/ships/stats/?application_id={1}&account_id={2}&in_garage=1", extension, Config.AppID, userId));
-                    JObject shipsObj;
-                    try
-                    {
-                        shipsObj = CC.GetJObject(shipsUri);
-                    }
-                    catch (WebException ex)
-                    {
-                        Logger.CatchWebEx(ex);
-                        return;
-                    }
-
-                    try
-                    {
-                        JToken shipsData = shipsObj["data"][userId];
-
-                        if (shipsData == null)
-                        {
-                            Logger.LogError("Could not find ships");
-                            return;
-                        }
-
-                        foreach (JToken item in shipsData)
-                        {
-                            string id = item["ship_id"].ToString();
-
-                            Ship aShip = AllShips.FirstOrDefault(s => s.ID == id);
-
-                            if (aShip != null)
-                                PlayerShips.Add(aShip);
-                        }
-
-                        Logger.Log("Finished fetching ships with more than 0 battles...");
-                        Logger.Log("Total ships found: " + PlayerShips.Count);
-                        UseIGN = true;
-                        lbl_Count.Text = FilterShips(PlayerShips).Count.ToString();
-                    }
-                    catch
-                    {
-                        Logger.LogError("Problem summing up ships.");
-                    }
-                }
-            }
-            else
-            {
-                Logger.Log("WARNING: Please select a valid server.");
-            }
-        }
-
-        // Checks if local data exists and connects to the internet to check latest version.
-        private void CheckVersions()
-        {
-            Logger.Log("Checking Versions...");
-
-            JToken remote = null;
-            JToken local = null;
-
-            try
-            {
-                remote = CC.GetRemoteVersionNumbers(Config.WebVersionAPI);
-                local = CC.GetLocalVersionNumbers(Config.LocalShipDataJson);
-            }
-            catch (Exception ex)
-            {
-                if (ex is FileNotFoundException)
-                {
-                    DialogResult result = MessageBox.Show("No local files found, download new files?", "No local files.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                    if (result == DialogResult.Yes)
-                    {
-                        UpdateLocalData();
-                        return;
-                    }
-                    else
-                    {
-                        Logger.Log("No local files downloaded, application will not work correctly untill the required files are downloaded.");
-                        return;
-                    }
-                }
-                else if (ex is WebException)
-                {
-                    Logger.CatchWebEx((WebException)ex);
-                    return;
-                }
-                else
-                {
-                    Logger.LogError("Irrelevent");
-                    return;
-                }
-            }
-
-            string localv = local["wowsversion"].ToString();
-            string remotev = remote["wowsversion"].ToString();
-
-            string locala = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string remotea = remote["appversion"].ToString();
-
-            if (localv.Equals(remotev) && locala.Equals(remotea))
-            {
-                Logger.Log("Files are up to date");
-            }
-            else if (!locala.Equals(remotea))
-            {
-                // Message with update app
-                string message = String.Format("A newer version is available: " + remotea + ". Current app version is: " + locala + ". Make sure to update the application to prevent problems.");
-
-                Logger.Log(@"Newer app version found: https://github.com/DInbound/Randomized-Ship-Selector/releases/latest");
-                MessageBox.Show(message, "Newer app version available!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!localv.Equals(remotev))
-            {
-                // Update local data                
-                string message = String.Format("Current version (" + localv + ") is lower than the newest version (" + remotev + "). Download newer files?");
-
-                DialogResult result = MessageBox.Show(message, "Local data out of date", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                ;
-                if (result == DialogResult.Yes)
-                {
-                    UpdateLocalData();
-                }
-                else if (result == DialogResult.No)
-                {
-                    Logger.Log("Update not executed.");
-                }
-            }
-        }
-
-        private void UpdateLocalData()
-        {
-            Logger.Log("Updating...");
-
-            try
-            {
-                // Download new JSON
-                CC.DownloadFile(Config.WebShipDataJson, Config.LocalShipDataJson);
-
-                // Download new images
-                CC.DownloadFile(Config.WebImages, Config.LocalImages);
-            }
-            catch (WebException ex)
-            {
-                Logger.CatchWebEx(ex);
-                return;
-            }
-            
-            Logger.Log("File(s) successfully updated!");
-            UpdateMasterList();
-        }
-
-        // Scrolls down the rich text box
-        private void Rtb_SearchOutput_TextChanged(object sender, EventArgs e)
-        {
-            // set the current caret position to the end
-            rtb_SearchOutput.SelectionStart = rtb_SearchOutput.Text.Length;
-            // scroll it automatically
-            rtb_SearchOutput.ScrollToCaret();
-        }
 
         /// Populaters ///
         
@@ -437,6 +182,10 @@ namespace Randomized_Ship_Selector
             if (cb_T10.Checked)
             {
                 tiers.Add(10);
+            }
+            if (cb_T11.Checked)
+            {
+                tiers.Add(11);
             }
 
             return tiers;
@@ -491,6 +240,14 @@ namespace Randomized_Ship_Selector
             {
                 nations.Add("Commonwealth");
             }
+            if (cb_N_Netherlands.Checked)
+            {
+                nations.Add("Netherlands");
+            }
+            if (cb_N_Spain.Checked)
+            {
+                nations.Add("Spain");
+            }
 
             return nations;
         }
@@ -516,6 +273,10 @@ namespace Randomized_Ship_Selector
             {
                 classes.Add("Destroyer");
             }
+            if (cb_C_Submarine.Checked)
+            {
+                classes.Add("Submarine");
+            }
 
             return classes;
         }
@@ -533,6 +294,7 @@ namespace Randomized_Ship_Selector
             cb_T8.Checked = c;
             cb_T9.Checked = c;
             cb_T10.Checked = c;
+            cb_T11.Checked = c;
         }
 
         private void Cb_Nations_CheckedChanged(object sender, EventArgs e)
@@ -549,6 +311,8 @@ namespace Randomized_Ship_Selector
             cb_N_RN.Checked = c;
             cb_N_USN.Checked = c;
             cb_N_VMF.Checked = c;
+            cb_N_Spain.Checked = c;
+            cb_N_Netherlands.Checked = c;
         }
 
         private void Cb_Classes_CheckedChanged(object sender, EventArgs e)
@@ -558,6 +322,12 @@ namespace Randomized_Ship_Selector
             cb_C_Carrier.Checked = c;
             cb_C_Cruiser.Checked = c;
             cb_C_Destroyer.Checked = c;
+            cb_C_Submarine.Checked = c;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,8 @@ namespace JsonGenerator
             Destroyer,
             Cruiser,
             Battleship,
-            Carrier
+            Carrier,
+            Submarine
         }
 
         public enum Nations
@@ -33,7 +34,10 @@ namespace JsonGenerator
             PAM, // Pan-Ameracan Navy (Pan-America)
             RN, // Royal Navy (England)
             PAE, // Pan-Ameracan Navy (Pan-Europe)
-            Commonwealth // Perth, Vampire (Australia)
+            Commonwealth, // Perth, Vampire (Australia)
+            Netherlands, //Netherlands
+            Spain //Spain
+
         }
 
         public enum Status

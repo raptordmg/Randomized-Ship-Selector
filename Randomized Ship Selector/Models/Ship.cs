@@ -15,7 +15,8 @@ namespace Randomized_Ship_Selector
             Destroyer,
             Cruiser,
             Battleship,
-            Carrier
+            Carrier,
+            Submarine
         }
 
         public enum Nations
@@ -30,8 +31,10 @@ namespace Randomized_Ship_Selector
             PAS, // Pan-Asian Navy (Pan-Asia)
             PAM, // Pan-Ameracan Navy (Pan-America)
             RN, // Royal Navy (England)
-            PAE, // Pan Europe (Pan-Europe)
-            Commonwealth // Perth, Vampire (Australia)
+            PAE, // Pan-Ameracan Navy (Pan-Europe)
+            Commonwealth, // Perth, Vampire (Australia)
+            Netherlands, //Netherlands
+            Spain //Spain
         }
 
         public enum Status
